@@ -1,3 +1,8 @@
+/* Tailwindcss Styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* GlideJS Styles */
+@import "./vendors/glide.core.min.css";
+@import "./vendors/glide.theme.min.css";
