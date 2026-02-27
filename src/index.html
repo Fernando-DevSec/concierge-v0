@@ -23,107 +23,179 @@
     <link rel="stylesheet" href="/css/vendors/glide.theme.min.css">
     <link rel="stylesheet" href="/css/styles.css">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <style>
+      .pinyon-script-regular {
+        font-family: "Pinyon Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+
   </head>
 
   <body>
 
-    <!--<header>
-      <nav>
-        <ul>
-          <li class="text-red-600 dark:text-blue-700">Home</li>
-          <li>Services</li>
-          <li>About Us</li>
-        </ul>
+    <!-- Navbar Section -->
+    <header
+      class="fixed w-full z-50 transition-colors duration-300 bg-white/80 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 font-sans">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+    
+          <div class="flex-shrink-0">
+            <a href="/" class="pinyon-script-regular text-2xl tracking-tight text-slate-900 dark:text-white italic">
+              Concierge <span class="text-amber-600 dark:text-amber-500">CR</span>
+            </a>
+          </div>
+    
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="/"
+              class="text-sm font-medium text-slate-600 hover:text-amber-600 dark:text-slate-300 dark:hover:text-amber-500 transition-colors">Home</a>
+    
+            <div class="relative group">
+              <button
+                class="flex items-center text-sm font-medium text-slate-600 group-hover:text-amber-600 dark:text-slate-300 dark:hover:text-amber-500 transition-colors">
+                Services
+                <svg class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+    
+              <div
+                class="absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-slate-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left scale-95 group-hover:scale-100">
+                <a href="./pages/services/concierge.html"
+                  class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+                  Concierge
+                </a>
+                <a href="./pages/services/relocation.html"
+                  class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+                  Relocation
+                </a>
+                <a href="./pages/services/weddings.html"
+                  class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+                  Weddings
+                </a>
+                <a href="./pages/services/shuttles.html"
+                  class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+                  Shuttle
+                </a>
+
+              </div>
+            </div>
+    
+            <a href="./pages/about.html"
+              class="text-sm font-medium text-slate-600 hover:text-amber-600 dark:text-slate-300 dark:hover:text-amber-500 transition-colors">
+              About Us
+            </a>
+
+            <button id="theme-toggle"
+              class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:ring-2 hover:ring-amber-500 transition-all focus:outline-none">
+              <svg id="sun-icon" class="hidden dark:block w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+                </path>
+              </svg>
+              <svg id="moon-icon" class="block dark:hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+            </button>
+
+          </div>
+    
+          <div class="md:hidden flex items-center space-x-4">
+
+
+            <button id="mobile-menu-button" class="text-slate-600 dark:text-slate-300 focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </nav>
-    </header>-->
-
-
-    <header class="bg-white dark:bg-slate-900 shadow-md transition-colors duration-300">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16 items-center">
-      
-      <div class="flex-shrink-0">
-        <span class="text-xl font-bold text-green-600 dark:text-green-400">CR CONCIERGE</span>
+    
+      <div id="mobile-menu"
+        class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+        <div class="px-4 pt-2 pb-6 space-y-2">
+          <a href="/" class="block text-base font-medium text-slate-700 dark:text-slate-200">Home</a>
+          <div class="pl-4 space-y-2">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Services</p>
+            <a href="./pages/services/concierge.html" class="block text-slate-600 dark:text-slate-400">Concierge</a>
+            <a href="./pages/services/relocation.html" class="block text-slate-600 dark:text-slate-400">Relocation</a>
+            <a href="./pages/services/weddings.html" class="block text-slate-600 dark:text-slate-400">Weddings</a>
+            <a href="./pages/services/shuttles.html" class="block text-slate-600 dark:text-slate-400">Shuttles</a>
+          </div>
+          <a href="./pages/about.html" class="block text-base font-medium text-slate-700 dark:text-slate-200">About Us</a>
+        </div>
       </div>
-
-      <div class="flex items-center space-x-8">
-        <ul class="flex space-x-6">
-          <li><a href="/index.html" class="text-slate-700 dark:text-slate-200 hover:text-green-600 dark:hover:text-green-400 font-medium">Home</a></li>
-          <li><a href="#" class="text-slate-700 dark:text-slate-200 hover:text-green-600 dark:hover:text-green-400 font-medium">Services</a></li>
-          <li><a href="/pages/about.html" class="text-slate-700 dark:text-slate-200 hover:text-green-600 dark:hover:text-green-400 font-medium">About Us</a></li>
-        </ul>
-
-        <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:ring-2 hover:ring-green-500 transition-all focus:outline-none">
-          <svg id="sun-icon" class="hidden dark:block w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
-          <svg id="moon-icon" class="block dark:hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-        </button>
-      </div>
-
-    </div>
-  </nav>
-</header>
-
-
-
-
-
-
+    </header>
+    <!-- Navbar Section -->
 
     <main>
 
-      <section></section>
-      <section></section>
-      <section></section>
-
-
-
+      <!-- Slider Section -->
       <section class="relative bg-slate-200 dark:bg-slate-800 min-h-[70vh]">
         <div class="glide hero-slider">
-          
+      
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
-              
+      
               <li class="glide__slide">
                 <div class="relative h-[70vh] w-full flex items-center justify-center bg-slate-800">
-                  <img src="/images/hero-1.webp" alt="Costa Rica Nature" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                  <img src="/images/hero-1.webp" alt="Costa Rica Nature"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60">
                   <div class="relative z-10 text-center">
                     <h2 class="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter">Luxury Concierge</h2>
                     <p class="text-white mt-4 text-lg">Experiencias inolvidables en el paraíso.</p>
                   </div>
                 </div>
               </li>
-
+      
               <li class="glide__slide">
                 <div class="relative h-[70vh] w-full flex items-center justify-center bg-slate-700">
-                  <img src="/images/hero-2.webp" alt="Costa Rica Beach" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                  <img src="/images/hero-2.webp" alt="Costa Rica Beach"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60">
                   <div class="relative z-10 text-center">
                     <h2 class="text-4xl md:text-6xl font-bold text-white uppercase tracking-tighter">Servicio VIP</h2>
                     <p class="text-white mt-4 text-lg">Transporte, Tours y Reubicación.</p>
                   </div>
                 </div>
               </li>
-
+      
             </ul>
           </div>
-
+      
           <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full text-white transition-all" data-glide-dir="<">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+            <button
+              class="glide__arrow glide__arrow--left absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full text-white transition-all"
+              data-glide-dir="<">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
             </button>
-            <button class="glide__arrow glide__arrow--right absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full text-white transition-all" data-glide-dir=">">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+            <button
+              class="glide__arrow glide__arrow--right absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full text-white transition-all"
+              data-glide-dir=">">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
             </button>
           </div>
-
-          <div class="glide__bullets absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2" data-glide-el="controls[nav]">
+      
+          <div class="glide__bullets absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2"
+            data-glide-el="controls[nav]">
             <button class="glide__bullet w-3 h-3 rounded-full bg-white/50" data-glide-dir="=0"></button>
             <button class="glide__bullet w-3 h-3 rounded-full bg-white/50" data-glide-dir="=1"></button>
           </div>
         </div>
       </section>
-
-
-
+      <!-- Slider Section -->
 
     </main>
 
