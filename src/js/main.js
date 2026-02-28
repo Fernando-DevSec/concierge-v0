@@ -1,21 +1,59 @@
 /**
  * @file main.js
- * @description Core interactions for CR Concierge website, including Dark Mode 
- * management and responsive navigation logic.
+ * @description Core interactions for CR Concierge website.
+ * Includes: Preloader, Dark Mode, Responsive Navigation, and Scroll Interactions.
  * @author CR Concierge Team
- * @version 1.1.0
+ * @version 1.3.0
  */
 
 /**
- * Initializes all UI components when the DOM is fully loaded.
+ * Single entry point for UI initialization.
+ * Starts all components after the DOM is fully interactive.
  */
 document.addEventListener('DOMContentLoaded', () => {
+    initPreloader();
     initDarkMode();
     initMobileNavigation();
+    initBackToTop();
 });
 
 // -------------------------------------------------------------------------
-// DARK MODE MANAGEMENT
+// 1. PRELOADER SYSTEM
+// -------------------------------------------------------------------------
+
+/**
+ * Manages the initial loading screen, progress bar, and smooth exit.
+ * @function initPreloader
+ */
+const initPreloader = () => {
+    const preloader = document.getElementById('preloader');
+    const progressBar = document.getElementById('preloader-bar');
+
+    if (!preloader) return;
+
+    // Start progress bar animation shortly after DOM is ready
+    setTimeout(() => {
+        if (progressBar) progressBar.style.width = '100%';
+    }, 100);
+
+    /**
+     * Fades out the preloader once the entire window (images/scripts) has loaded.
+     */
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            // Transition to transparent
+            preloader.classList.add('opacity-0', 'pointer-events-none');
+            
+            // Clean up DOM after transition to save memory/resources
+            setTimeout(() => {
+                if (preloader.parentNode) preloader.remove();
+            }, 700);
+        }, 800); // Small delay to appreciate the luxury branding
+    });
+};
+
+// -------------------------------------------------------------------------
+// 2. DARK MODE MANAGEMENT
 // -------------------------------------------------------------------------
 
 /**
@@ -26,26 +64,27 @@ const initDarkMode = () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleMobile = document.getElementById('theme-toggle-mobile');
 
+    if (!themeToggleBtn && !themeToggleMobile) return;
+
     /**
      * Toggles the 'dark' class on the document root and updates localStorage.
-     * Includes a smooth transition effect applied to the body.
      */
     const toggleDarkMode = () => {
-        // Apply smooth transition effect during theme switch
+        // Add a temporary transition to the body for a smooth color fade
         document.body.classList.add('transition-colors', 'duration-500');
         
         const isDark = document.documentElement.classList.toggle('dark');
         localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
     };
 
-    // Attach event listeners if elements exist in the DOM
+    // Attach listeners to both desktop and mobile theme buttons
     [themeToggleBtn, themeToggleMobile].forEach(btn => {
         if (btn) btn.addEventListener('click', toggleDarkMode);
     });
 };
 
 // -------------------------------------------------------------------------
-// MOBILE NAVIGATION
+// 3. MOBILE NAVIGATION
 // -------------------------------------------------------------------------
 
 /**
@@ -62,29 +101,25 @@ const initMobileNavigation = () => {
     if (!mobileMenuButton || !mobileMenu) return;
 
     /**
-     * Toggles the main mobile menu visibility with a scale feedback animation.
+     * Toggles main mobile menu visibility with haptic-like scale feedback.
      */
     const toggleMobileMenu = () => {
         mobileMenu.classList.toggle('hidden');
         
-        // Haptic-like visual feedback
+        // Visual feedback on click
         mobileMenuButton.classList.add('scale-90');
         setTimeout(() => mobileMenuButton.classList.remove('scale-90'), 100);
     };
 
     /**
-     * Toggles the services sub-menu and rotates the associated arrow icon.
+     * Toggles the services dropdown in the mobile view.
      */
     const toggleServicesDropdown = () => {
-        if (mobileServicesMenu) {
-            mobileServicesMenu.classList.toggle('hidden');
-        }
-        if (mobileServicesArrow) {
-            mobileServicesArrow.classList.toggle('rotate-180');
-        }
+        if (mobileServicesMenu) mobileServicesMenu.classList.toggle('hidden');
+        if (mobileServicesArrow) mobileServicesArrow.classList.toggle('rotate-180');
     };
 
-    // Event Listeners
+    // Event listeners
     mobileMenuButton.addEventListener('click', toggleMobileMenu);
 
     if (mobileServicesButton) {
@@ -92,11 +127,52 @@ const initMobileNavigation = () => {
     }
 
     /**
-     * Closes the mobile menu automatically when a link is clicked.
-     * Enhances User Experience (UX) for single-page or internal navigation.
+     * UX Improvement: Auto-close the mobile menu when a link is clicked.
      */
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
-        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
     });
+};
+
+// -------------------------------------------------------------------------
+// 4. SCROLL INTERACTIONS
+// -------------------------------------------------------------------------
+
+/**
+ * Manages the "Back to Top" button visibility and smooth scroll execution.
+ * @function initBackToTop
+ */
+const initBackToTop = () => {
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    if (!backToTopBtn) return;
+
+    /**
+     * Shows/hides the button based on the scroll threshold (400px).
+     */
+    const handleScroll = () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.remove('opacity-0', 'invisible');
+            backToTopBtn.classList.add('opacity-100', 'visible');
+        } else {
+            backToTopBtn.classList.add('opacity-0', 'invisible');
+            backToTopBtn.classList.remove('opacity-100', 'visible');
+        }
+    };
+
+    /**
+     * Executes the smooth scroll to the top of the page.
+     */
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    backToTopBtn.addEventListener('click', scrollToTop);
 };
