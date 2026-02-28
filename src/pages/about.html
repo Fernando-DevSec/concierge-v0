@@ -35,9 +35,34 @@
       }
     </style>
 
+    <style>
+      /* Evita que el scroll se mueva mientras carga */
+      body.loading {
+        overflow: hidden;
+      }
+    
+      #preloader {
+        background-color: #11120D;
+        /* Dark Luxury */
+        display: flex;
+        visibility: visible;
+      }
+    </style>
+
   </head>
 
   <body>
+
+    <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-dark-luxury transition-opacity duration-700">
+      <div class="relative">
+        <h1 class="pinyon-script-regular text-5xl text-white italic animate-pulse">
+          Concierge <span class="text-gold-luxury">CR</span>
+        </h1>
+        <div class="absolute -bottom-4 left-0 w-full h-[1px] bg-white/10 overflow-hidden">
+          <div id="preloader-bar" class="h-full bg-gold-luxury w-0 transition-all duration-500 ease-out"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- Navbar Section -->
     <header
@@ -168,14 +193,15 @@
     </header>
     <!-- Navbar Section -->
 
-    <main>
-    
-      <section class="relative w-full h-screen overflow-hidden bg-slate-900 dark:bg-dark-luxury">
-        <h1>About Us</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, laudantium aperiam explicabo exercitationem ipsam hic 
-          quasi vitae facilis! Beatae tempora molestiae optio soluta labore blanditiis maiores nemo dolor placeat? Perspiciatis.</p>
+    <main class="pt-20">
+      <section class="relative w-full min-h-screen overflow-hidden bg-white dark:bg-dark-luxury px-8 py-20">
+        <h1 class="text-5xl font-bold mb-6 text-slate-900 dark:text-white">About Us</h1>
+        <p class="text-lg text-slate-600 dark:text-zinc-400 max-w-2xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, laudantium aperiam explicabo exercitationem ipsam hic quasi vitae facilis! Beatae tempora molestiae optio soluta labore blanditiis maiores nemo dolor placeat? Perspiciatis.
+        </p>
+        
+        <div class="h-[100vh]"></div> 
       </section>
-
     </main>
 
     <!-- Footer Section -->
