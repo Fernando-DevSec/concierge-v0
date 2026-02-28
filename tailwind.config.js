@@ -5,7 +5,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'luxury-dark': '#060D0C',
+        'dark-luxury': '#11120D',
+        'gold-luxury': '#C5A059',
+        'gold-light': '#D4AF37',
       },
     },
   },
