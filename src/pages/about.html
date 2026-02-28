@@ -1,79 +1,185 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Nosotros | CR Concierge</title>
-  
-  <link rel="stylesheet" href="/css/styles.css">
+  <head>
 
-  <script>
-    if (localStorage.getItem('color-theme') === 'dark' || 
-      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  </script>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CR Concierge | Servicios de Lujo y Tours en Costa Rica</title>
+    <meta name="description" content="Servicios exclusivos de concierge en Costa Rica. Organización de tours, transporte, bodas y reubicación con expertos locales.">
+    
+    <link rel="stylesheet" href="/css/styles.css">
 
-<body class="bg-white dark:bg-slate-900 transition-colors duration-300 antialiased">
+    <script>
+      if (localStorage.getItem('color-theme') === 'dark' || 
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
 
-  <header class="bg-white dark:bg-slate-900 shadow-md transition-colors duration-300 sticky top-0 z-50">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        
-        <div class="flex-shrink-0">
-          <span class="text-xl font-bold text-green-600 dark:text-green-400">CR CONCIERGE</span>
+    <link rel="stylesheet" href="/css/vendors/glide.core.min.css">
+    <link rel="stylesheet" href="/css/vendors/glide.theme.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <style>
+      .pinyon-script-regular {
+        font-family: "Pinyon Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navbar Section -->
+    <header
+      class="fixed w-full z-50 transition-colors duration-300 bg-white/80 dark:bg-luxury-dark backdrop-blur-md border-b border-luxury-dark-200 dark:border-luxury-dark-900 font-sans">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+    
+          <div class="flex-shrink-0">
+            <a href="/" class="pinyon-script-regular text-4xl tracking-tight text-slate-900 dark:text-white italic">
+              Concierge <span class="text-slate-900 dark:text-white">CR</span>
+            </a>
+          </div>
+    
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="/"
+              class="text-sm font-medium text-slate-600 hover:text-amber-600 dark:text-slate-300 dark:hover:text-amber-500 transition-colors">Home</a>
+    
+            <div class="relative group">
+              <button
+                class="flex items-center text-sm font-medium text-slate-600 group-hover:text-amber-600 dark:text-slate-300 dark:hover:text-amber-500 transition-colors">
+                Services
+                <svg class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+    
+              <div
+                class="absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-slate-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left scale-95 group-hover:scale-100">
+                <a href="./pages/services/concierge.html"
+                  class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+                  Concierge
+                </a>
+                <a href="./pages/services/relocation.html"
+                  class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+                  Relocation
+                </a>
+                <a href="./pages/services/weddings.html"
+                  class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+                  Weddings
+                </a>
+                <a href="./pages/services/shuttles.html"
+                  class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+                  Shuttle
+                </a>
+
+              </div>
+            </div>
+    
+            <a href="./pages/about.html"
+              class="text-sm font-medium text-slate-600 hover:text-amber-600 dark:text-slate-300 dark:hover:text-amber-500 transition-colors">
+              About Us
+            </a>
+
+            <button id="theme-toggle"
+              class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:ring-2 hover:ring-amber-500 transition-all focus:outline-none">
+              <svg id="sun-icon" class="hidden dark:block w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+                </path>
+              </svg>
+              <svg id="moon-icon" class="block dark:hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+            </button>
+
+          </div>
+    
+          <div class="md:hidden flex items-center space-x-4">
+
+
+            <button id="mobile-menu-button" class="text-slate-600 dark:text-slate-300 focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
         </div>
-
-        <div class="flex items-center space-x-8">
-          <ul class="flex space-x-6">
-            <li><a href="/index.html" class="text-slate-700 dark:text-slate-200 hover:text-green-600 dark:hover:text-green-400 font-medium">Home</a></li>
-            <li><a href="#" class="text-slate-700 dark:text-slate-200 hover:text-green-600 dark:hover:text-green-400 font-medium">Services</a></li>
-            <li><a href="/pages/about.html" class="text-green-600 dark:text-green-400 font-bold border-b-2 border-green-600 dark:border-green-400">About Us</a></li>
-          </ul>
-
-          <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:ring-2 hover:ring-green-500 transition-all focus:outline-none">
-            <svg id="sun-icon" class="hidden dark:block w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
-            <svg id="moon-icon" class="block dark:hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-          </button>
-        </div>
-
-      </div>
-    </nav>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-4 py-20">
-    <section class="text-center">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">Nuestra Historia</h1>
-      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-        Somos un equipo apasionado por mostrar la verdadera esencia de Costa Rica. Con más de 10 años de experiencia en servicios de lujo, nuestra misión es que tu única preocupación sea disfrutar.
-      </p>
+      </nav>
+    
+      <div id="mobile-menu"
+        class="hidden md:hidden bg-white/95 dark:bg-black backdrop-blur-md border-b border-luxury-dark-200 dark:border-luxury-dark-900">
+        <div class="px-4 pt-2 pb-6 space-y-4">
+          <a href="/"
+            class="block text-lg font-medium text-slate-700 dark:text-slate-200 hover:text-amber-600 transition-colors">Home</a>
       
-      <div class="grid md:grid-cols-3 gap-8 mt-12">
-        <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl transition-transform hover:scale-105">
-          <h3 class="font-bold text-green-600 dark:text-green-400 mb-2">Exclusividad</h3>
-          <p class="text-sm dark:text-slate-400">Acceso a destinos y servicios privados únicos.</p>
-        </div>
-        <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl transition-transform hover:scale-105">
-          <h3 class="font-bold text-green-600 dark:text-green-400 mb-2">Confianza</h3>
-          <p class="text-sm dark:text-slate-400">Seguridad y logística profesional garantizada.</p>
-        </div>
-        <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl transition-transform hover:scale-105">
-          <h3 class="font-bold text-green-600 dark:text-green-400 mb-2">Pasión</h3>
-          <p class="text-sm dark:text-slate-400">Amamos nuestra tierra y queremos que tú también.</p>
+          <div>
+            <button id="mobile-services-button"
+              class="flex items-center justify-between w-full text-lg font-medium text-slate-700 dark:text-slate-200 hover:text-amber-600 transition-colors">
+              Services
+              <svg id="mobile-services-arrow" class="w-5 h-5 transition-transform duration-300" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+      
+            <div id="mobile-services-menu"
+              class="hidden mt-2 pl-4 space-y-3 border-l-2 border-slate-100 dark:border-luxury-dark-900">
+              <a href="./pages/services/concierge.html" class="block text-sm text-slate-600 dark:text-slate-400">Concierge</a>
+              <a href="./pages/services/relocation.html"
+                class="block text-sm text-slate-600 dark:text-slate-400">Relocation</a>
+              <a href="./pages/services/weddings.html" class="block text-sm text-slate-600 dark:text-slate-400">Weddings</a>
+              <a href="./pages/services/shuttles.html" class="block text-sm text-slate-600 dark:text-slate-400">Shuttles</a>
+            </div>
+          </div>
+      
+          <a href="./pages/about.html"
+            class="block text-lg font-medium text-slate-700 dark:text-slate-200 hover:text-amber-600 transition-colors">About
+            Us</a>
+      
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+            <!--<span class="text-sm font-medium text-slate-500 dark:text-slate-400">Switch Theme</span>-->
+            <button id="theme-toggle-mobile"
+              class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+              <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+                </path>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+    </header>
+    <!-- Navbar Section -->
 
-  <footer class="mt-20 py-10 border-t dark:border-slate-800 text-center text-slate-500 text-sm">
-    <p>&copy; 2026 CR Concierge. Pura Vida.</p>
-  </footer>
+    <main>
+      <section>
+        <div>
+          <h1>About Us</h1>
+          <img src="/src/images/about/about_one.jpg" alt="">
+        </div>
+      </section>
+    </main>
 
-  <script src="/js/main.js"></script>
-</body>
+
+    
+    <script src="/js/main.js"></script>
+
+  </body>
 
 </html>
