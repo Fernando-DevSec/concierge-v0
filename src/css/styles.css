@@ -1545,11 +1545,6 @@ video {
   background-color: rgb(255 255 255 / 0.05);
 }
 
-.dark\:text-amber-500:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(245 158 11 / var(--tw-text-opacity, 1));
-}
-
 .dark\:text-gold-luxury:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(197 160 89 / var(--tw-text-opacity, 1));

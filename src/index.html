@@ -27,12 +27,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&display=swap" rel="stylesheet">
+
     <style>
       .pinyon-script-regular {
         font-family: "Pinyon Script", cursive;
         font-weight: 400;
         font-style: normal;
       }
+
+      .font-nav {
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 0.05em; /* Un pequeño respiro entre letras */
+        text-transform: uppercase; /* El lujo suele ir en mayúsculas sutiles */
+      }
+
     </style>
 
     <style>
@@ -78,11 +90,11 @@
     
           <div class="hidden md:flex items-center space-x-8">
             <a href="/"
-              class="text-sm font-medium text-slate-600 hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">Home</a>
+              class="font-nav text-sm font-medium text-slate-600 hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">Home</a>
     
             <div class="relative group">
               <button
-                class="flex items-center text-sm font-medium text-slate-600 group-hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
+                class="font-nav flex items-center text-sm font-medium text-slate-600 group-hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
                 Services
                 <svg class="ml-1 w-4 h-4 transition-transform duration-500 group-hover:rotate-180" fill="none"
                   stroke="currentColor" viewBox="0 0 24 24">
@@ -93,26 +105,26 @@
               <div
                 class="absolute left-0 mt-2 w-48 rounded-md shadow-2xl py-1 bg-white dark:bg-dark-luxury ring-1 ring-black ring-opacity-5 dark:ring-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left scale-95 group-hover:scale-100">
                 <a href="./pages/services/concierge.html"
-                  class="block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
+                  class="font-nav block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
                   Concierge Services
                 </a>
                 <a href="./pages/services/relocation.html"
-                  class="block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
+                  class="font-nav block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
                   Relocation and Real State
                 </a>
                 <a href="./pages/services/weddings.html"
-                  class="block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
+                  class="font-nav block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
                   Weddings
                 </a>
                 <a href="./pages/services/shuttles.html"
-                  class="block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
+                  class="font-nav block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
                   Shuttle and Rent a Car
                 </a>
               </div>
             </div>
     
             <a href="./pages/about.html"
-              class="text-sm font-medium text-slate-600 hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
+              class="font-nav text-sm font-medium text-slate-600 hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
               About Us
             </a>
     
@@ -146,7 +158,7 @@
         class="hidden md:hidden bg-white/95 dark:bg-dark-luxury backdrop-blur-md border-b border-zinc-200 dark:border-white/10">
         <div class="px-4 pt-2 pb-6 space-y-4">
           <a href="/"
-            class="block text-lg font-medium text-slate-700 dark:text-zinc-200 hover:text-gold-luxury transition-all duration-300 active:pl-2">Home</a>
+            class="navfont- block text-lg font-medium text-slate-700 dark:text-zinc-200 hover:text-gold-luxury transition-all duration-300 active:pl-2">Home</a>
     
           <div>
             <button id="mobile-services-button"
@@ -211,11 +223,11 @@
                 <div class="relative z-20 h-full flex items-center justify-center px-6">
                   <div class="text-center max-w-5xl">
                     <h2
-                      class="font-sans text-4xl md:text-6xl text-white mb-6">
+                      class="font-nav text-4xl md:text-6xl text-white mb-6">
                       Wishing an unforgettable moment?
                     </h2>
                     <p
-                      class="font-sans text-sm md:text-lg text-slate-200 tracking-widest uppercase mb-10">
+                      class="font-nav text-sm md:text-lg text-slate-200 tracking-widest uppercase mb-10">
                       We provide unique experiences
                     </p>
                   </div>
