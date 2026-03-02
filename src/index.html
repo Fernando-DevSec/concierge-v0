@@ -1,437 +1,405 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
-  <head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CR Concierge | Servicios de Lujo y Tours en Costa Rica</title>
-    <meta name="description" content="Servicios exclusivos de concierge en Costa Rica. Organización de tours, transporte, bodas y reubicación con expertos locales.">
-    
-    <link rel="stylesheet" href="/css/styles.css">
+  <title>CR Concierge | Servicios de Lujo y Tours en Costa Rica</title>
+  <meta name="description"
+    content="Servicios exclusivos de concierge en Costa Rica. Organización de tours, transporte, bodas y reubicación con expertos locales.">
+  <link rel="canonical" href="https://crconcierge.com/index.html">
 
-    <script>
-      if (localStorage.getItem('color-theme') === 'dark' || 
-        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
+  <script>
+    const theme = localStorage.getItem('color-theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 
-    <link rel="stylesheet" href="/css/vendors/glide.core.min.css">
-    <link rel="stylesheet" href="/css/vendors/glide.theme.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/vendors/glide.core.min.css">
+  <link rel="stylesheet" href="/css/vendors/glide.theme.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+    rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <style>
+    .pinyon-script-regular {
+      font-family: "Pinyon Script", cursive;
+      font-weight: 400;
+    }
 
-    <style>
-      .pinyon-script-regular {
-        font-family: "Pinyon Script", cursive;
-        font-weight: 400;
-        font-style: normal;
-      }
+    .font-nav {
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
 
-      .font-nav {
-        font-family: 'Montserrat', sans-serif;
-        letter-spacing: 0.05em; /* Un pequeño respiro entre letras */
-        text-transform: uppercase; /* El lujo suele ir en mayúsculas sutiles */
-      }
+    /* Preloader Critical Layout */
+    #preloader {
+      background-color: #11120D;
+      display: flex;
+      visibility: visible;
+    }
 
-    </style>
+    body.loading {
+      overflow: hidden;
+    }
 
-    <style>
-      /* Evita que el scroll se mueva mientras carga */
-      body.loading {
-        overflow: hidden;
-      }
-    
-      #preloader {
-        background-color: #11120D;
-        /* Dark Luxury */
-        display: flex;
-        visibility: visible;
-      }
-    </style>
+    /* Accessibility: Custom Focus Ring */
+    :focus-visible {
+      outline: 2px solid #D4AF37;
+      outline-offset: 4px;
+    }
 
-  </head>
+    /* Fix for Hero Slider text contrast */
+    .hero-slider .glide__slide img {
+      filter: brightness(0.6);
+    }
 
-  <body>
-    <div id="preloader"
-      class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-dark-luxury transition-opacity duration-700">
-      <div class="relative">
-        <h1 class="pinyon-script-regular text-5xl text-white italic animate-pulse">
-          Concierge <span class="text-gold-luxury">CR</span>
-        </h1>
-        <div class="absolute -bottom-4 left-0 w-full h-[1px] bg-white/10 overflow-hidden">
-          <div id="preloader-bar" class="h-full bg-gold-luxury w-0 transition-all duration-500 ease-out"></div>
-        </div>
+    .dark .hero-slider .glide__slide img {
+      filter: brightness(0.4);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "CR Concierge",
+    "image": "https://crconcierge.com/images/slider/slider_one.jpg",
+    "@id": "https://crconcierge.com",
+    "url": "https://crconcierge.com",
+    "telephone": "+506-0000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Escazú Corporate Center, Floor 4",
+      "addressLocality": "San José",
+      "addressRegion": "SJ",
+      "addressCountry": "CR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 9.9322,
+      "longitude": -84.1415
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Luxury Services",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "Bespoke Concierge" } },
+        { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "Real Estate & Relocation" } },
+        { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "Luxury Shuttles" } }
+      ]
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-white dark:bg-dark-luxury transition-colors duration-300 antialiased">
+
+  <div id="preloader" role="status" aria-label="Loading CR Concierge"
+    class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-dark-luxury transition-opacity duration-700">
+    <div class="relative">
+      <h1 class="pinyon-script-regular text-5xl text-white italic animate-pulse">
+        Concierge <span class="text-gold-luxury">CR</span>
+      </h1>
+      <div class="absolute -bottom-4 left-0 w-full h-[1px] bg-white/10 overflow-hidden">
+        <div id="preloader-bar" class="h-full bg-gold-luxury w-0 transition-all duration-500 ease-out"></div>
       </div>
     </div>
+  </div>
 
-    <!-- Navbar Section -->
-    <header
-      class="fixed w-full z-50 transition-colors duration-300 bg-white/80 dark:bg-dark-luxury/90 backdrop-blur-md border-b border-zinc-200 dark:border-white/10 font-sans">
-      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-    
-          <div class="flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
-            <a href="/index.html" class="pinyon-script-regular text-4xl tracking-tight text-slate-900 dark:text-white italic">
-              Concierge <span class="text-gold-luxury">CR</span>
-            </a>
-          </div>
-    
-          <div class="hidden md:flex items-center space-x-8">
-            <a href="/"
-              class="font-nav text-sm font-medium text-slate-600 hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">Home</a>
-    
-            <div class="relative group">
-              <button
-                class="font-nav flex items-center text-sm font-medium text-slate-600 group-hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
-                Services
-                <svg class="ml-1 w-4 h-4 transition-transform duration-500 group-hover:rotate-180" fill="none"
-                  stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-    
-              <div
-                class="absolute left-0 mt-2 w-48 rounded-md shadow-2xl py-1 bg-white dark:bg-dark-luxury ring-1 ring-black ring-opacity-5 dark:ring-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left scale-95 group-hover:scale-100">
-                <a href="./pages/services/concierge.html"
-                  class="font-nav block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
-                  Concierge Services
-                </a>
-                <a href="./pages/services/relocation.html"
-                  class="font-nav block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
-                  Relocation and Real State
-                </a>
-                <a href="./pages/services/weddings.html"
-                  class="font-nav block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
-                  Weddings
-                </a>
-                <a href="./pages/services/shuttles.html"
-                  class="font-nav block px-4 py-2 text-sm text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">
-                  Shuttle and Rent a Car
-                </a>
-              </div>
-            </div>
-    
-            <a href="./pages/about.html"
-              class="font-nav text-sm font-medium text-slate-600 hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
-              About Us
-            </a>
-    
-            <button id="theme-toggle"
-              class="p-2 rounded-lg bg-zinc-100 dark:bg-white/5 text-slate-500 dark:text-gold-luxury hover:ring-2 hover:ring-gold-luxury transition-all duration-500 active:scale-90 hover:rotate-12 focus:outline-none">
-              <svg id="sun-icon" class="hidden dark:block w-5 h-5 transition-transform duration-700" fill="currentColor"
-                viewBox="0 0 20 20">
-                <path
-                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
-                </path>
-              </svg>
-              <svg id="moon-icon" class="block dark:hidden w-5 h-5 transition-transform duration-700" fill="currentColor"
-                viewBox="0 0 20 20">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-              </svg>
-            </button>
-          </div>
-    
-          <div class="md:hidden flex items-center">
-            <button id="mobile-menu-button"
-              class="text-slate-600 dark:text-zinc-300 focus:outline-none transition-transform active:scale-90">
-              <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-              </svg>
-            </button>
-          </div>
+  <header
+    class="fixed w-full z-50 transition-colors duration-300 bg-white/80 dark:bg-dark-luxury/90 backdrop-blur-md border-b border-zinc-200 dark:border-white/10">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+      <div class="flex justify-between items-center h-20">
+
+        <div class="flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+          <a href="/index.html"
+            class="pinyon-script-regular text-4xl tracking-tight text-slate-900 dark:text-white italic">
+            Concierge <span class="text-gold-luxury">CR</span>
+          </a>
         </div>
-      </nav>
-    
-      <div id="mobile-menu"
-        class="hidden md:hidden bg-white/95 dark:bg-dark-luxury backdrop-blur-md border-b border-zinc-200 dark:border-white/10">
-        <div class="px-4 pt-2 pb-6 space-y-4">
-          <a href="/"
-            class="navfont- block text-lg font-medium text-slate-700 dark:text-zinc-200 hover:text-gold-luxury transition-all duration-300 active:pl-2">Home</a>
-    
-          <div>
-            <button id="mobile-services-button"
-              class="flex items-center justify-between w-full text-lg font-medium text-slate-700 dark:text-zinc-200 hover:text-gold-luxury transition-colors">
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/index.html"
+            class="font-nav text-sm font-medium text-slate-600 hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
+            Home
+          </a>
+
+          <div class="relative group">
+            <button aria-expanded="false" aria-haspopup="true"
+              class="font-nav flex items-center text-sm font-medium text-slate-600 group-hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
               Services
-              <svg id="mobile-services-arrow" class="w-5 h-5 transition-transform duration-500" fill="none"
+              <svg class="ml-1 w-4 h-4 transition-transform duration-500 group-hover:rotate-180" fill="none"
                 stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
-    
-            <div id="mobile-services-menu"
-              class="hidden mt-2 pl-4 space-y-3 border-l-2 border-zinc-100 dark:border-gold-luxury/30 transition-all duration-500">
+
+            <div
+              class="absolute left-0 mt-2 w-64 rounded-md shadow-2xl py-2 bg-white dark:bg-dark-luxury ring-1 ring-black ring-opacity-5 dark:ring-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left scale-95 group-hover:scale-100">
               <a href="./pages/services/concierge.html"
-                class="block text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury transition-all duration-300">Concierge Services</a>
+                class="font-nav block px-4 py-3 text-xs text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">Concierge
+                Services</a>
               <a href="./pages/services/relocation.html"
-                class="block text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury transition-all duration-300">Relocation and Real State</a>
+                class="font-nav block px-4 py-3 text-xs text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">Relocation
+                & Real Estate</a>
               <a href="./pages/services/weddings.html"
-                class="block text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury transition-all duration-300">Weddings</a>
+                class="font-nav block px-4 py-3 text-xs text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">Weddings</a>
               <a href="./pages/services/shuttles.html"
-                class="block text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury transition-all duration-300">Shuttles and Rent a Car</a>
+                class="font-nav block px-4 py-3 text-xs text-slate-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/5 hover:pl-6 transition-all duration-300">Shuttle
+                & Rent a Car</a>
             </div>
           </div>
-    
+
           <a href="./pages/about.html"
-            class="block text-lg font-medium text-slate-700 dark:text-zinc-200 hover:text-gold-luxury transition-all duration-300 active:pl-2">About
-            Us</a>
-    
-          <div class="pt-4 border-t border-slate-100 dark:border-white/10 flex items-center justify-between">
-            <button id="theme-toggle-mobile"
-              class="p-2 rounded-lg bg-zinc-100 dark:bg-white/5 text-slate-500 dark:text-gold-luxury transition-all active:scale-95">
-              <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-              </svg>
-              <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
-                </path>
-              </svg>
-            </button>
-          </div>
+            class="font-nav text-sm font-medium text-slate-600 hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
+            About Us
+          </a>
+
+          <button id="theme-toggle" aria-label="Toggle dark mode"
+            class="p-2 rounded-lg bg-zinc-100 dark:bg-white/5 text-slate-500 dark:text-gold-luxury hover:ring-2 hover:ring-gold-luxury transition-all duration-500 active:scale-90 hover:rotate-12">
+            <svg id="sun-icon" class="hidden dark:block w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+              </path>
+            </svg>
+            <svg id="moon-icon" class="block dark:hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" aria-label="Open menu"
+            class="p-2 text-slate-600 dark:text-zinc-300 active:scale-90 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
         </div>
       </div>
-    </header>
-    <!-- Navbar Section -->
+    </nav>
 
-    <main class="relative">
-    
-      <section class="relative w-full h-screen overflow-hidden bg-slate-900">
-    
-        <div class="glide hero-slider h-full w-full">
-          <div class="glide__track h-full" data-glide-el="track">
-            <ul class="glide__slides h-full">
-    
-              <li class="glide__slide h-full relative">
-                <img src="./images/slider/slider_one.jpg" alt="Costa Rica Nature"
-                  class="absolute inset-0 w-full h-full object-cover object-center brightness-[0.6] dark:brightness-[0.5]">
-                  <!--class="absolute inset-0 w-full h-full object-cover object-center">-->
-    
-                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/70 z-10"></div>
-    
-                <div class="relative z-20 h-full flex items-center justify-center px-6">
-                  <div class="text-center max-w-5xl">
-                    <h2
-                      class="font-nav text-4xl md:text-6xl text-white mb-6">
-                      Wishing an unforgettable moment?
-                    </h2>
-                    <p
-                      class="font-nav text-sm md:text-lg text-slate-200 tracking-widest uppercase mb-10">
-                      We provide unique experiences
-                    </p>
-                  </div>
-                </div>
-              </li>
-    
-              <li class="glide__slide h-full relative">
-                <img src="./images/slider/slider_two.jpg" alt="Costa Rica Beach"
-                  class="absolute inset-0 w-full h-full object-cover object-center brightness-[0.6] dark:brightness-[0.5]">
-                  <!--class="absolute inset-0 w-full h-full object-cover object-center">-->
-                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent z-10"></div>
-    
-                <div class="relative z-20 h-full flex items-center justify-start px-10 md:px-24">
-                  <div class="text-left max-w-3xl">
-                    <h2 class="font-logo-script text-5xl md:text-8xl text-white mb-6 drop-shadow-lg">
-                      Visit natural jewels of Costa Rica
-                    </h2>
-                    <p class="font-sans text-sm md:text-lg text-slate-100 tracking-widest uppercase mb-8">
-                      We take you there
-                    </p>
-                  </div>
-                </div>
-              </li>
-    
-              <li class="glide__slide h-full relative">
-                <img src="./images/slider/slider_three.jpg" alt="Luxury Real Estate"
-                  class="absolute inset-0 w-full h-full object-cover object-center brightness-[0.6] dark:brightness-[0.5]">
-                  <!--class="absolute inset-0 w-full h-full object-cover object-center">-->
-                <div class="absolute inset-0 bg-black/50 z-10"></div>
-    
-                <div class="relative z-20 h-full flex items-center justify-center px-6">
-                  <div class="text-center max-w-4xl">
-                    <h2 class="font-logo-script text-5xl md:text-8xl text-white mb-6">
-                      We can bring you high level accommodation
-                    </h2>
-                    <p class="font-sans text-sm md:text-lg text-slate-200 tracking-widest uppercase mb-10">
-                      for your vacations and Real Estate
-                    </p>
-                  </div>
-                </div>
-              </li>
-    
-            </ul>
-          </div>
-    
-          <!--<div class="glide__arrows pointer-events-none" data-glide-el="controls">
-            <button
-              class="glide__arrow glide__arrow--left absolute left-4 md:left-10 top-1/2 -translate-y-1/2 z-30 pointer-events-auto group"
-              data-glide-dir="<">
-              <div
-                class="p-3 border border-white/20 rounded-full group-hover:bg-white/20 group-hover:border-white transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-              </div>
-            </button>
-            <button
-              class="glide__arrow glide__arrow--right absolute right-4 md:right-10 top-1/2 -translate-y-1/2 z-30 pointer-events-auto group"
-              data-glide-dir=">">
-              <div
-                class="p-3 border border-white/20 rounded-full group-hover:bg-white/20 group-hover:border-white transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </button>
-          </div>-->
-    
-          <div class="glide__bullets absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-4"
-            data-glide-el="controls[nav]">
-            <button class="glide__bullet w-12 h-[2px] bg-white/30 transition-all hover:bg-white active:bg-white"
-              data-glide-dir="=0"></button>
-            <button class="glide__bullet w-12 h-[2px] bg-white/30 transition-all hover:bg-white active:bg-white"
-              data-glide-dir="=1"></button>
-            <button class="glide__bullet w-12 h-[2px] bg-white/30 transition-all hover:bg-white active:bg-white"
-              data-glide-dir="=2"></button>
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-white/95 dark:bg-dark-luxury backdrop-blur-md border-b border-zinc-200 dark:border-white/10">
+      <div class="px-4 pt-2 pb-6 space-y-2">
+        <a href="/index.html"
+          class="font-nav block px-3 py-4 text-base font-medium text-slate-700 dark:text-zinc-200 rounded-lg transition-all duration-300 hover:text-gold-luxury dark:hover:text-gold-luxury hover:bg-zinc-100 dark:hover:bg-white/5 active:pl-6">
+          Home
+        </a>
+
+        <div>
+          <button id="mobile-services-button"
+            class="font-nav flex items-center justify-between w-full px-3 py-4 text-base font-medium text-slate-700 dark:text-zinc-200 rounded-lg transition-all duration-300 hover:text-gold-luxury dark:hover:text-gold-luxury hover:bg-zinc-100 dark:hover:bg-white/5">
+            Services
+            <svg id="mobile-services-arrow" class="w-5 h-5 transition-transform duration-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <div id="mobile-services-menu"
+            class="hidden mt-1 ml-3 pl-4 space-y-1 border-l border-zinc-200 dark:border-gold-luxury/30">
+            <a href="./pages/services/concierge.html"
+              class="font-nav block py-3 px-3 text-xs text-slate-600 dark:text-zinc-400 rounded-md transition-all duration-300 hover:text-gold-luxury dark:hover:text-gold-luxury hover:bg-zinc-100 dark:hover:bg-white/5 active:pl-6">Concierge
+              Services</a>
+            <a href="./pages/services/relocation.html"
+              class="font-nav block py-3 px-3 text-xs text-slate-600 dark:text-zinc-400 rounded-md transition-all duration-300 hover:text-gold-luxury dark:hover:text-gold-luxury hover:bg-zinc-100 dark:hover:bg-white/5 active:pl-6">Relocation
+              & Real Estate</a>
+            <a href="./pages/services/weddings.html"
+              class="font-nav block py-3 px-3 text-xs text-slate-600 dark:text-zinc-400 rounded-md transition-all duration-300 hover:text-gold-luxury dark:hover:text-gold-luxury hover:bg-zinc-100 dark:hover:bg-white/5 active:pl-6">Weddings</a>
+            <a href="./pages/services/shuttles.html"
+              class="font-nav block py-3 px-3 text-xs text-slate-600 dark:text-zinc-400 rounded-md transition-all duration-300 hover:text-gold-luxury dark:hover:text-gold-luxury hover:bg-zinc-100 dark:hover:bg-white/5 active:pl-6">Shuttles
+              & Rent a Car</a>
           </div>
         </div>
-      </section>
-    
-      <section class="py-24 bg-white dark:bg-slate-900 transition-colors duration-300">
-        <div class="max-w-4xl mx-auto text-center px-6">
-          <span class="text-amber-600 dark:text-gold-luxury font-bold tracking-[0.3em] uppercase text-xs">
-            What does a Concierge do?
-          </span>
-          <p class="font-sans text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
-            The term "Concierge" was originated in France. During centuries, a Concierge was responsible for attending to the needs of nobility and ensuring their safety and comfort.
-            Concierges tasks evolved over time, making that luxury hotels and resorts take this term to name someone referred to guests relations manager. 
-            Currently, the roles of a Concierge can be provided as well as by specialized agencies or individual professionals who deliver high class care for a customer. 
-            Concierge VIP Costa Rica helps you to get:
+
+        <a href="./pages/about.html"
+          class="font-nav block px-3 py-4 text-base font-medium text-slate-700 dark:text-zinc-200 rounded-lg transition-all duration-300 hover:text-gold-luxury dark:hover:text-gold-luxury hover:bg-zinc-100 dark:hover:bg-white/5 active:pl-6">
+          About Us
+        </a>
+
+        <div class="pt-6 border-t border-zinc-100 dark:border-white/10 flex justify-center">
+          <button id="theme-toggle-mobile" aria-label="Toggle dark mode"
+            class="p-4 rounded-full bg-zinc-100 dark:bg-white/5 text-slate-500 dark:text-gold-luxury active:scale-90 transition-all">
+            <svg class="w-6 h-6 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg class="w-6 h-6 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
+              </path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative">
+    <section class="relative w-full h-screen overflow-hidden bg-slate-900">
+      <div class="glide hero-slider h-full w-full">
+        <div class="glide__track h-full" data-glide-el="track">
+          <ul class="glide__slides h-full">
+            <li class="glide__slide h-full relative">
+              <img src="./images/slider/slider_one.jpg" alt="Exotic landscape in Costa Rica"
+                class="absolute inset-0 w-full h-full object-cover object-center" fetchpriority="high">
+              <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70 z-10"></div>
+              <div class="relative z-20 h-full flex items-center justify-center px-6">
+                <div class="text-center max-w-5xl">
+                  <h2 class="font-nav text-4xl md:text-6xl text-white mb-6">Wishing an unforgettable moment?</h2>
+                  <p class="font-nav text-sm md:text-lg text-slate-200 tracking-widest uppercase mb-10">We provide
+                    unique experiences</p>
+                </div>
+              </div>
+            </li>
+            <li class="glide__slide h-full relative">
+              <img src="./images/slider/slider_two.jpg" alt="Luxury beach experience Costa Rica"
+                class="absolute inset-0 w-full h-full object-cover object-center">
+              <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent z-10"></div>
+              <div class="relative z-20 h-full flex items-center justify-start px-10 md:px-24">
+                <div class="text-left max-w-3xl">
+                  <h2 class="font-nav text-4xl md:text-6xl text-white mb-6">Visit natural jewels of Costa Rica</h2>
+                  <p class="font-nav text-sm md:text-lg text-slate-100 tracking-widest uppercase mb-8">We take you there
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="glide__slide h-full relative">
+              <img src="./images/slider/slider_three.jpg" alt="Luxury property Costa Rica"
+                class="absolute inset-0 w-full h-full object-cover object-center">
+              <div class="absolute inset-0 bg-black/40 z-10"></div>
+              <div class="relative z-20 h-full flex items-center justify-center px-6">
+                <div class="text-center max-w-4xl">
+                  <h2 class="font-nav text-4xl md:text-6xl text-white mb-6">High level accommodation</h2>
+                  <p class="font-nav text-sm md:text-lg text-slate-200 tracking-widest uppercase mb-10">Vacations & Real
+                    Estate</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="glide__bullets absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-4"
+          data-glide-el="controls[nav]">
+          <button class="glide__bullet w-12 h-[2px] bg-white/30 transition-all hover:bg-white" data-glide-dir="=0"
+            aria-label="Slide 1"></button>
+          <button class="glide__bullet w-12 h-[2px] bg-white/30 transition-all hover:bg-white" data-glide-dir="=1"
+            aria-label="Slide 2"></button>
+          <button class="glide__bullet w-12 h-[2px] bg-white/30 transition-all hover:bg-white" data-glide-dir="=2"
+            aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white dark:bg-dark-luxury transition-colors duration-300">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <span class="text-amber-600 dark:text-gold-luxury font-bold tracking-[0.3em] uppercase text-xs mb-4 block">
+          What does a Concierge do?
+        </span>
+        <p class="text-slate-600 dark:text-zinc-400 leading-relaxed text-lg">
+          The term "Concierge" was originated in France. During centuries, a Concierge was responsible for attending to
+          the needs of nobility and ensuring their safety and comfort. CR Concierge helps you to get high class care for
+          your stay.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer
+    class="bg-zinc-50 dark:bg-dark-luxury border-t border-zinc-200 dark:border-white/5 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div class="space-y-4">
+          <a href="/index.html" class="pinyon-script-regular text-3xl text-slate-900 dark:text-white block">
+            Concierge <span class="text-gold-luxury">CR</span>
+          </a>
+          <p class="text-sm text-slate-600 dark:text-zinc-400 max-w-xs">
+            Defining the standard of luxury concierge services across Costa Rica.
           </p>
         </div>
-      </section>
-    
-    </main>
-
-    <!-- Footer Section -->
-    <footer
-      class="bg-zinc-50 dark:bg-dark-luxury border-t border-zinc-200 dark:border-white/5 transition-colors duration-300">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-    
-          <div class="space-y-4">
-            <a href="/" class="pinyon-script-regular text-3xl tracking-tight text-slate-900 dark:text-white italic block">
-              Concierge <span class="text-gold-luxury">CR</span>
-            </a>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-zinc-400 max-w-xs">
-              Elevating your Costa Rican experience with bespoke luxury services and local expertise.
-              Excellence in every detail.
-            </p>
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-nav text-xs font-bold text-slate-900 dark:text-white mb-4">Discovery</h3>
+            <ul class="space-y-2">
+              <li><a href="/index.html"
+                  class="text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury transition-colors">Home</a>
+              </li>
+              <li><a href="./pages/about.html"
+                  class="text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury transition-colors">About
+                  Us</a></li>
+            </ul>
           </div>
-    
-          <div class="grid grid-cols-2 gap-8">
-            <div>
-              <h3 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-4">Discovery</h3>
-              <ul class="space-y-2">
-                <li><a href="/"
-                    class="text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury dark:hover:text-gold-luxury transition-colors duration-300">Home</a>
-                </li>
-                <li><a href="./pages/about.html"
-                    class="text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury dark:hover:text-gold-luxury transition-colors duration-300">About
-                    Us</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-4">Services</h3>
-              <ul class="space-y-2">
-                <li><a href="./pages/services/concierge.html"
-                    class="text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury dark:hover:text-gold-luxury transition-colors duration-300">Concierge</a>
-                </li>
-                <li><a href="./pages/services/relocation.html"
-                    class="text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury dark:hover:text-gold-luxury transition-colors duration-300">Relocation</a>
-                </li>
-              </ul>
-            </div>
+          <div>
+            <h3 class="font-nav text-xs font-bold text-slate-900 dark:text-white mb-4">Services</h3>
+            <ul class="space-y-2">
+              <li><a href="./pages/services/concierge.html"
+                  class="text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury transition-colors">Concierge</a>
+              </li>
+              <li><a href="./pages/services/relocation.html"
+                  class="text-sm text-slate-600 dark:text-zinc-400 hover:text-gold-luxury transition-colors">Relocation</a>
+              </li>
+            </ul>
           </div>
-    
-          <div class="space-y-4">
-            <h3 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-4">Connect</h3>
-            <p class="text-sm text-slate-600 dark:text-zinc-400 italic">San José, Costa Rica</p>
-            <div class="flex space-x-5">
-              <a href="#" class="text-slate-400 hover:text-gold-luxury transition-all duration-300 hover:scale-110">
-                <span class="sr-only">Instagram</span>
+        </div>
+        <div class="space-y-4">
+          <h3 class="font-nav text-xs font-bold text-slate-900 dark:text-white mb-4">Connect</h3>
+          <address class="not-italic text-sm text-slate-600 dark:text-zinc-400 space-y-2">
+            <p>San José, Costa Rica</p>
+            <div class="flex space-x-5 mt-4">
+              <a href="#" class="text-slate-400 hover:text-gold-luxury transition-all hover:scale-110"
+                aria-label="Instagram">
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                 </svg>
               </a>
             </div>
-          </div>
-        </div>
-    
-        <div
-          class="pt-8 border-t border-zinc-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
-          <p class="text-xs text-slate-500 dark:text-zinc-500">
-            &copy; 2026 CR Concierge. All rights reserved.
-          </p>
-          <div class="flex space-x-6">
-            <a href="#" class="text-xs text-slate-500 dark:text-zinc-500 hover:text-gold-luxury transition-colors">Privacy
-              Policy</a>
-            <a href="#" class="text-xs text-slate-500 dark:text-zinc-500 hover:text-gold-luxury transition-colors">Terms of
-              Service</a>
-          </div>
+          </address>
         </div>
       </div>
+      <div
+        class="pt-8 border-t border-zinc-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+        <p>&copy; 2026 CR Concierge. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="hover:text-gold-luxury transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-gold-luxury transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <button id="back-to-top" aria-label="Scroll to top"
+      class="fixed bottom-8 right-8 p-3 rounded-full bg-white dark:bg-dark-luxury border border-zinc-200 dark:border-gold-luxury/50 text-gold-luxury shadow-2xl opacity-0 invisible transition-all duration-500 hover:scale-110 active:scale-95 z-40 group">
+      <svg xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 transition-transform duration-300 group-hover:-translate-y-1" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    </button>
+  </footer>
 
-      <!-- Top Button -->
-      <button id="back-to-top"
-        class="fixed bottom-8 right-8 p-3 rounded-full bg-white dark:bg-dark-luxury border border-zinc-200 dark:border-gold-luxury/50 text-gold-luxury shadow-2xl opacity-0 invisible transition-all duration-500 hover:scale-110 active:scale-95 z-40 group"
-        aria-label="Back to top">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform duration-300 group-hover:-translate-y-1"
-          fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-      </button>
-      <!-- Top Button -->
-
-    </footer>
-    <!-- Footer Section -->
-
-    
-    <script src="/js/main.js"></script>
-
-    <script src="/js/vendors/glide.min.js"></script>
-
-    <script>
-      window.addEventListener('load', function() {
-        // Verificamos que Glide esté definido para evitar errores en consola
-        if (typeof Glide !== 'undefined') {
-          new Glide('.hero-slider', {
-            type: 'carousel',
-            perView: 1,
-            autoplay: 4000,
-            gap: 0
-          }).mount();
-        } else {
-          console.error("Error: Glide.js no se cargó. Revisa la ruta /js/vendors/glide.min.js");
-        }
-      });
-    </script>
-
-  </body>
+  <script src="/js/main.js"></script>
+  <script src="/js/vendors/glide.min.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      if (typeof Glide !== 'undefined') {
+        new Glide('.hero-slider', {
+          type: 'carousel',
+          perView: 1,
+          autoplay: 4000,
+          gap: 0,
+          dragThreshold: 80
+        }).mount();
+      }
+    });
+  </script>
+</body>
 
 </html>
