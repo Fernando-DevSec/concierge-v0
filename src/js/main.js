@@ -1,22 +1,22 @@
 /**
  * @file main.js
- * @description Core interactions for CR Concierge website.
+ * @description Core interactions for Concierge VIP Costa Rica.
  * Includes: Preloader, Dark Mode, Responsive Navigation, Scroll Interactions, 
- * Scalable Parallax, and Reveal Animations.
+ * Stable Hero Slider (No-overlap), Scalable Parallax, and Reveal Animations.
  * @author CR Concierge Team
- * @version 1.6.0
+ * @version 1.9.0
  */
 
 /**
  * Single entry point for UI initialization.
- * Starts all components after the DOM is fully interactive.
  */
 document.addEventListener('DOMContentLoaded', () => {
     initPreloader();
     initDarkMode();
     initMobileNavigation();
     initBackToTop();
-    initParallaxEffects(); // Refactorizado para múltiples elementos
+    initHeroSlider();      // Slider corregido (Transición suave 3-1 y Responsive)
+    initParallaxEffects();
     initScrollAnimations();
 });
 
@@ -24,16 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // 1. PRELOADER SYSTEM
 // -------------------------------------------------------------------------
 
-/**
- * Manages the initial loading screen, progress bar, and smooth exit.
- * @function initPreloader
- */
 const initPreloader = () => {
     const preloader = document.getElementById('preloader');
     const progressBar = document.getElementById('preloader-bar');
     if (!preloader) return;
 
-    // Start progress bar animation
     setTimeout(() => {
         if (progressBar) progressBar.style.width = '100%';
     }, 100);
@@ -44,7 +39,7 @@ const initPreloader = () => {
             setTimeout(() => {
                 if (preloader.parentNode) preloader.remove();
             }, 700);
-        }, 800); // Luxury delay
+        }, 800);
     });
 };
 
@@ -52,10 +47,6 @@ const initPreloader = () => {
 // 2. DARK MODE MANAGEMENT
 // -------------------------------------------------------------------------
 
-/**
- * Handles the dark/light theme switching logic and persistence.
- * @function initDarkMode
- */
 const initDarkMode = () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleMobile = document.getElementById('theme-toggle-mobile');
@@ -76,10 +67,6 @@ const initDarkMode = () => {
 // 3. MOBILE NAVIGATION
 // -------------------------------------------------------------------------
 
-/**
- * Manages mobile menu visibility and sub-menu interactions.
- * @function initMobileNavigation
- */
 const initMobileNavigation = () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -110,13 +97,39 @@ const initMobileNavigation = () => {
 };
 
 // -------------------------------------------------------------------------
-// 4. SCROLL & VISUAL EFFECTS
+// 4. HERO SLIDER (GLIDE.JS)
 // -------------------------------------------------------------------------
 
 /**
- * Manages the "Back to Top" button visibility and execution.
- * @function initBackToTop
+ * Initializes the Hero Slider.
+ * Fixes: Transition glitch from slide 3 to 1 by using 'carousel' type, gap 0,
+ * and a refined cubic-bezier for high-speed frame recovery.
  */
+const initHeroSlider = () => {
+    const heroSlider = document.querySelector('.hero-slider');
+    if (!heroSlider) return;
+
+    const glide = new Glide(heroSlider, {
+        type: 'carousel',
+        startAt: 0,
+        perView: 1,
+        autoplay: 6000,
+        hoverpause: false,
+        gap: 0, 
+        dragThreshold: 80,
+        animationDuration: 1000,
+        // Easing premium que suaviza el retorno del loop infinito
+        animationTimingFunc: 'cubic-bezier(0.165, 0.84, 0.44, 1)' 
+    });
+
+    // Asegura que los clones del carrusel se rendericen correctamente
+    glide.mount();
+};
+
+// -------------------------------------------------------------------------
+// 5. SCROLL & VISUAL EFFECTS
+// -------------------------------------------------------------------------
+
 const initBackToTop = () => {
     const backToTopBtn = document.getElementById('back-to-top');
     if (!backToTopBtn) return;
@@ -131,18 +144,15 @@ const initBackToTop = () => {
         }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 };
 
 /**
- * Hardware-accelerated parallax effect for multiple elements.
- * Uses a class-based selector for scalability and RequestAnimationFrame for performance.
- * @function initParallaxEffects
+ * Hardware-accelerated parallax effect for tagged elements.
  */
 const initParallaxEffects = () => {
-    // Targets both specific IDs and any element with the parallax class
-    const parallaxTargets = document.querySelectorAll('#parallax-home, #parallax-nature, .parallax-effector');
+    const parallaxTargets = document.querySelectorAll('#parallax-home, #parallax-nature, #parallax-wedding, #parallax-car, .parallax-effector');
     
     if (parallaxTargets.length === 0) return;
 
@@ -154,12 +164,10 @@ const initParallaxEffects = () => {
         parallaxTargets.forEach(target => {
             const rect = target.parentElement.getBoundingClientRect();
 
-            // Only calculate if the element is visible in viewport
             if (rect.top < windowHeight && rect.bottom > 0) {
                 const speed = 0.15;
                 const shift = (rect.top - windowHeight) * speed;
-                
-                // transform3d forces GPU layer composition
+                // Force GPU rendering via translate3d
                 target.style.transform = `translate3d(0, ${shift}px, 0) scale(1.1)`;
             }
         });
@@ -171,18 +179,16 @@ const initParallaxEffects = () => {
             window.requestAnimationFrame(updateParallax);
             ticking = true;
         }
-    }, { passive: true }); // Improved scroll performance
+    }, { passive: true });
 };
 
 /**
- * Intersection Observer for reveal animations on scroll.
- * Applies to elements with 'reveal-on-scroll' class.
- * @function initScrollAnimations
+ * Intersection Observer for scroll-triggered reveal animations.
  */
 const initScrollAnimations = () => {
     const observerOptions = { 
         threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px' // Slight offset for better UX
+        rootMargin: '0px 0px -50px 0px' 
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -190,8 +196,6 @@ const initScrollAnimations = () => {
             if (entry.isIntersecting) {
                 entry.target.classList.remove('opacity-0', 'translate-y-10');
                 entry.target.classList.add('opacity-100', 'translate-y-0');
-                
-                // Memory management: stop observing once animation is done
                 observer.unobserve(entry.target);
             }
         });
