@@ -1,28 +1,39 @@
 /**
  * @file main.js
  * @description Core interactions for CR Concierge website.
- * Includes: Preloader, Dark Mode, Responsive Navigation, Scroll Interactions, Parallax, and Reveal Animations.
+ * Includes: Preloader, Dark Mode, Responsive Navigation, Scroll Interactions, 
+ * Scalable Parallax, and Reveal Animations.
  * @author CR Concierge Team
- * @version 1.5.0
+ * @version 1.6.0
  */
 
+/**
+ * Single entry point for UI initialization.
+ * Starts all components after the DOM is fully interactive.
+ */
 document.addEventListener('DOMContentLoaded', () => {
     initPreloader();
     initDarkMode();
     initMobileNavigation();
     initBackToTop();
-    initParallaxEffects();
+    initParallaxEffects(); // Refactorizado para múltiples elementos
     initScrollAnimations();
 });
 
 // -------------------------------------------------------------------------
 // 1. PRELOADER SYSTEM
 // -------------------------------------------------------------------------
+
+/**
+ * Manages the initial loading screen, progress bar, and smooth exit.
+ * @function initPreloader
+ */
 const initPreloader = () => {
     const preloader = document.getElementById('preloader');
     const progressBar = document.getElementById('preloader-bar');
     if (!preloader) return;
 
+    // Start progress bar animation
     setTimeout(() => {
         if (progressBar) progressBar.style.width = '100%';
     }, 100);
@@ -33,13 +44,18 @@ const initPreloader = () => {
             setTimeout(() => {
                 if (preloader.parentNode) preloader.remove();
             }, 700);
-        }, 800);
+        }, 800); // Luxury delay
     });
 };
 
 // -------------------------------------------------------------------------
 // 2. DARK MODE MANAGEMENT
 // -------------------------------------------------------------------------
+
+/**
+ * Handles the dark/light theme switching logic and persistence.
+ * @function initDarkMode
+ */
 const initDarkMode = () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleMobile = document.getElementById('theme-toggle-mobile');
@@ -59,6 +75,11 @@ const initDarkMode = () => {
 // -------------------------------------------------------------------------
 // 3. MOBILE NAVIGATION
 // -------------------------------------------------------------------------
+
+/**
+ * Manages mobile menu visibility and sub-menu interactions.
+ * @function initMobileNavigation
+ */
 const initMobileNavigation = () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -93,7 +114,8 @@ const initMobileNavigation = () => {
 // -------------------------------------------------------------------------
 
 /**
- * Manages the "Back to Top" button visibility.
+ * Manages the "Back to Top" button visibility and execution.
+ * @function initBackToTop
  */
 const initBackToTop = () => {
     const backToTopBtn = document.getElementById('back-to-top');
@@ -114,23 +136,33 @@ const initBackToTop = () => {
 };
 
 /**
- * Hardware-accelerated parallax effect for home images.
+ * Hardware-accelerated parallax effect for multiple elements.
+ * Uses a class-based selector for scalability and RequestAnimationFrame for performance.
+ * @function initParallaxEffects
  */
 const initParallaxEffects = () => {
-    const parallaxImage = document.getElementById('parallax-home');
-    if (!parallaxImage) return;
+    // Targets both specific IDs and any element with the parallax class
+    const parallaxTargets = document.querySelectorAll('#parallax-home, #parallax-nature, .parallax-effector');
+    
+    if (parallaxTargets.length === 0) return;
 
     let ticking = false;
 
     const updateParallax = () => {
-        const rect = parallaxImage.parentElement.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        if (rect.top < windowHeight && rect.bottom > 0) {
-            const speed = 0.15;
-            const shift = (rect.top - windowHeight) * speed;
-            parallaxImage.style.transform = `translate3d(0, ${shift}px, 0) scale(1.1)`;
-        }
+        parallaxTargets.forEach(target => {
+            const rect = target.parentElement.getBoundingClientRect();
+
+            // Only calculate if the element is visible in viewport
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                const speed = 0.15;
+                const shift = (rect.top - windowHeight) * speed;
+                
+                // transform3d forces GPU layer composition
+                target.style.transform = `translate3d(0, ${shift}px, 0) scale(1.1)`;
+            }
+        });
         ticking = false;
     };
 
@@ -139,20 +171,27 @@ const initParallaxEffects = () => {
             window.requestAnimationFrame(updateParallax);
             ticking = true;
         }
-    });
+    }, { passive: true }); // Improved scroll performance
 };
 
 /**
  * Intersection Observer for reveal animations on scroll.
+ * Applies to elements with 'reveal-on-scroll' class.
+ * @function initScrollAnimations
  */
 const initScrollAnimations = () => {
-    const observerOptions = { threshold: 0.15 };
+    const observerOptions = { 
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px' // Slight offset for better UX
+    };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.remove('opacity-0', 'translate-y-10');
                 entry.target.classList.add('opacity-100', 'translate-y-0');
+                
+                // Memory management: stop observing once animation is done
                 observer.unobserve(entry.target);
             }
         });
