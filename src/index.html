@@ -302,55 +302,65 @@
     </section>
     <!-- Slider Ends -->
 
-    <section class="py-24 bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden">
+    <section id="concierge-definition"
+      class="py-24 bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden"
+      aria-labelledby="concierge-title">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row items-center gap-16">
     
           <div class="w-full lg:w-5/12">
-            <div class="relative group">
+            <figure class="relative" role="group" aria-label="Visual representation of luxury leisure">
               <div
-                class="absolute -inset-4 border border-gold-luxury/20 translate-x-8 translate-y-8 rounded-sm -z-10 hidden lg:block">
+                class="absolute -inset-4 border border-gold-luxury/20 translate-x-8 translate-y-8 rounded-sm -z-10 hidden lg:block"
+                aria-hidden="true">
               </div>
     
-              <div class="overflow-hidden rounded-sm shadow-2xl">
-                <img src="./images/home/home_one.jpg" width="3840" height="5760" alt="Concierge VIP Costa Rica"
-                  class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy">
+              <div
+                class="overflow-hidden rounded-sm shadow-2xl h-[500px] md:h-[700px] lg:h-[800px] bg-zinc-100 dark:bg-zinc-800">
+                <img id="parallax-home" src="./images/home/home_one.jpg" width="3840" height="5760"
+                  alt="Woman sitting by the ocean, shielding her eyes from the sun while gazing at the horizon in Costa Rica"
+                  class="w-full h-[130%] object-cover will-change-transform scale-110" style="object-position: 50% 20%;"
+                  loading="lazy" decoding="async" sizes="(max-width: 1024px) 100vw, 40vw">
               </div>
-            </div>
+            </figure>
           </div>
     
-          <div class="w-full lg:w-7/12 space-y-8">
-            <header>
-              <h2 class="font-nav text-3xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-2">
-                What does a Concierge do?
-              </h2>
-              <div class="h-1 w-20 bg-gold-luxury"></div>
-            </header>
+          <div class="w-full lg:w-7/12 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <article>
+              <header class="mb-8">
+                <h2 id="concierge-title"
+                  class="font-nav text-3xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-4">
+                  What does a Concierge do?
+                </h2>
+                <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+              </header>
     
-            <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-lg">
-              <p>
-                The term "Concierge" was originated in France. During centuries, a Concierge was responsible for attending
-                to the needs of nobility and ensuring their safety and comfort.
-              </p>
-              <p>
-                Concierges´s tasks evolved over time, making that luxury hotels and resorts take this term to name someone
-                referred to guests relations manager. Currently, the roles of a Concierge can be provided as well as by
-                specialized agencies or individual professionals who deliver high class care for a customer. Concierge VIP
-                Costa Rica helps you to get:
-              </p>
-            </div>
+              <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-lg">
+                <p>
+                  The term <span class="italic text-slate-800 dark:text-zinc-200">"Concierge"</span> was originated in
+                  France. During centuries, a Concierge was responsible for attending
+                  to the needs of nobility and ensuring their safety and comfort.
+                </p>
+                <p>
+                  Concierges´s tasks evolved over time, making that luxury hotels and resorts take this term to name someone
+                  referred to guests relations manager. Currently, the roles of a Concierge can be provided as well as by
+                  specialized agencies or individual professionals who deliver high class care for a customer.
+                  <span class="font-semibold text-gold-luxury font-nav">Concierge VIP Costa Rica</span> helps you to get:
+                </p>
+              </div>
     
-            <div class="p-8 border-l-2 border-gold-luxury bg-zinc-50 dark:bg-white/5">
-              <h3 class="font-nav text-slate-900 dark:text-white text-xl font-bold mb-4">
-                High Quality Comfort
-              </h3>
-              <p class="text-slate-700 dark:text-zinc-300 leading-relaxed">
-                Do not feel tired of seeking for the best accommodation, transportation, organization tours, privacy, safety
-                and other important details about your trip or stay in Costa Rica, let us bring the maximum comfort you
-                deserve at every moment.
-              </p>
-            </div>
+              <aside class="mt-10 p-8 border-l-4 border-gold-luxury bg-zinc-50 dark:bg-white/5 rounded-r-lg" role="note">
+                <h3 class="font-nav text-slate-900 dark:text-white text-xl font-bold mb-4">
+                  High Quality Comfort
+                </h3>
+                <p class="text-slate-700 dark:text-zinc-300 leading-relaxed italic">
+                  "Do not feel tired of seeking for the best accommodation, transportation, organization tours, privacy,
+                  safety
+                  and other important details about your trip or stay in Costa Rica, let us bring the maximum comfort you
+                  deserve at every moment."
+                </p>
+              </aside>
+            </article>
           </div>
     
         </div>
