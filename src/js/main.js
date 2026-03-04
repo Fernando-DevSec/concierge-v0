@@ -1,156 +1,102 @@
 /**
  * @file main.js
  * @description Core interactions for Concierge VIP Costa Rica.
- * Includes: Preloader, Dark Mode, Responsive Navigation, Scroll Interactions, 
- * Stable Hero Slider (No-overlap), Scalable Parallax, and Reveal Animations.
- * @author CR Concierge Team
- * @version 1.9.0
+ * Includes: Custom Ping-Pong Slider (10s), Stable Parallax (v1.9.0 logic), 
+ * Mobile Nav with Dropdowns, and Reveal Animations.
+ * @version 3.7.0
  */
 
-/**
- * Single entry point for UI initialization.
- */
 document.addEventListener('DOMContentLoaded', () => {
     initPreloader();
     initDarkMode();
-    initMobileNavigation();
+    initMobileNavigation(); 
     initBackToTop();
-    initHeroSlider();      // Slider corregido (Transición suave 3-1 y Responsive)
-    initParallaxEffects();
+    initCustomHeroSlider(); 
+    initParallaxEffects(); // Usando la lógica estable de la v1.9.0
     initScrollAnimations();
 });
 
 // -------------------------------------------------------------------------
-// 1. PRELOADER SYSTEM
+// 1. NAVIGATION (Desktop Hover Safe & Mobile Dropdown)
 // -------------------------------------------------------------------------
-
-const initPreloader = () => {
-    const preloader = document.getElementById('preloader');
-    const progressBar = document.getElementById('preloader-bar');
-    if (!preloader) return;
-
-    setTimeout(() => {
-        if (progressBar) progressBar.style.width = '100%';
-    }, 100);
-
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.classList.add('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                if (preloader.parentNode) preloader.remove();
-            }, 700);
-        }, 800);
-    });
-};
-
-// -------------------------------------------------------------------------
-// 2. DARK MODE MANAGEMENT
-// -------------------------------------------------------------------------
-
-const initDarkMode = () => {
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-    if (!themeToggleBtn && !themeToggleMobile) return;
-
-    const toggleDarkMode = () => {
-        document.body.classList.add('transition-colors', 'duration-500');
-        const isDark = document.documentElement.classList.toggle('dark');
-        localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
-    };
-
-    [themeToggleBtn, themeToggleMobile].forEach(btn => {
-        if (btn) btn.addEventListener('click', toggleDarkMode);
-    });
-};
-
-// -------------------------------------------------------------------------
-// 3. MOBILE NAVIGATION
-// -------------------------------------------------------------------------
-
 const initMobileNavigation = () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileServicesButton = document.getElementById('mobile-services-button');
-    const mobileServicesMenu = document.getElementById('mobile-services-menu');
-    const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    const srvBtn = document.getElementById('mobile-services-button');
+    const srvMenu = document.getElementById('mobile-services-menu');
+    const arrow = document.getElementById('mobile-services-arrow');
 
-    if (!mobileMenuButton || !mobileMenu) return;
+    if (!btn || !menu) return;
 
-    const toggleMobileMenu = () => {
-        mobileMenu.classList.toggle('hidden');
-        mobileMenuButton.classList.add('scale-90');
-        setTimeout(() => mobileMenuButton.classList.remove('scale-90'), 100);
-    };
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        btn.classList.toggle('rotate-90');
+    });
 
-    const toggleServicesDropdown = () => {
-        if (mobileServicesMenu) mobileServicesMenu.classList.toggle('hidden');
-        if (mobileServicesArrow) mobileServicesArrow.classList.toggle('rotate-180');
-    };
+    if (srvBtn) {
+        srvBtn.addEventListener('click', (e) => {
+            if (window.innerWidth < 1024) {
+                e.preventDefault();
+                e.stopPropagation();
+                srvMenu?.classList.toggle('hidden');
+                arrow?.classList.toggle('rotate-180');
+            }
+        });
+    }
 
-    mobileMenuButton.addEventListener('click', toggleMobileMenu);
-    if (mobileServicesButton) mobileServicesButton.addEventListener('click', toggleServicesDropdown);
-
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (link !== srvBtn) {
+                menu.classList.add('hidden');
+                btn.classList.remove('rotate-90');
+            }
+        });
     });
 };
 
 // -------------------------------------------------------------------------
-// 4. HERO SLIDER (GLIDE.JS)
+// 2. CUSTOM HERO SLIDER (Ping-Pong: 1-2-3-2-1 | 10s)
 // -------------------------------------------------------------------------
+const initCustomHeroSlider = () => {
+    const track = document.getElementById('slider-track');
+    if (!track) return;
 
-/**
- * Initializes the Hero Slider.
- * Fixes: Transition glitch from slide 3 to 1 by using 'carousel' type, gap 0,
- * and a refined cubic-bezier for high-speed frame recovery.
- */
-const initHeroSlider = () => {
-    const heroSlider = document.querySelector('.hero-slider');
-    if (!heroSlider) return;
+    const slides = track.children;
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+    let movingForward = true;
 
-    const glide = new Glide(heroSlider, {
-        type: 'carousel',
-        startAt: 0,
-        perView: 1,
-        autoplay: 6000,
-        hoverpause: false,
-        gap: 0, 
-        dragThreshold: 80,
-        animationDuration: 1000,
-        // Easing premium que suaviza el retorno del loop infinito
-        animationTimingFunc: 'cubic-bezier(0.165, 0.84, 0.44, 1)' 
-    });
-
-    // Asegura que los clones del carrusel se rendericen correctamente
-    glide.mount();
-};
-
-// -------------------------------------------------------------------------
-// 5. SCROLL & VISUAL EFFECTS
-// -------------------------------------------------------------------------
-
-const initBackToTop = () => {
-    const backToTopBtn = document.getElementById('back-to-top');
-    if (!backToTopBtn) return;
-
-    const handleScroll = () => {
-        if (window.scrollY > 400) {
-            backToTopBtn.classList.replace('opacity-0', 'opacity-100');
-            backToTopBtn.classList.replace('invisible', 'visible');
+    const updateSlider = () => {
+        if (movingForward) {
+            if (currentIndex < totalSlides - 1) currentIndex++;
+            else { movingForward = false; currentIndex--; }
         } else {
-            backToTopBtn.classList.replace('opacity-100', 'opacity-0');
-            backToTopBtn.classList.replace('visible', 'invisible');
+            if (currentIndex > 0) currentIndex--;
+            else { movingForward = true; currentIndex++; }
         }
+
+        track.style.transform = `translateX(${currentIndex * -100}%)`;
+
+        const activeSlide = slides[currentIndex];
+        const elementsToReset = activeSlide.querySelectorAll('.reveal-content, img, .animate-grow-line');
+
+        elementsToReset.forEach(el => {
+            el.style.animation = 'none';
+            el.offsetHeight; 
+            el.style.animation = null;
+        });
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    let sliderInterval = setInterval(updateSlider, 10000);
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) clearInterval(sliderInterval);
+        else sliderInterval = setInterval(updateSlider, 10000);
+    });
 };
 
-/**
- * Hardware-accelerated parallax effect for tagged elements.
- */
+// -------------------------------------------------------------------------
+// 3. STABLE PARALLAX SYSTEM (Lógica v1.9.0)
+// -------------------------------------------------------------------------
 const initParallaxEffects = () => {
     const parallaxTargets = document.querySelectorAll('#parallax-home, #parallax-nature, #parallax-wedding, #parallax-car, .parallax-effector');
     
@@ -162,12 +108,18 @@ const initParallaxEffects = () => {
         const windowHeight = window.innerHeight;
 
         parallaxTargets.forEach(target => {
-            const rect = target.parentElement.getBoundingClientRect();
+            const parent = target.parentElement;
+            if (!parent) return;
+            
+            const rect = parent.getBoundingClientRect();
 
+            // Solo actúa si el padre es visible en el viewport
             if (rect.top < windowHeight && rect.bottom > 0) {
                 const speed = 0.15;
+                // Lógica v1.9.0: Cálculo basado en la distancia al borde inferior
                 const shift = (rect.top - windowHeight) * speed;
-                // Force GPU rendering via translate3d
+                
+                // Renderizado por GPU
                 target.style.transform = `translate3d(0, ${shift}px, 0) scale(1.1)`;
             }
         });
@@ -182,16 +134,40 @@ const initParallaxEffects = () => {
     }, { passive: true });
 };
 
-/**
- * Intersection Observer for scroll-triggered reveal animations.
- */
-const initScrollAnimations = () => {
-    const observerOptions = { 
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px' 
-    };
+// -------------------------------------------------------------------------
+// 4. DARK MODE, PRELOADER & REVEAL
+// -------------------------------------------------------------------------
+const initPreloader = () => {
+    const p = document.getElementById('preloader');
+    if (p) window.addEventListener('load', () => {
+        setTimeout(() => { p.classList.add('opacity-0', 'pointer-events-none'); }, 500);
+    });
+};
 
-    const observer = new IntersectionObserver((entries, observer) => {
+const initDarkMode = () => {
+    const btns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+    btns.forEach(b => b?.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
+    }));
+};
+
+const initBackToTop = () => {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+        const show = window.scrollY > 400;
+        btn.classList.toggle('opacity-100', show);
+        btn.classList.toggle('visible', show);
+        btn.classList.toggle('opacity-0', !show);
+        btn.classList.toggle('invisible', !show);
+    }, { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+};
+
+const initScrollAnimations = () => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.remove('opacity-0', 'translate-y-10');
@@ -199,7 +175,6 @@ const initScrollAnimations = () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
-
+    }, { threshold: 0.15 });
     document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
 };

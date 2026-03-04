@@ -114,16 +114,8 @@
       outline: 2px solid #D4AF37;
       outline-offset: 4px;
     }
-
-    /* Fix for Hero Slider text contrast */
-    .hero-slider .glide__slide img {
-      filter: brightness(0.6);
-    }
-
-    .dark .hero-slider .glide__slide img {
-      filter: brightness(0.4);
-    }
   </style>
+  
 
 </head>
 
@@ -327,81 +319,75 @@
     </section>-->
     <!-- Slider Ends -->
 
-    <section class="relative w-full h-screen overflow-hidden bg-slate-900" aria-label="Luxury Experience Gallery">
-      <div class="glide hero-slider h-full w-full">
-        <div class="glide__track h-full" data-glide-el="track">
-          <ul class="glide__slides h-full flex items-center">
+    <section class="relative w-full h-screen overflow-hidden bg-black" id="custom-hero" aria-label="Luxury Gallery">
     
-            <li class="glide__slide h-full relative overflow-hidden flex items-center justify-center text-center">
-              <img src="./images/slider/slider_one.jpg" width="6192" height="4128"
-                alt="Couple sharing a romantic moment on a luxury yacht"
-                class="absolute inset-0 w-full h-full object-cover object-center" fetchpriority="high" loading="eager">
-              <div class="absolute inset-0 bg-black/50 z-10"></div>
+      <div class="relative w-full h-full flex transition-transform duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+        id="slider-track" style="will-change: transform;">
     
-              <div class="relative z-20 w-full max-w-5xl px-6">
-                <h2
-                  class="font-nav text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 leading-tight drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-                  Wishing an unforgettable moment?
-                </h2>
-                <p
-                  class="font-nav text-xs sm:text-sm md:text-lg text-slate-100 font-light tracking-[0.3em] uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                  We provide unique experiences
-                </p>
-              </div>
-            </li>
+        <div class="w-full h-full flex-shrink-0 relative overflow-hidden">
+          <img src="./images/slider/slider_one.jpg" alt="Romantic yacht moment"
+            class="absolute inset-0 w-full h-full object-cover animate-ken-burns">
     
-            <li class="glide__slide h-full relative overflow-hidden flex items-center justify-start text-left">
-              <img src="./images/slider/slider_two.jpg" width="4056" height="3040" alt="Aerial view of Costa Rica peninsula"
-                class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy">
-              <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <div class="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10"></div>
     
-              <div class="relative z-20 w-full max-w-4xl px-10 md:px-24">
-                <h2
-                  class="font-nav text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 leading-tight drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-                  Visit natural jewels of Costa Rica
-                </h2>
-                <p
-                  class="font-nav text-xs sm:text-sm md:text-lg text-slate-100 font-light tracking-[0.3em] uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                  We take you there
-                </p>
-              </div>
-            </li>
-    
-            <li class="glide__slide h-full relative overflow-hidden flex items-center justify-center text-center">
-              <img src="./images/slider/slider_three.jpg" width="4712" height="3126" alt="Luxury mansion with private pool"
-                class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy">
-              <div class="absolute inset-0 bg-black/55 z-10"></div>
-    
-              <div class="relative z-20 w-full max-w-5xl px-6">
-                <h2
-                  class="font-nav text-2xl sm:text-4xl md:text-6xl lg:text-7xl text-white font-bold mb-8 leading-snug drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-                  We can bring you high level accommodation
-                </h2>
-                <p
-                  class="font-nav text-xs sm:text-sm md:text-lg text-slate-200 font-light tracking-[0.3em] uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-                  Vacations & Real Estate
-                </p>
-              </div>
-            </li>
-    
-          </ul>
+          <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4 sm:px-8">
+            <div class="reveal-content w-full max-w-[90vw] md:max-w-5xl">
+              <span class="block w-12 h-[1px] bg-white/60 mx-auto mb-6 md:mb-8 animate-grow-line"></span>
+              <h2
+                class="font-nav text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-black leading-none tracking-tighter uppercase drop-shadow-2xl">
+                Wishing an<br>unforgettable<br>moment?
+              </h2>
+              <p
+                class="font-nav text-[11px] sm:text-sm md:text-base text-white font-medium tracking-[0.4em] md:tracking-[0.5em] uppercase pt-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                We provide unique experiences
+              </p>
+            </div>
+          </div>
         </div>
     
-        <div class="glide__bullets absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-6"
-          data-glide-el="controls[nav]">
-          <button class="glide__bullet group flex items-center" data-glide-dir="=0" aria-label="Slide 1">
-            <span
-              class="w-12 h-[2px] bg-white/30 group-[.glide__bullet--active]:bg-white transition-all duration-500"></span>
-          </button>
-          <button class="glide__bullet group flex items-center" data-glide-dir="=1" aria-label="Slide 2">
-            <span
-              class="w-12 h-[2px] bg-white/30 group-[.glide__bullet--active]:bg-white transition-all duration-500"></span>
-          </button>
-          <button class="glide__bullet group flex items-center" data-glide-dir="=2" aria-label="Slide 3">
-            <span
-              class="w-12 h-[2px] bg-white/30 group-[.glide__bullet--active]:bg-white transition-all duration-500"></span>
-          </button>
+        <div class="w-full h-full flex-shrink-0 relative overflow-hidden">
+          <img src="./images/slider/slider_two.jpg" alt="Costa Rica Coastline"
+            class="absolute inset-0 w-full h-full object-cover animate-ken-burns">
+    
+          <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent z-10"></div>
+    
+          <div
+            class="relative z-20 h-full flex flex-col justify-end pb-32 md:pb-24 px-6 sm:px-12 md:px-24 lg:px-32 text-left">
+            <div
+              class="reveal-content border-l border-white/40 pl-6 md:pl-10 space-y-4 md:space-y-6 max-w-[85vw] md:max-w-3xl">
+              <h2
+                class="font-nav text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-black leading-[0.9] tracking-tighter uppercase drop-shadow-2xl">
+                Visit natural<br>jewels of<br>Costa Rica
+              </h2>
+              <p
+                class="font-nav text-[11px] sm:text-sm text-white font-medium tracking-[0.3em] md:tracking-[0.4em] uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
+                Expert guidance to the unseen
+              </p>
+            </div>
+          </div>
         </div>
+    
+        <div class="w-full h-full flex-shrink-0 relative overflow-hidden">
+          <img src="./images/slider/slider_three.jpg" alt="Luxury Villa"
+            class="absolute inset-0 w-full h-full object-cover animate-ken-burns">
+    
+          <div class="absolute inset-0 bg-black/30 z-10"></div>
+    
+          <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
+            <div
+              class="reveal-content w-full max-w-[95vw] sm:max-w-2xl md:max-w-4xl backdrop-blur-md bg-black/30 p-8 md:p-16 border border-white/10 rounded-sm shadow-2xl">
+              <h2
+                class="font-nav text-2xl sm:text-4xl md:text-6xl lg:text-7xl text-white font-black mb-6 md:mb-8 leading-tight tracking-tighter uppercase">
+                High level<br>accommodation
+              </h2>
+              <p
+                class="font-nav text-[9px] sm:text-xs md:text-base text-white/90 font-extralight tracking-[0.4em] md:tracking-[0.6em] uppercase">
+                Vacations & Real Estate
+              </p>
+            </div>
+          </div>
+        </div>
+    
       </div>
     </section>
 
@@ -729,20 +715,7 @@
   </footer>
 
   <script src="/js/main.js"></script>
-  <script src="/js/vendors/glide.min.js"></script>
-  <script>
-    window.addEventListener('load', function () {
-      if (typeof Glide !== 'undefined') {
-        new Glide('.hero-slider', {
-          type: 'carousel',
-          perView: 1,
-          autoplay: 4000,
-          gap: 0,
-          dragThreshold: 80
-        }).mount();
-      }
-    });
-  </script>
+
 </body>
 
 </html>
