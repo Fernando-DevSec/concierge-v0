@@ -139,8 +139,27 @@ const initParallaxEffects = () => {
 // -------------------------------------------------------------------------
 const initPreloader = () => {
     const p = document.getElementById('preloader');
-    if (p) window.addEventListener('load', () => {
-        setTimeout(() => { p.classList.add('opacity-0', 'pointer-events-none'); }, 500);
+    const bar = document.getElementById('preloader-bar');
+    if (!p) return;
+
+    // Animamos la barra a un 80% inmediatamente
+    if (bar) bar.style.width = '80%';
+
+    const hidePreloader = () => {
+        if (bar) bar.style.width = '100%';
+        setTimeout(() => {
+            p.classList.add('opacity-0', 'pointer-events-none');
+            // Eliminamos del DOM después de la transición
+            setTimeout(() => p.remove(), 700); 
+        }, 500);
+    };
+
+    // Si la página tarda más de 5 segundos, forzamos la salida
+    const safetyTimeout = setTimeout(hidePreloader, 5000);
+
+    window.addEventListener('load', () => {
+        clearTimeout(safetyTimeout);
+        hidePreloader();
     });
 };
 
