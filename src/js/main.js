@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNavigation(); 
     initBackToTop();
     initCustomHeroSlider(); 
-    initParallaxEffects(); // Usando la lógica estable de la v1.9.0
+    initParallaxEffects();
     initScrollAnimations();
 });
 
 // -------------------------------------------------------------------------
-// 1. NAVIGATION (Desktop Hover Safe & Mobile Dropdown)
+// 1. NAVIGATION
 // -------------------------------------------------------------------------
 const initMobileNavigation = () => {
     const btn = document.getElementById('mobile-menu-button');
@@ -55,7 +55,7 @@ const initMobileNavigation = () => {
 };
 
 // -------------------------------------------------------------------------
-// 2. CUSTOM HERO SLIDER (Ping-Pong: 1-2-3-2-1 | 10s)
+// 2. CUSTOM HERO SLIDER
 // -------------------------------------------------------------------------
 const initCustomHeroSlider = () => {
     const track = document.getElementById('slider-track');
@@ -95,7 +95,7 @@ const initCustomHeroSlider = () => {
 };
 
 // -------------------------------------------------------------------------
-// 3. STABLE PARALLAX SYSTEM (Lógica v1.9.0)
+// 3. STABLE PARALLAX SYSTEM
 // -------------------------------------------------------------------------
 const initParallaxEffects = () => {
     const parallaxTargets = document.querySelectorAll('#parallax-home, #parallax-nature, #parallax-wedding, #parallax-car, .parallax-effector');
@@ -113,13 +113,9 @@ const initParallaxEffects = () => {
             
             const rect = parent.getBoundingClientRect();
 
-            // Solo actúa si el padre es visible en el viewport
             if (rect.top < windowHeight && rect.bottom > 0) {
                 const speed = 0.15;
-                // Lógica v1.9.0: Cálculo basado en la distancia al borde inferior
                 const shift = (rect.top - windowHeight) * speed;
-                
-                // Renderizado por GPU
                 target.style.transform = `translate3d(0, ${shift}px, 0) scale(1.1)`;
             }
         });
@@ -135,29 +131,35 @@ const initParallaxEffects = () => {
 };
 
 // -------------------------------------------------------------------------
-// 4. DARK MODE, PRELOADER & REVEAL
+// 4. DARK MODE, PRELOADER (Optimized) & REVEAL
 // -------------------------------------------------------------------------
-const initPreloader = () => {
+const initPreloader = async () => {
     const p = document.getElementById('preloader');
     const bar = document.getElementById('preloader-bar');
     if (!p) return;
 
-    // Animamos la barra a un 80% inmediatamente
+    // Sincronizar fuentes antes de ocultar
+    try {
+        await document.fonts.ready;
+        document.documentElement.classList.add('fonts-loaded');
+    } catch (err) {
+        console.warn("Error cargando fuentes:", err);
+    }
+
     if (bar) bar.style.width = '80%';
 
     const hidePreloader = () => {
         if (bar) bar.style.width = '100%';
         setTimeout(() => {
             p.classList.add('opacity-0', 'pointer-events-none');
-            // Eliminamos del DOM después de la transición
             setTimeout(() => p.remove(), 700); 
         }, 500);
     };
 
-    // Si la página tarda más de 5 segundos, forzamos la salida
     const safetyTimeout = setTimeout(hidePreloader, 5000);
 
-    window.addEventListener('load', () => {
+    window.addEventListener('load', async () => {
+        await document.fonts.ready;
         clearTimeout(safetyTimeout);
         hidePreloader();
     });
