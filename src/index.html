@@ -263,82 +263,29 @@
   </header>
 
   <main class="relative">
-    <!-- Slider Starts -->
-    <!--<section class="relative w-full h-screen overflow-hidden bg-slate-900">
-      <div class="glide hero-slider h-full w-full">
-        <div class="glide__track h-full" data-glide-el="track">
-          <ul class="glide__slides h-full">
-            <li class="glide__slide h-full relative">
-              <img src="./images/slider/slider_one.jpg" alt="Exotic landscape in Costa Rica"
-                class="absolute inset-0 w-full h-full object-cover object-center" fetchpriority="high">
-              <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70 z-10"></div>
-              <div class="relative z-20 h-full flex items-center justify-center px-6">
-                <div class="text-center max-w-5xl">
-                  <h2 class="font-nav text-4xl md:text-6xl text-white mb-6">Wishing an unforgettable moment?</h2>
-                  <p class="font-nav text-sm md:text-lg text-slate-200 tracking-widest uppercase mb-10">We provide
-                    unique experiences</p>
-                </div>
-              </div>
-            </li>
-            <li class="glide__slide h-full relative">
-              <img src="./images/slider/slider_two.jpg" alt="Luxury beach experience Costa Rica"
-                class="absolute inset-0 w-full h-full object-cover object-center">
-              <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent z-10"></div>
-              <div class="relative z-20 h-full flex items-center justify-start px-10 md:px-24">
-                <div class="text-left max-w-3xl">
-                  <h2 class="font-nav text-4xl md:text-6xl text-white mb-6">Visit natural jewels of Costa Rica</h2>
-                  <p class="font-nav text-sm md:text-lg text-slate-100 tracking-widest uppercase mb-8">We take you there
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="glide__slide h-full relative">
-              <img src="./images/slider/slider_three.jpg" alt="Luxury property Costa Rica"
-                class="absolute inset-0 w-full h-full object-cover object-center">
-              <div class="absolute inset-0 bg-black/40 z-10"></div>
-              <div class="relative z-20 h-full flex items-center justify-center px-6">
-                <div class="text-center max-w-4xl">
-                  <h2 class="font-nav text-4xl md:text-6xl text-white mb-6">High level accommodation</h2>
-                  <p class="font-nav text-sm md:text-lg text-slate-200 tracking-widest uppercase mb-10">Vacations & Real
-                    Estate</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="glide__bullets absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-4"
-          data-glide-el="controls[nav]">
-          <button class="glide__bullet w-12 h-[2px] bg-white/30 transition-all hover:bg-white" data-glide-dir="=0"
-            aria-label="Slide 1"></button>
-          <button class="glide__bullet w-12 h-[2px] bg-white/30 transition-all hover:bg-white" data-glide-dir="=1"
-            aria-label="Slide 2"></button>
-          <button class="glide__bullet w-12 h-[2px] bg-white/30 transition-all hover:bg-white" data-glide-dir="=2"
-            aria-label="Slide 3"></button>
-        </div>
-      </div>
-    </section>-->
-    <!-- Slider Ends -->
-
-    <section class="relative w-full h-screen overflow-hidden bg-black" id="custom-hero" aria-label="Luxury Gallery">
+  
+    <section class="relative w-full h-[100dvh] overflow-hidden bg-black" id="custom-hero" aria-label="Luxury Gallery">
     
       <div class="relative w-full h-full flex transition-transform duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
         id="slider-track" style="will-change: transform;">
     
         <div class="w-full h-full flex-shrink-0 relative overflow-hidden">
-          <img src="./images/slider/slider_one.jpg" alt="Romantic yacht moment"
-            class="absolute inset-0 w-full h-full object-cover animate-ken-burns" fetchpriority="high">
-    
+          <picture>
+            <source srcset="./images/slider/slider_one.webp" type="image/webp">
+            <img src="./images/slider/slider_one.jpg" alt="Romantic yacht experience in Costa Rica"
+              class="absolute inset-0 w-full h-full object-cover animate-ken-burns" fetchpriority="high">
+          </picture>
           <div class="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10"></div>
     
-          <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4 sm:px-8">
-            <div class="reveal-content w-full max-w-[90vw] md:max-w-5xl">
+          <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4 pt-20">
+            <div class="reveal-content w-full max-w-5xl">
               <span class="block w-12 h-[1px] bg-white/60 mx-auto mb-6 md:mb-8 animate-grow-line"></span>
               <h2
-                class="font-nav text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-black leading-none tracking-tighter uppercase drop-shadow-2xl">
+                class="font-nav text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-black leading-[0.9] tracking-tighter uppercase drop-shadow-2xl">
                 Wishing an<br>unforgettable<br>moment?
               </h2>
               <p
-                class="font-nav text-[11px] sm:text-sm md:text-base text-white font-medium tracking-[0.4em] md:tracking-[0.5em] uppercase pt-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                class="font-nav text-xs sm:text-sm md:text-base text-white font-medium tracking-[0.3em] md:tracking-[0.5em] uppercase pt-6 drop-shadow-lg">
                 We provide unique experiences
               </p>
             </div>
@@ -346,21 +293,20 @@
         </div>
     
         <div class="w-full h-full flex-shrink-0 relative overflow-hidden">
-          <img src="./images/slider/slider_two.jpg" alt="Costa Rica Coastline"
-            class="absolute inset-0 w-full h-full object-cover animate-ken-burns" loading="lazy">
-    
+          <picture>
+            <source srcset="./images/slider/slider_two.webp" type="image/webp">
+            <img src="./images/slider/slider_two.jpg" alt="Costa Rica coastline view"
+              class="absolute inset-0 w-full h-full object-cover animate-ken-burns" loading="lazy">
+          </picture>
           <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent z-10"></div>
     
-          <div
-            class="relative z-20 h-full flex flex-col justify-end pb-32 md:pb-24 px-6 sm:px-12 md:px-24 lg:px-32 text-left">
-            <div
-              class="reveal-content border-l border-white/40 pl-6 md:pl-10 space-y-4 md:space-y-6 max-w-[85vw] md:max-w-3xl">
+          <div class="relative z-20 h-full flex flex-col justify-end pt-20 pb-24 px-6 sm:px-12 md:px-24 lg:px-32 text-left">
+            <div class="reveal-content border-l border-white/40 pl-6 md:pl-10 space-y-4 md:space-y-6 max-w-3xl">
               <h2
-                class="font-nav text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-black leading-[0.9] tracking-tighter uppercase drop-shadow-2xl">
+                class="font-nav text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-black leading-[0.9] tracking-tighter uppercase drop-shadow-2xl">
                 Visit natural<br>jewels of<br>Costa Rica
               </h2>
-              <p
-                class="font-nav text-[11px] sm:text-sm text-white font-medium tracking-[0.3em] md:tracking-[0.4em] uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
+              <p class="font-nav text-xs sm:text-sm text-white font-medium tracking-[0.3em] uppercase drop-shadow-lg">
                 Expert guidance to the unseen
               </p>
             </div>
@@ -368,20 +314,22 @@
         </div>
     
         <div class="w-full h-full flex-shrink-0 relative overflow-hidden">
-          <img src="./images/slider/slider_three.jpg" alt="Luxury Villa"
-            class="absolute inset-0 w-full h-full object-cover animate-ken-burns" loading="lazy">
-    
+          <picture>
+            <source srcset="./images/slider/slider_three.webp" type="image/webp">
+            <img src="./images/slider/slider_three.jpg" alt="High-end luxury villa accommodation"
+              class="absolute inset-0 w-full h-full object-cover animate-ken-burns" loading="lazy">
+          </picture>
           <div class="absolute inset-0 bg-black/30 z-10"></div>
     
-          <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
+          <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4 pt-20">
             <div
-              class="reveal-content w-full max-w-[95vw] sm:max-w-2xl md:max-w-4xl backdrop-blur-md bg-black/30 p-8 md:p-16 border border-white/10 rounded-sm shadow-2xl">
+              class="reveal-content w-full max-w-4xl backdrop-blur-md bg-black/30 p-8 md:p-16 border border-white/10 rounded-[1px] shadow-2xl">
               <h2
-                class="font-nav text-2xl sm:text-4xl md:text-6xl lg:text-7xl text-white font-black mb-6 md:mb-8 leading-tight tracking-tighter uppercase">
+                class="font-nav text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-black mb-6 md:mb-8 leading-tight tracking-tighter uppercase">
                 High level<br>accommodation
               </h2>
               <p
-                class="font-nav text-[9px] sm:text-xs md:text-base text-white/90 font-extralight tracking-[0.4em] md:tracking-[0.6em] uppercase">
+                class="font-nav text-[10px] sm:text-xs md:text-base text-white/90 font-extralight tracking-[0.3em] md:tracking-[0.6em] uppercase">
                 Vacations & Real Estate
               </p>
             </div>
@@ -392,64 +340,58 @@
     </section>
 
     <section id="concierge-definition"
-      class="py-24 bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden"
+      class="py-16 md:py-24 bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden"
       aria-labelledby="concierge-title">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center gap-16">
-    
-          <div class="w-full lg:w-5/12">
-            <figure class="relative" role="group" aria-label="Visual representation of luxury leisure">
-              <div
-                class="absolute -inset-4 border border-gold-luxury/20 translate-x-8 translate-y-8 rounded-sm -z-10 hidden lg:block"
-                aria-hidden="true">
-              </div>
-    
-              <div
-                class="overflow-hidden rounded-sm shadow-2xl h-[500px] md:h-[700px] lg:h-[800px] bg-zinc-100 dark:bg-zinc-800">
-                <img id="parallax-home" src="./images/home/home_one.jpg" width="3840" height="5760"
-                  alt="Woman sitting by the ocean, shielding her eyes from the sun while gazing at the horizon in Costa Rica"
-                  class="w-full h-[130%] object-cover will-change-transform scale-110" style="object-position: 50% 20%;"
-                  loading="lazy" decoding="async" sizes="(max-width: 1024px) 100vw, 40vw">
-              </div>
-            </figure>
-          </div>
+        <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24">
     
           <div class="w-full lg:w-7/12 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
             <article>
-              <header class="mb-8">
+              <header class="mb-8 md:mb-10">
                 <h2 id="concierge-title"
-                  class="font-nav text-3xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-4">
-                  What does a Concierge do?
+                  class="font-nav text-3xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-6 md:mb-8">
+                  What does a <span class="text-gold-luxury">Concierge</span> do?
                 </h2>
                 <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
               </header>
     
-              <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-lg">
+              <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-base md:text-lg">
                 <p>
-                  The term <span class="italic text-slate-800 dark:text-zinc-200">"Concierge"</span> was originated in
-                  France. During centuries, a Concierge was responsible for attending
-                  to the needs of nobility and ensuring their safety and comfort.
+                  The term "Concierge" originated in France. For centuries, a Concierge was responsible for attending to the
+                  needs of nobility and ensuring their safety and comfort.
                 </p>
                 <p>
-                  Concierges´s tasks evolved over time, making that luxury hotels and resorts take this term to name someone
-                  referred to guests relations manager. Currently, the roles of a Concierge can be provided as well as by
-                  specialized agencies or individual professionals who deliver high class care for a customer.
-                  <span class="font-semibold text-gold-luxury font-nav">Concierge VIP Costa Rica</span> helps you to get:
+                  Tasks evolved over time, leading luxury hotels and resorts to use this term for guest relations managers.
+                  Currently, these roles are provided by specialized agencies or individual professionals who deliver
+                  high-class care. Concierge VIP Costa Rica helps you secure:
                 </p>
               </div>
     
               <aside class="mt-10 p-8 border-l-4 border-gold-luxury bg-zinc-50 dark:bg-white/5 rounded-r-lg" role="note">
-                <h3 class="font-nav text-slate-900 dark:text-white text-xl font-bold mb-4">
+                <h3 class="font-nav text-slate-900 dark:text-white text-xl mb-4">
                   High Quality Comfort
                 </h3>
                 <p class="text-slate-700 dark:text-zinc-300 leading-relaxed italic">
-                  "Do not feel tired of seeking for the best accommodation, transportation, organization tours, privacy,
-                  safety
-                  and other important details about your trip or stay in Costa Rica, let us bring the maximum comfort you
-                  deserve at every moment."
+                  "Do not feel tired of seeking the best accommodation, transportation, tours, privacy, and safety. Let us
+                  bring the maximum comfort you deserve at every moment of your stay in Costa Rica."
                 </p>
               </aside>
             </article>
+          </div>
+    
+          <div class="w-full lg:w-5/12">
+            <figure class="relative w-full" role="group" aria-label="Luxury lifestyle representation">
+              <div
+                class="overflow-hidden rounded-[1px] shadow-2xl h-[450px] md:h-[700px] lg:h-[800px] bg-zinc-100 dark:bg-zinc-800">
+                <picture>
+                  <source srcset="./images/home/home_one.webp" type="image/webp">
+                  <img id="parallax-home" src="./images/home/home_one.jpg" width="3840" height="5760"
+                    alt="Woman sitting by the ocean, shielding her eyes from the sun while gazing at the horizon in Costa Rica"
+                    class="w-full h-[130%] object-cover will-change-transform scale-110" style="object-position: 50% 20%;"
+                    loading="lazy" decoding="async">
+                </picture>
+              </div>
+            </figure>
           </div>
     
         </div>
@@ -457,51 +399,46 @@
     </section>
 
     <section id="nature-experience"
-      class="py-24 bg-zinc-50 dark:bg-white/[0.02] transition-colors duration-300 overflow-hidden"
+      class="py-16 md:py-24 bg-zinc-50 dark:bg-white/[0.02] transition-colors duration-300 overflow-hidden"
       aria-labelledby="nature-title">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="flex flex-col-reverse lg:flex-row items-center gap-16">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
     
           <div class="w-full lg:w-7/12 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
             <article>
-              <header class="mb-8">
+              <header class="mb-8 md:mb-10">
                 <h2 id="nature-title"
-                  class="font-nav text-3xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-4">
+                  class="font-nav text-3xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-6 md:mb-8">
                   Hot springs and <span class="text-gold-luxury italic">nature walkings</span>
                 </h2>
                 <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
               </header>
     
-              <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-lg">
+              <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-base md:text-lg">
                 <p>
-                  Experience the most relaxing hot springs in a tropical paradise. Thermal waters
-                  <span class="text-slate-800 dark:text-zinc-200 font-medium">eliminate toxins, reduce stress and chronic
-                    fatigue</span>,
-                  relieve respiratory problems and help with body problems.
+                  Experience the most relaxing hot springs in a tropical paradise. Thermal waters eliminate toxins, reduce
+                  stress and chronic fatigue, relieve respiratory problems and help with body problems.
                 </p>
                 <p class="italic">
-                  Have more than a trip, experience walking in the nature, in the uniques forests and
-                  jungles in Costa Rica, that is something will transform your body,
-                  mind and soul from the exhausting stress of daily life.
+                  Have more than a trip, experience walking in the nature, in the uniques forests and jungles in Costa Rica,
+                  that is something will transform your body, mind and soul from the exhausting stress of daily life.
                 </p>
               </div>
-    
             </article>
           </div>
     
           <div class="w-full lg:w-5/12">
-            <figure class="relative" role="group" aria-label="Tropical waterfall surrounded by lush vegetation">
+            <figure class="relative w-full" role="group"
+              aria-label="Tropical waterfall surrounded by lush vegetation in Costa Rica">
               <div
-                class="absolute -inset-4 border border-gold-luxury/20 -translate-x-8 translate-y-8 rounded-sm -z-10 hidden lg:block"
-                aria-hidden="true">
-              </div>
-    
-              <div
-                class="overflow-hidden rounded-sm shadow-2xl h-[500px] md:h-[700px] lg:h-[800px] bg-zinc-100 dark:bg-zinc-800">
-                <img id="parallax-nature" src="./images/home/home_two.jpg" width="2500" height="3749"
-                  alt="Majestic waterfall in Costa Rica surrounded by tropical palms and dense green jungle"
-                  class="w-full h-[130%] object-cover mystery-parallax will-change-transform scale-110"
-                  style="object-position: 50% 10%;" loading="lazy" decoding="async" sizes="(max-width: 1024px) 100vw, 40vw">
+                class="overflow-hidden rounded-[1px] shadow-2xl h-[450px] md:h-[700px] lg:h-[800px] bg-zinc-100 dark:bg-zinc-800">
+                <picture>
+                  <source srcset="./images/home/home_two.webp" type="image/webp">
+                  <img id="parallax-nature" src="./images/home/home_two.jpg" width="2500" height="3749"
+                    alt="Majestic waterfall in Costa Rica surrounded by tropical palms and dense green jungle"
+                    class="w-full h-[130%] object-cover mystery-parallax will-change-transform scale-110"
+                    style="object-position: 50% 10%;" loading="lazy" decoding="async">
+                </picture>
               </div>
             </figure>
           </div>
@@ -511,47 +448,44 @@
     </section>
 
     <section id="wedding-experience"
-      class="py-24 bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden"
+      class="py-16 md:py-24 bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden"
       aria-labelledby="wedding-title">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24">
     
           <div class="w-full lg:w-5/12">
-            <figure class="relative" role="group" aria-label="Romantic wedding destination in Costa Rica">
+            <figure class="relative w-full" role="group" aria-label="Romantic wedding destination in Costa Rica">
               <div
-                class="absolute -inset-4 border border-gold-luxury/20 translate-x-8 translate-y-8 rounded-sm -z-10 hidden lg:block"
-                aria-hidden="true">
-              </div>
-    
-              <div
-                class="overflow-hidden rounded-sm shadow-2xl h-[500px] md:h-[700px] lg:h-[800px] bg-zinc-100 dark:bg-zinc-800">
-                <img id="parallax-wedding" src="./images/home/home_three.jpg" width="4480" height="6720"
-                  alt="A man and a woman standing on a rock at the seashore, kissing romantically during a sunset in Costa Rica"
-                  class="w-full h-[130%] object-cover parallax-effector will-change-transform scale-110"
-                  style="object-position: 50% 30%;" loading="lazy" decoding="async" sizes="(max-width: 1024px) 100vw, 40vw">
+                class="overflow-hidden rounded-[1px] shadow-2xl h-[450px] md:h-[700px] lg:h-[800px] bg-zinc-100 dark:bg-zinc-800">
+                <picture>
+                  <source srcset="./images/home/home_three.webp" type="image/webp">
+                  <img id="parallax-wedding" src="./images/home/home_three.jpg" width="4480" height="6720"
+                    alt="Couple kissing romantically on a coastal rock formation during a sunset in Costa Rica"
+                    class="w-full h-[130%] object-cover parallax-effector will-change-transform scale-110"
+                    style="object-position: 50% 30%;" loading="lazy" decoding="async">
+                </picture>
               </div>
             </figure>
           </div>
     
           <div class="w-full lg:w-7/12 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
             <article>
-              <header class="mb-8">
+              <header class="mb-8 md:mb-10">
                 <h2 id="wedding-title"
-                  class="font-nav text-3xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-4">
+                  class="font-nav text-3xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-6 md:mb-8">
                   Your <span class="text-gold-luxury">Dream Wedding</span> in Costa Rica
                 </h2>
                 <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
               </header>
     
-              <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-lg">
+              <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-base md:text-lg">
                 <p class="text-2xl font-light italic text-slate-800 dark:text-zinc-200">
-                  <span class="pinyon-script-regular text-gold-luxury text-5xl not-italic">Love</span> is a journey, let us
+                  <span class="pinyon-script-regular text-gold-luxury text-5xl not-italic">Love</span> is a journey; let us
                   make your first stop in paradise.
                 </p>
                 <p>
-                  Marriage is an adventure, start it off with a destination wedding, take a flight and
-                  do it under the sun. Look for Costa Rica which is a top international
-                  destination for weddings.
+                  Marriage is an adventure. Start it off with a destination wedding in Costa Rica, a top-rated international
+                  location perfect for exchanging vows under the tropical sun.
                 </p>
               </div>
             </article>
@@ -561,49 +495,75 @@
       </div>
     </section>
 
-    <section id="car-rental" class="py-24 bg-zinc-50 dark:bg-white/[0.02] transition-colors duration-300 overflow-hidden"
+    <section id="car-rental"
+      class="py-16 md:py-24 bg-zinc-50 dark:bg-white/[0.02] transition-colors duration-300 overflow-hidden"
       aria-labelledby="rental-title">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="flex flex-col-reverse lg:flex-row items-center gap-16">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
     
-          <div class="w-full lg:w-6/12 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+          <div class="w-full lg:w-5/12 reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
             <article>
-              <header class="mb-8">
+              <header class="mb-8 md:mb-10">
                 <h2 id="rental-title"
-                  class="font-nav text-3xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-4">
-                  Rent a car <span class="text-gold-luxury italic font-light">with us</span>
+                  class="font-nav text-3xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-6 md:mb-8">
+                  <span class="inline-block border-b border-gold-luxury pb-2">Rent a car <span class="text-gold-luxury">with
+                      us</span></span>
                 </h2>
-                <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
               </header>
     
-              <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-lg">
+              <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-base md:text-lg">
                 <p class="font-medium text-slate-800 dark:text-zinc-200">
-                  Feel freedom and flexibility. Comfort and privacy.
+                  Experience true freedom and flexibility.
                 </p>
                 <p>
-                  Personalized your travel experience and assure you will have air condition comfort
-                  during your trip. All of them are factors not guaranteed in public transportation.
+                  Personalized travel crafted for comfort and privacy—essential factors for your journey through Costa Rica.
                 </p>
               </div>
             </article>
           </div>
     
-          <div class="w-full lg:w-6/12">
-            <figure class="relative" role="group" aria-label="Modern luxury vehicle rental">
+          <div class="w-full lg:w-7/12">
+            <figure class="relative w-full" role="group" aria-label="Modern luxury car rental service in Costa Rica">
               <div
-                class="absolute -inset-4 border border-gold-luxury/20 -translate-x-8 translate-y-8 rounded-sm -z-10 hidden lg:block"
-                aria-hidden="true">
-              </div>
+                class="absolute -inset-4 border border-gold-luxury/40 dark:border-gold-luxury/20 translate-x-6 translate-y-6 rounded-[1px] -z-10 hidden lg:block"
+                aria-hidden="true"></div>
     
-              <div class="overflow-hidden rounded-sm shadow-2xl h-[400px] md:h-[500px] bg-zinc-100 dark:bg-zinc-800">
-                <img id="parallax-car" src="./images/home/home_four.jpg" width="3000" height="1809"
-                  alt="Modern luxury car parked on lush green grass under the Costa Rican sun"
-                  class="w-full h-[140%] object-cover parallax-effector will-change-transform scale-110"
-                  style="object-position: 50% 50%;" loading="lazy" decoding="async" sizes="(max-width: 1024px) 100vw, 50vw">
+              <div
+                class="overflow-hidden rounded-[1px] shadow-2xl bg-zinc-100 dark:bg-zinc-800 aspect-[16/10] md:aspect-[3/2] lg:aspect-auto ring-1 ring-gold-luxury/20 ring-inset">
+                <picture>
+                  <source srcset="./images/home/home_four.webp" type="image/webp">
+                  <img src="./images/home/home_four.jpg" width="3000" height="1809"
+                    alt="Modern luxury car parked on lush green grass under the Costa Rican sun"
+                    class="w-full h-full object-cover transition-all duration-[2000ms] ease-out grayscale-[20%] hover:grayscale-0 hover:scale-105"
+                    loading="lazy" decoding="async">
+                </picture>
               </div>
             </figure>
           </div>
     
+        </div>
+      </div>
+    </section>
+
+    <section class="relative w-full py-32 bg-white dark:bg-dark-luxury transition-colors duration-500 overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.05]">
+        <div class="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-gold-luxury/20 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-[250px] h-[250px] bg-gold-luxury/10 rounded-full blur-[100px]"></div>
+      </div>
+    
+      <div class="max-w-xs mx-auto relative flex flex-col items-center justify-center gap-8">
+        <svg viewBox="0 0 100 100" class="w-24 h-24 text-gold-luxury/80" fill="none" stroke="currentColor"
+          stroke-width="1.5">
+          <path d="M40 35 C 30 20, 70 20, 60 35 C 55 45, 45 45, 40 35 Z" />
+          <path d="M25 75 Q 25 50, 50 50 Q 75 50, 75 75 Z" />
+          <line x1="20" y1="75" x2="80" y2="75" />
+          <line x1="30" y1="82" x2="70" y2="82" />
+        </svg>
+    
+        <div class="flex items-center gap-4">
+          <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-luxury/40"></div>
+          <div class="w-1.5 h-1.5 border border-gold-luxury rotate-45"></div>
+          <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-luxury/40"></div>
         </div>
       </div>
     </section>
