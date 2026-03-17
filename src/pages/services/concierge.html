@@ -211,24 +211,29 @@
 
   <main id="main-content" class="pt-20">
 
-    <section
-      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
+    <section id="service-reservations"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="res-title">
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32 order-2 lg:order-1">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-1">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">01 — Concierge
-            Services</span>
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">01 — Concierge
+              Services</span>
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Effortless<br>
-            <span class="text-slate-400 dark:text-zinc-600">Reservations</span>
-          </h2>
+            <h2 id="res-title"
+              class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words">
+              Effortless<br>
+              <span class="text-slate-400 dark:text-zinc-600">Reservations</span>
+            </h2>
     
-          <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
-            Time-Saving and Stress-Free
-          </h3>
+            <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
+              Time-Saving and Stress-Free
+            </h3>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -241,48 +246,47 @@
               Rican accommodations.
             </p>
           </div>
-
         </div>
       </div>
     
       <div
-        class="w-full lg:w-1/2 h-[60vh] lg:h-screen relative overflow-hidden order-1 lg:order-2 bg-zinc-200 dark:bg-zinc-800">
-        <img src="/images/services/concierge/concierge_one.jpg" id="parallax-home"
-          class="parallax-effector absolute inset-0 w-full h-[130%] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
-          alt="Luxury resort pool" fetchpriority="high">
-    
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-dark-luxury/30 via-transparent to-transparent pointer-events-none">
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 order-2 lg:order-2">
+        <picture>
+          <source srcset="/images/services/concierge/concierge_one.webp" type="image/webp">
+          <img src="/images/services/concierge/concierge_one.jpg" id="parallax-home"
+            class="parallax-effector absolute inset-0 w-full h-[130%] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
+            alt="Luxury resort pool" fetchpriority="high">
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
+    
     </section>
 
-    <section
-      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-zinc-900 overflow-hidden border-b border-zinc-100 dark:border-white/5">
+    <section id="service-logistics"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="logistics-title">
     
-      <div class="w-full lg:w-1/2 h-[60vh] lg:h-screen relative overflow-hidden bg-zinc-200 dark:bg-zinc-800">
-        <img src="/images/services/concierge/concierge_two.jpg" id="parallax-nature"
-          class="parallax-effector absolute inset-0 w-full h-[130%] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
-          alt="Luxury transportation services" loading="lazy">
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-dark-luxury/30 via-transparent to-transparent pointer-events-none">
-        </div>
-      </div>
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-2">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">
+              02 — Logistics
+            </span>
     
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">02 — Logistics</span>
+            <h2 id="logistics-title"
+              class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words">
+              Transportation<br>
+              <span class="text-slate-400 dark:text-zinc-600">Services</span>
+            </h2>
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Transportation<br>
-            <span class="text-slate-400 dark:text-zinc-600">Services</span>
-          </h2>
-    
-          <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
-            To the Best Destinations
-          </h3>
+            <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
+              To the Best Destinations
+            </h3>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -297,25 +301,43 @@
           </div>
         </div>
       </div>
+    
+      <div
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 order-2 lg:order-1">
+        <picture>
+          <source srcset="/images/services/concierge/concierge_two.webp" type="image/webp">
+          <img src="/images/services/concierge/concierge_two.jpg" id="parallax-nature"
+            class="parallax-effector absolute inset-0 w-full h-[130%] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
+            alt="Luxury transportation services" loading="lazy">
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none">
+        </div>
+      </div>
+    
     </section>
 
-    <section
-      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
+    <section id="service-culture"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="culture-title">
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-1">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">03 — Culture</span>
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">03 — Culture</span>
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Explore<br>
-            <span class="text-slate-400 dark:text-zinc-600">San José City</span>
-          </h2>
+            <h2 id="culture-title"
+              class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words">
+              Explore<br>
+              <span class="text-slate-400 dark:text-zinc-600">San José City</span>
+            </h2>
     
-          <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
-            History, Culture, and More
-          </h3>
+            <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
+              History, Culture, and More
+            </h3>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -327,42 +349,42 @@
         </div>
       </div>
     
-      <div class="w-full lg:w-1/2 h-[60vh] lg:h-screen relative overflow-hidden bg-zinc-200 dark:bg-zinc-800">
-        <img src="/images/services/concierge/concierge_three.jpg" id="parallax-culture"
-          class="parallax-effector absolute inset-0 w-full h-[130%] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
-          alt="Explore San Jose City" loading="lazy">
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-dark-luxury/30 via-transparent to-transparent pointer-events-none">
+      <div
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 order-2 lg:order-2">
+        <picture>
+          <source srcset="/images/services/concierge/concierge_three.webp" type="image/webp">
+          <img src="/images/services/concierge/concierge_three.jpg" id="parallax-culture"
+            class="parallax-effector absolute inset-0 w-full h-[130%] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
+            alt="Explore San Jose City" loading="lazy" decoding="async">
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
+    
     </section>
 
-    <section
-      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-zinc-900 overflow-hidden border-b border-zinc-100 dark:border-white/5">
+    <section id="service-adventure"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="adventure-title">
     
-      <div class="w-full lg:w-1/2 h-[60vh] lg:h-screen relative overflow-hidden bg-zinc-200 dark:bg-zinc-800">
-        <img src="/images/services/concierge/concierge_four.jpg" id="parallax-adventure"
-          class="parallax-effector absolute inset-0 w-full h-[130%] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
-          alt="Adventure activities in Costa Rica" loading="lazy">
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-dark-luxury/30 via-transparent to-transparent pointer-events-none">
-        </div>
-      </div>
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-2">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">04 — Adrenaline</span>
     
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">04 — Adrenaline</span>
+            <h2 id="adventure-title"
+              class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words">
+              An Adventure<br>
+              <span class="text-slate-400 dark:text-zinc-600">Paradise</span>
+            </h2>
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            An Adventure<br>
-            <span class="text-slate-400 dark:text-zinc-600">Paradise</span>
-          </h2>
-    
-          <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
-            Feel the Rush
-          </h3>
+            <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
+              Feel the Rush
+            </h3>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -372,25 +394,45 @@
           </div>
         </div>
       </div>
+    
+      <div
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 order-2 lg:order-1">
+        <picture>
+          <source srcset="/images/services/concierge/concierge_four.webp" type="image/webp">
+          <img src="/images/services/concierge/concierge_four.jpg" id="parallax-adventure"
+            class="parallax-effector absolute inset-0 w-full h-[130%] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
+            alt="Adventure activities in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none">
+        </div>
+      </div>
+    
     </section>
 
-    <section
-      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
+    <section id="service-biodiversity"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="biodiversity-title">
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32 order-2 lg:order-1">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-1">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">05 — Biodiversity</span>
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
+              05 — Biodiversity
+            </span>
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Bird Watching<br>
-            <span class="text-slate-400 dark:text-zinc-600">in Costa Rica</span>
-          </h2>
+            <h2 id="biodiversity-title"
+              class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words">
+              Bird Watching<br>
+              <span class="text-slate-400 dark:text-zinc-600">in Costa Rica</span>
+            </h2>
     
-          <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
-            Nature's Enchantment
-          </h3>
+            <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
+              Nature's Enchantment
+            </h3>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -406,44 +448,43 @@
       </div>
     
       <div
-        class="w-full lg:w-1/2 h-[60vh] lg:h-screen relative overflow-hidden bg-zinc-200 dark:bg-zinc-800 order-1 lg:order-2">
-        <img src="/images/services/concierge/concierge_five.jpg"
-          class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[2000ms] ease-out hover:scale-105"
-          alt="Bird watching in Costa Rica" loading="lazy">
-    
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-dark-luxury/30 via-transparent to-transparent pointer-events-none">
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 order-2 lg:order-2">
+        <picture>
+          <source srcset="/images/services/concierge/concierge_five.webp" type="image/webp">
+          <img src="/images/services/concierge/concierge_five.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[2000ms] ease-out hover:scale-105"
+            alt="Bird watching in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
+    
     </section>
 
-    <section
-      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
+    <section id="service-nature-wildlife"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="nature-wildlife-title">
     
-      <div class="w-full lg:w-1/2 h-[60vh] lg:h-screen relative overflow-hidden bg-zinc-200 dark:bg-zinc-800">
-        <img src="/images/services/concierge/concierge_six.jpg"
-          class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[2000ms] ease-out hover:scale-105"
-          alt="Nature and wildlife in Costa Rica" loading="lazy">
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-2">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-dark-luxury/30 via-transparent to-transparent pointer-events-none">
-        </div>
-      </div>
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
+              06 — Biodiversity
+            </span>
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+            <h2 id="nature-wildlife-title"
+              class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words">
+              Nature<br>
+              <span class="text-slate-400 dark:text-zinc-600">and Wildlife</span>
+            </h2>
     
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">06 — Biodiversity</span>
-    
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Nature<br>
-            <span class="text-slate-400 dark:text-zinc-600">and Wildlife</span>
-          </h2>
-    
-          <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
-            Costa Rica's Richness
-          </h3>
+            <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
+              Costa Rica's Richness
+            </h3>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -458,25 +499,44 @@
           </div>
         </div>
       </div>
+    
+      <div
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 order-2 lg:order-1">
+        <picture>
+          <source srcset="/images/services/concierge/concierge_six.webp" type="image/webp">
+          <img src="/images/services/concierge/concierge_six.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[2000ms] ease-out hover:scale-105"
+            alt="Nature and wildlife in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none">
+        </div>
+      </div>
+    
     </section>
 
-    <section
-      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
+    <section id="service-yacht"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="yacht-title">
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32 order-2 lg:order-1">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-1">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">07 — Luxury</span>
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">07 —
+              Luxury</span>
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Yacht<br>
-            <span class="text-slate-400 dark:text-zinc-600">Services</span>
-          </h2>
+            <h2 id="yacht-title"
+              class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words">
+              Yacht<br>
+              <span class="text-slate-400 dark:text-zinc-600">Services</span>
+            </h2>
     
-          <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
-            Yacht Services, sailing activities and sport fishing
-          </h3>
+            <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
+              Yacht Services, sailing activities and sport fishing
+            </h3>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -494,46 +554,42 @@
       </div>
     
       <div
-        class="w-full lg:w-1/2 h-[60vh] lg:h-screen relative overflow-hidden order-1 lg:order-2 bg-zinc-200 dark:bg-zinc-800">
-        <img src="/images/services/concierge/concierge_seven.jpg" id="parallax-yacht"
-          class="parallax-effector absolute w-full h-[160%] -top-[30%] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
-          alt="Yacht services and sport fishing in Costa Rica" loading="lazy">
-    
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-dark-luxury/30 via-transparent to-transparent pointer-events-none">
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 order-2 lg:order-2">
+        <picture>
+          <source srcset="/images/services/concierge/concierge_seven.webp" type="image/webp">
+          <img src="/images/services/concierge/concierge_seven.jpg" id="parallax-yacht"
+            class="parallax-effector absolute w-full h-[160%] -top-[30%] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
+            alt="Yacht services and sport fishing in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
+    
     </section>
 
-    <section
-      class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-zinc-900 overflow-hidden border-b border-zinc-100 dark:border-white/5">
+    <section id="service-hiking"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="hiking-title">
     
       <div
-        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-50 dark:bg-zinc-900 flex items-center justify-center">
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-2">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-        <img src="/images/services/concierge/concierge_eight.png"
-          class="w-full h-full object-contain p-4 lg:p-12 grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-[1.02]"
-          alt="Guided hiking tours in Costa Rica" loading="lazy">
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">08 —
+              Adventure</span>
     
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-zinc-50/20 via-transparent to-transparent dark:from-zinc-900/50 pointer-events-none">
-        </div>
-      </div>
+            <h2 id="hiking-title"
+              class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words">
+              Explore<br>
+              <span class="text-slate-400 dark:text-zinc-600">Costa Rica</span>
+            </h2>
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
-    
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">08 — Adventure</span>
-    
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Explore<br>
-            <span class="text-slate-400 dark:text-zinc-600">Costa Rica</span>
-          </h2>
-    
-          <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
-            With guided hiking tours
-          </h3>
+            <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
+              With guided hiking tours
+            </h3>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -548,37 +604,44 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <section
-      class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
     
       <div
-        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-white dark:bg-dark-luxury flex items-center justify-center">
-    
-        <img src="/images/services/concierge/concierge_nine.jpg"
-          class="w-full h-full object-contain p-4 lg:p-12 grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-[1.02]"
-          alt="Breathtaking and unmatched places in Costa Rica" loading="lazy">
-    
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-50 dark:bg-dark-luxury flex items-center justify-center order-2 lg:order-1">
+        <picture class="w-full h-full">
+          <img src="/images/services/concierge/concierge_eight.png"
+            class="w-full h-full object-contain p-4 lg:p-12 grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-[1.02]"
+            alt="Guided hiking tours in Costa Rica" loading="lazy" decoding="async">
+        </picture>
         <div
-          class="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent dark:from-dark-luxury/50 pointer-events-none">
+          class="absolute inset-0 bg-gradient-to-t from-zinc-50/20 via-transparent to-transparent dark:from-black/40 pointer-events-none">
         </div>
       </div>
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+    </section>
+
+    <section id="service-inspiration"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="inspiration-title">
     
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">09 — Inspiration</span>
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-1">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Breathtaking,<br>
-            <span class="text-slate-400 dark:text-zinc-600">Unmatched Places</span>
-          </h2>
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">09 —
+              Inspiration</span>
     
-          <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
-            Refresh Body & Soul
-          </h3>
+            <h2 id="inspiration-title"
+              class="font-nav text-[10vw] md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 select-none hyphens-none">
+              Breathtaking,<br>
+              <span class="text-slate-400 dark:text-zinc-600">Unmatched Places</span>
+            </h2>
+    
+            <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
+              Refresh Body & Soul
+            </h3>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -591,37 +654,45 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <section
-      class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-zinc-900 overflow-hidden border-b border-zinc-100 dark:border-white/5">
     
       <div
-        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-50 dark:bg-zinc-900 flex items-center justify-center">
-    
-        <img src="/images/services/concierge/concierge_ten.jpg"
-          class="w-full h-full object-contain p-4 lg:p-12 grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-[1.02]"
-          alt="Exclusivity and privacy in luxury retreats" loading="lazy">
-    
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-white dark:bg-dark-luxury flex items-center justify-center order-2 lg:order-2">
+        <picture class="w-full h-full">
+          <source srcset="/images/services/concierge/concierge_nine.webp" type="image/webp">
+          <img src="/images/services/concierge/concierge_nine.jpg"
+            class="w-full h-full object-contain p-4 lg:p-12 grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-[1.02]"
+            alt="Breathtaking and unmatched places in Costa Rica" loading="lazy" decoding="async">
+        </picture>
         <div
-          class="absolute inset-0 bg-gradient-to-t from-zinc-50/20 via-transparent to-transparent dark:from-zinc-900/50 pointer-events-none">
+          class="absolute inset-0 bg-gradient-to-t from-white dark:from-dark-luxury via-transparent to-transparent pointer-events-none opacity-40">
         </div>
       </div>
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+    </section>
+
+    <section id="service-privacy"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="privacy-title">
     
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">10 — Privacy</span>
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-2">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Exclusivity<br>
-            <span class="text-slate-400 dark:text-zinc-600">and Privacy</span>
-          </h2>
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">10 —
+              Privacy</span>
     
-          <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
-            At Their Finest
-          </h3>
+            <h2 id="privacy-title"
+              class="font-nav text-[10vw] md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words hyphens-none">
+              Exclusivity<br>
+              <span class="text-slate-400 dark:text-zinc-600">and Privacy</span>
+            </h2>
+    
+            <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
+              At Their Finest
+            </h3>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -636,33 +707,41 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <section
-      class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
     
       <div
-        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-white dark:bg-dark-luxury flex items-center justify-center">
-    
-        <img src="/images/services/concierge/concierge_eleven.jpg"
-          class="w-full h-full object-contain p-4 lg:p-12 grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-[1.02]"
-          alt="Wellness services, spa, and massage therapy in Costa Rica" loading="lazy">
-    
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-50 dark:bg-dark-luxury flex items-center justify-center order-2 lg:order-1">
+        <picture class="w-full h-full">
+          <source srcset="/images/services/concierge/concierge_ten.webp" type="image/webp">
+          <img src="/images/services/concierge/concierge_ten.jpg"
+            class="w-full h-full object-contain p-4 lg:p-12 grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-[1.02]"
+            alt="Exclusivity and privacy in luxury retreats" loading="lazy" decoding="async">
+        </picture>
         <div
-          class="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent dark:from-dark-luxury/50 pointer-events-none">
+          class="absolute inset-0 bg-gradient-to-t from-zinc-50 dark:from-dark-luxury via-transparent to-transparent pointer-events-none opacity-40">
         </div>
       </div>
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+    </section>
+
+    <section id="service-wellness"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="wellness-title">
     
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">11 — Wellness</span>
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-1">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            A variety of<br>
-            <span class="text-slate-400 dark:text-zinc-600">wellness services</span>
-          </h2>
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">11 —
+              Wellness</span>
+    
+            <h2 id="wellness-title"
+              class="font-nav text-[10vw] md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words hyphens-none">
+              A variety of<br>
+              <span class="text-slate-400 dark:text-zinc-600">wellness services</span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury mt-6" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6 mt-10">
             <p
@@ -671,6 +750,43 @@
               techniques that will elevate your trip to the ultimate relaxation you've ever experienced.
             </p>
           </div>
+        </div>
+      </div>
+    
+      <div
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-white dark:bg-dark-luxury flex items-center justify-center order-2 lg:order-2">
+        <picture class="w-full h-full">
+          <source srcset="/images/services/concierge/concierge_eleven.webp" type="image/webp">
+          <img src="/images/services/concierge/concierge_eleven.jpg"
+            class="w-full h-full object-contain p-4 lg:p-12 grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-[1.02]"
+            alt="Wellness services, spa, and massage therapy in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-white dark:from-dark-luxury via-transparent to-transparent pointer-events-none opacity-40">
+        </div>
+      </div>
+    
+    </section>
+    
+    <section class="relative w-full py-32 bg-white dark:bg-dark-luxury transition-colors duration-500 overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.05]">
+        <div class="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-gold-luxury/20 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-[250px] h-[250px] bg-gold-luxury/10 rounded-full blur-[100px]"></div>
+      </div>
+    
+      <div class="max-w-xs mx-auto relative flex flex-col items-center justify-center gap-8">
+        <svg viewBox="0 0 100 100" class="w-24 h-24 text-gold-luxury/80" fill="none" stroke="currentColor"
+          stroke-width="1.5">
+          <path d="M40 35 C 30 20, 70 20, 60 35 C 55 45, 45 45, 40 35 Z" />
+          <path d="M25 75 Q 25 50, 50 50 Q 75 50, 75 75 Z" />
+          <line x1="20" y1="75" x2="80" y2="75" />
+          <line x1="30" y1="82" x2="70" y2="82" />
+        </svg>
+    
+        <div class="flex items-center gap-4">
+          <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-luxury/40"></div>
+          <div class="w-1.5 h-1.5 border border-gold-luxury rotate-45"></div>
+          <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-luxury/40"></div>
         </div>
       </div>
     </section>
