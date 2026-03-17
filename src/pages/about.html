@@ -211,134 +211,170 @@
 
   <main id="main-content" class="pt-20">
 
-    <section
-      class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
+    <section id="about-intro"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="about-title">
     
       <div
-        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-        <img src="/images/about/about_one.jpg"
-          class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
-          alt="Exclusivity and Unmatched Service" fetchpriority="high">
-        <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/40 via-transparent to-transparent pointer-events-none">
-        </div>
-      </div> 
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-2">
+        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
-        
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Exclusivity and<br>
-            <span class="text-slate-400 dark:text-zinc-600">Unmatched Service</span>
-          </h2>
+          <header class="mb-8 md:mb-10">
+            <h2 id="about-title"
+              class="font-nav text-4xl md:text-6xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-6">
+              Exclusivity and<br>
+              <span class="text-slate-400 dark:text-zinc-600">Unmatched Service</span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
     
-          <div class="space-y-6">
-            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+          <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-base md:text-lg">
+            <p>
               At Concierge VIP Costa Rica, we take pride in offering an unmatched level of exclusivity. Every moment of your
               experience is meticulously curated to provide the highest standard of service, ensuring that you feel like
               royalty from the moment you arrive. Whether it's enjoying a private drink in an exclusive setting by the sea
-              or receiving bespoke attention, we guarantee that every detail is handled with the utmost care. With us, your
-              stay in Costa Rica is more than just a vacation—it’s a luxurious experience designed to exceed your
-              expectations.
+              or receiving bespoke attention, we guarantee that every detail is handled with the utmost care.
             </p>
-            <p
-              class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic">
+            <p class="border-l-2 border-gold-luxury/30 pl-6 italic text-slate-700 dark:text-zinc-300">
               We believe in creating exceptional moments for our guests, where the luxury of personalized service meets the
               beauty of Costa Rica. From arranging VIP experiences to delivering flawless service, we are committed to
-              ensuring that your time here is as exclusive and memorable as it can be. Let us take care of every detail, so
-              you can simply relax and enjoy the elegance of a truly unique experience.
+              ensuring that your time here is as exclusive and memorable as it can be.
             </p>
           </div>
         </div>
       </div>
-    </section>
-
-    <section
-      class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row-reverse items-center bg-white dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
     
       <div
-        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-        <img src="/images/about/about_two.jpg"
-          class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
-          alt="Caring for You and Your Dream Getaway" loading="lazy">
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-dark-luxury/40 via-transparent to-transparent pointer-events-none">
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 order-2 lg:order-1">
+        <picture>
+          <source srcset="/images/about/about_one.webp" type="image/webp">
+          <img src="/images/about/about_one.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Luxury concierge service representative assisting a client in Costa Rica" fetchpriority="high">
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+    </section>
+
+    <section id="about-care"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="care-title">
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Caring for You and<br>
-            <span class="text-slate-400 dark:text-zinc-600">Your Dream Getaway</span>
-          </h2>
+      <div class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1">
+        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-          <div class="space-y-6">
-            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+          <header class="mb-8 md:mb-10">
+            <h2 id="care-title"
+              class="font-nav text-4xl md:text-6xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-6">
+              Caring for You and<br>
+              <span class="text-slate-400 dark:text-zinc-600">Your Dream Getaway</span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
+    
+          <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-base md:text-lg">
+            <p>
               At Concierge VIP Costa Rica, we understand that the key to a perfect getaway is personalized attention to your
               needs and comfort. We are dedicated to taking care of everything, allowing you to focus on creating cherished
               memories with your loved ones. Whether it's arranging family-friendly activities or ensuring that every aspect
-              of your stay is seamless, we provide the support and care that guarantees a smooth and unforgettable
-              experience for you and your family.
+              of your stay is seamless, we provide the support and care that guarantees a smooth experience.
             </p>
-            <p
-              class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic">
+            <p class="border-l-2 border-gold-luxury/30 pl-6 italic text-slate-700 dark:text-zinc-300">
               Our commitment to providing a dream vacation means we go above and beyond to ensure your environment and
               experience are perfect. From luxurious accommodations to tailor-made excursions, we are here to take care of
-              all the details. With Concierge VIP Costa Rica, you can rest assured that every part of your journey is
-              designed with your needs in mind, giving you peace of mind while you enjoy the wonders of Costa Rica with your
-              family.
+              all the details, giving you peace of mind while you enjoy the wonders of Costa Rica.
             </p>
           </div>
         </div>
       </div>
-    </section>
-
-    <section
-      class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
     
-      <div
-        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-        <img src="/images/about/about_three.jpg"
-          class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
-          alt="Creating Unforgettable Moments" loading="lazy"> 
-        <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/40 via-transparent to-transparent pointer-events-none">
+      <div class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 order-2">
+        <picture>
+          <source srcset="/images/about/about_two.webp" type="image/webp">
+          <img src="/images/about/about_two.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Family enjoying a luxury sunset experience in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+    </section>
+
+    <section id="about-moments"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="moments-title">
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Creating<br>
-            <span class="text-slate-400 dark:text-zinc-600">Unforgettable Moments</span>
-          </h2>
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-2">
+        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-          <div class="space-y-6">
-            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+          <header class="mb-8 md:mb-10">
+            <h2 id="moments-title"
+              class="font-nav text-4xl md:text-6xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-6">
+              Creating<br>
+              <span class="text-slate-400 dark:text-zinc-600">Unforgettable Moments</span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
+          </header>
+    
+          <div class="space-y-6 text-slate-600 dark:text-zinc-400 leading-relaxed text-base md:text-lg">
+            <p>
               At Concierge VIP Costa Rica, we specialize in creating moments that will stay with you long after your trip
               ends. Every experience is designed to be extraordinary, offering you exclusive access to the most breathtaking
               views and unique activities in Costa Rica. From private sunset views to personalized tours, we ensure that
               every moment of your journey is something you’ll never forget.
             </p>
-            <p
-              class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic">
+            <p class="border-l-2 border-gold-luxury/30 pl-6 italic text-slate-700 dark:text-zinc-300">
               We know that the best trips are made up of unforgettable moments. That's why we focus on delivering
-              experiences that are one-of-a-kind, tailored specifically to your interests and desires. Whether you’re
-              enjoying a private dinner by the beach or taking part in an adventure tailored just for you, Concierge VIP
-              Costa Rica ensures that your trip is filled with memories that will last a lifetime. Let us help you create
-              the perfect Costa Rican getaway, where every moment is designed to leave you in awe.
+              one-of-a-kind experiences, tailored specifically to your desires. Let us help you create
+              the perfect Costa Rican getaway, where every detail is designed to leave you in awe.
             </p>
           </div>
+        </div>
+      </div>
+    
+      <div
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 order-2 lg:order-1">
+        <picture>
+          <source srcset="/images/about/about_three.webp" type="image/webp">
+          <img src="/images/about/about_three.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Breathtaking private sunset experience in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none">
+        </div>
+      </div>
+    
+    </section>
+
+    <section class="relative w-full py-32 bg-white dark:bg-dark-luxury transition-colors duration-500 overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.05]">
+        <div class="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-gold-luxury/20 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-[250px] h-[250px] bg-gold-luxury/10 rounded-full blur-[100px]"></div>
+      </div>
+    
+      <div class="max-w-xs mx-auto relative flex flex-col items-center justify-center gap-8">
+        <svg viewBox="0 0 100 100" class="w-24 h-24 text-gold-luxury/80" fill="none" stroke="currentColor"
+          stroke-width="1.5">
+          <path d="M40 35 C 30 20, 70 20, 60 35 C 55 45, 45 45, 40 35 Z" />
+          <path d="M25 75 Q 25 50, 50 50 Q 75 50, 75 75 Z" />
+          <line x1="20" y1="75" x2="80" y2="75" />
+          <line x1="30" y1="82" x2="70" y2="82" />
+        </svg>
+    
+        <div class="flex items-center gap-4">
+          <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-luxury/40"></div>
+          <div class="w-1.5 h-1.5 border border-gold-luxury rotate-45"></div>
+          <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-luxury/40"></div>
         </div>
       </div>
     </section>
 
   </main>
-
+ 
   <footer
     class="bg-zinc-50 dark:bg-dark-luxury border-t border-zinc-200 dark:border-white/5 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
