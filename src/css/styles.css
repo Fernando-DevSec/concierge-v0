@@ -1225,6 +1225,11 @@ video {
   background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
 }
 
+.\!bg-zinc-50 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(250 250 250 / var(--tw-bg-opacity, 1)) !important;
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -1961,6 +1966,11 @@ video {
 .dark\:bg-zinc-900:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(24 24 27 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:\!bg-dark-luxury:is(.dark *) {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(17 18 13 / var(--tw-bg-opacity, 1)) !important;
 }
 
 .dark\:from-dark-luxury\/50:is(.dark *) {
