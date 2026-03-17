@@ -5,31 +5,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Us | CR Concierge | Luxury Services in Costa Rica</title>
+  <title>About Us | Concierge VIP Costa Rica | Bespoke Luxury Services</title>
   <meta name="description"
-    content="Discover the expertise behind CR Concierge. We provide bespoke luxury travel, relocation, and event planning services across Costa Rica.">
+    content="Discover the philosophy behind Concierge VIP Costa Rica. Experts in bespoke luxury travel, elite relocation, and curated private experiences across the natural jewels of Costa Rica.">
+  <link rel="canonical" href="https://www.conciergevipcr.com/pages/about.html">
+  <meta name="author" content="Concierge VIP Costa Rica">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.conciergevipcr.com/pages/about.html">
+  <meta property="og:title" content="About Us | Concierge VIP Costa Rica">
+  <meta property="og:description"
+    content="Unmatched service and exclusivity. Meet the team dedicated to making your Costa Rican getaway a dream come true.">
+  <meta property="og:image" content="https://www.conciergevipcr.com/images/about/about_one.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="About Us | Concierge VIP Costa Rica">
+  <meta property="twitter:description"
+    content="Bespoke luxury attention and curated moments in paradise. Discover our commitment to excellence.">
+  <meta property="twitter:image" content="https://www.conciergevipcr.com/images/about/about_one.jpg">
 
   <script>
-    if (localStorage.getItem('color-theme') === 'dark' ||
-      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    (function () {
+      const theme = localStorage.getItem('color-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+    })();
   </script>
-  
-  <link rel="stylesheet" href="/css/styles.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=block"
     rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
 
   <style>
     .pinyon-script-regular {
       font-family: "Pinyon Script", cursive;
-      font-weight: 400;
+      visibility: hidden;
+      /* Se revela mediante main.js con .fonts-loaded */
+    }
+
+    .fonts-loaded .pinyon-script-regular {
+      visibility: visible;
     }
 
     .font-nav {
@@ -38,22 +59,38 @@
       text-transform: uppercase;
     }
 
+    /* Preloader: Debe estar disponible inmediatamente */
     #preloader {
       background-color: #11120D;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
       display: flex;
-      visibility: visible;
     }
 
     body.loading {
       overflow: hidden;
     }
 
-    /* Custom Focus Ring for Accessibility */
+    /* Accesibilidad: Anillo de enfoque personalizado */
     :focus-visible {
       outline: 2px solid #D4AF37;
       outline-offset: 4px;
     }
   </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "TravelAgency",
+        "name": "Concierge VIP Costa Rica",
+        "image": "https://www.conciergevipcr.com/images/about/about_one.jpg",
+        "description": "Specialists in creating unforgettable moments and providing unmatched exclusive service in Costa Rica."
+      }
+    }
+  </script>
 </head>
 
 <body class="bg-white dark:bg-dark-luxury transition-colors duration-300 antialiased">
