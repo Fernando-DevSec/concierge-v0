@@ -5,31 +5,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Us | CR Concierge | Luxury Services in Costa Rica</title>
+  <title>Relocation & Real Estate Services | Concierge VIP Costa Rica</title>
   <meta name="description"
-    content="Discover the expertise behind CR Concierge. We provide bespoke luxury travel, relocation, and event planning services across Costa Rica.">
+    content="Expert relocation and real estate services in Costa Rica. Seamless international moving logistics, door-to-door assistance, and exclusive property scouting for your new life in paradise.">
+  <link rel="canonical" href="https://www.conciergevipcr.com/pages/relocation.html">
+  <meta name="author" content="Concierge VIP Costa Rica">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.conciergevipcr.com/pages/relocation.html">
+  <meta property="og:title" content="Seamless Relocation & Dream Properties | Concierge VIP Costa Rica">
+  <meta property="og:description"
+    content="From international logistics to finding your dream villa. We handle every detail of your move to Costa Rica with care and local expertise.">
+  <meta property="og:image" content="https://www.conciergevipcr.com/images/services/relocation/relocation_one.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Relocation & Real Estate | Concierge VIP Costa Rica">
+  <meta property="twitter:description"
+    content="Start your new life in Costa Rica. Specialized relocation logistics and expert real estate guidance.">
+  <meta property="twitter:image" content="https://www.conciergevipcr.com/images/services/relocation/relocation_one.jpg">
 
   <script>
-    if (localStorage.getItem('color-theme') === 'dark' ||
-      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    (function () {
+      const theme = localStorage.getItem('color-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+    })();
   </script>
-
-  <link rel="stylesheet" href="/css/styles.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=block"
     rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
 
   <style>
     .pinyon-script-regular {
       font-family: "Pinyon Script", cursive;
-      font-weight: 400;
+      visibility: hidden;
+      /* Se revela mediante main.js con .fonts-loaded */
+    }
+
+    .fonts-loaded .pinyon-script-regular {
+      visibility: visible;
     }
 
     .font-nav {
@@ -38,22 +59,48 @@
       text-transform: uppercase;
     }
 
+    /* Preloader: Identical to about.html */
     #preloader {
       background-color: #11120D;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
       display: flex;
-      visibility: visible;
     }
 
     body.loading {
       overflow: hidden;
     }
 
-    /* Custom Focus Ring for Accessibility */
+    /* Accesibilidad: Anillo de enfoque personalizado */
     :focus-visible {
       outline: 2px solid #D4AF37;
       outline-offset: 4px;
     }
+
+    /* Prevención de desbordamiento para títulos largos */
+    h2 {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: none;
+    }
   </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Relocation and Real Estate Services",
+      "serviceType": "Elite Relocation Logistics",
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "Concierge VIP Costa Rica",
+        "image": "https://www.conciergevipcr.com/images/services/relocation/relocation_one.jpg"
+      },
+      "description": "Specialized relocation services in Costa Rica, including international moving logistics, customs clearance, and premium real estate property scouting.",
+      "areaServed": "Costa Rica"
+    }
+  </script>
 </head>
 
 <body class="bg-white dark:bg-dark-luxury transition-colors duration-300 antialiased">
@@ -211,27 +258,26 @@
 
   <main id="main-content" class="pt-20">
 
-    <section
-      class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
+    <section id="service-relocation-intro"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="relocation-title">
     
       <div
-        class="w-full lg:w-1/2 h-[60vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-        <img src="/images/services/relocation/relocation_one.jpg"
-          class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
-          alt="Expert relocation services to Costa Rica" fetchpriority="high">
-        <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/40 via-transparent to-transparent pointer-events-none">
-        </div>
-      </div>
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1 lg:order-2">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">Relocation — Services</span>
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
+              Relocation — Services
+            </span>
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Seamless<br>
-            <span class="text-slate-400 dark:text-zinc-600">Relocation</span>
-          </h2>
+            <h2 id="relocation-title"
+              class="font-nav text-[10vw] md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words hyphens-none">
+              Seamless<br>
+              <span class="text-slate-400 dark:text-zinc-600">Relocation</span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury mt-6" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -257,31 +303,38 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <section
-      class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row-reverse items-center bg-white dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
     
       <div
-        class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-        <img src="/images/services/relocation/relocation_two.jpg"
-          class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
-          alt="Dream property in Costa Rica" loading="lazy">
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-dark-luxury/40 via-transparent to-transparent pointer-events-none">
-        </div>
+        class="w-full lg:w-1/2 h-[60vh] lg:h-screen relative overflow-hidden !bg-zinc-50 dark:!bg-dark-luxury order-2 lg:order-1">
+        <picture>
+          <source srcset="/images/services/relocation/relocation_one.webp" type="image/webp">
+          <img src="/images/services/relocation/relocation_one.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Expert relocation services to Costa Rica" fetchpriority="high" decoding="async">
+        </picture>
       </div>
     
-      <div class="w-full lg:w-1/2 flex items-center justify-center px-8 py-20 md:px-20 lg:px-32">
-        <div class="max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
-          <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold">Relocation — Real
-            Estate</span>
+    </section>
+
+    <section id="service-real-estate"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="realestate-title">
     
-          <h2
-            class="font-nav text-4xl md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
-            Your Dream<br>
-            <span class="text-slate-400 dark:text-zinc-600">Property Awaits</span>
-          </h2>
+      <div class="w-full lg:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 order-1">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+    
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
+              Relocation — Real Estate
+            </span>
+    
+            <h2 id="realestate-title"
+              class="font-nav text-[10vw] md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words hyphens-none">
+              Your Dream<br>
+              <span class="text-slate-400 dark:text-zinc-600">Property Awaits</span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury mt-6" aria-hidden="true"></div>
+          </header>
     
           <div class="space-y-6">
             <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
@@ -298,6 +351,39 @@
               dream into reality. Your new life begins here!
             </p>
           </div>
+        </div>
+      </div>
+    
+      <div class="w-full lg:w-1/2 h-[50vh] lg:h-screen relative overflow-hidden !bg-white dark:!bg-dark-luxury order-2">
+        <picture>
+          <source srcset="/images/services/relocation/relocation_two.webp" type="image/webp">
+          <img src="/images/services/relocation/relocation_two.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Dream property in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    
+    </section>
+
+    <section class="relative w-full py-32 bg-white dark:bg-dark-luxury transition-colors duration-500 overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.05]">
+        <div class="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-gold-luxury/20 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-[250px] h-[250px] bg-gold-luxury/10 rounded-full blur-[100px]"></div>
+      </div>
+    
+      <div class="max-w-xs mx-auto relative flex flex-col items-center justify-center gap-8">
+        <svg viewBox="0 0 100 100" class="w-24 h-24 text-gold-luxury/80" fill="none" stroke="currentColor"
+          stroke-width="1.5">
+          <path d="M40 35 C 30 20, 70 20, 60 35 C 55 45, 45 45, 40 35 Z" />
+          <path d="M25 75 Q 25 50, 50 50 Q 75 50, 75 75 Z" />
+          <line x1="20" y1="75" x2="80" y2="75" />
+          <line x1="30" y1="82" x2="70" y2="82" />
+        </svg>
+    
+        <div class="flex items-center gap-4">
+          <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-luxury/40"></div>
+          <div class="w-1.5 h-1.5 border border-gold-luxury rotate-45"></div>
+          <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-luxury/40"></div>
         </div>
       </div>
     </section>
