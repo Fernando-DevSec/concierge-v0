@@ -5,31 +5,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Us | CR Concierge | Luxury Services in Costa Rica</title>
+  <title>Private Shuttles & Luxury Transportation | CR Concierge Costa Rica</title>
   <meta name="description"
-    content="Discover the expertise behind CR Concierge. We provide bespoke luxury travel, relocation, and event planning services across Costa Rica.">
+    content="Experience stress-free travel with CR Concierge. Private shuttle services, luxury limousine rentals, and premium car rentals for exploring Costa Rica in total comfort.">
+  <link rel="canonical" href="https://www.conciergevipcr.com/pages/shuttle.html">
+  <meta name="author" content="CR Concierge">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.conciergevipcr.com/pages/shuttle.html">
+  <meta property="og:title" content="Bespoke Transportation Services | CR Concierge Costa Rica">
+  <meta property="og:description"
+    content="From private shuttles to luxury limousines. Discover the most reliable and elegant way to move around Costa Rica.">
+  <meta property="og:image" content="https://www.conciergevipcr.com/images/services/shuttles/shuttles_one.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Private & Luxury Shuttles | CR Concierge">
+  <meta property="twitter:description"
+    content="Stress-free private transportation and luxury car rentals in Costa Rica.">
+  <meta property="twitter:image" content="https://www.conciergevipcr.com/images/services/shuttles/shuttles_one.jpg">
 
   <script>
-    if (localStorage.getItem('color-theme') === 'dark' ||
-      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    (function () {
+      const theme = localStorage.getItem('color-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+    })();
   </script>
-
-  <link rel="stylesheet" href="/css/styles.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=block"
     rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
 
   <style>
     .pinyon-script-regular {
       font-family: "Pinyon Script", cursive;
-      font-weight: 400;
+      visibility: hidden;
+      /* Se revela mediante main.js con .fonts-loaded */
+    }
+
+    .fonts-loaded .pinyon-script-regular {
+      visibility: visible;
     }
 
     .font-nav {
@@ -38,22 +59,51 @@
       text-transform: uppercase;
     }
 
+    /* Preloader Identical Configuration */
     #preloader {
       background-color: #11120D;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
       display: flex;
-      visibility: visible;
     }
 
     body.loading {
       overflow: hidden;
     }
 
-    /* Custom Focus Ring for Accessibility */
+    /* Accessibility Focus */
     :focus-visible {
       outline: 2px solid #D4AF37;
       outline-offset: 4px;
     }
+
+    /* Fix para evitar cortes de palabras largas en títulos responsivos */
+    h2 {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: none;
+    }
   </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TaxiService",
+      "name": "CR Concierge Private Shuttles",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "CR Concierge",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San José",
+          "addressCountry": "CR"
+        }
+      },
+      "areaServed": "Costa Rica",
+      "description": "Premium private shuttle, car rental, and luxury limousine services across Costa Rica."
+    }
+  </script>
 </head>
 
 <body class="bg-white dark:bg-dark-luxury transition-colors duration-300 antialiased">
@@ -259,10 +309,125 @@
         </div>
       </div>
     </section>-->
-   
-  
+    
+    <!--<section id="service-shuttle-intro"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="shuttle-title">
+    
+      <div
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen lg:sticky lg:top-0 relative overflow-hidden !bg-zinc-50 dark:!bg-dark-luxury order-2 lg:order-1 flex items-center justify-center">
+        <picture class="w-full h-full">
+          <source srcset="/images/services/shuttles/shuttles_one.webp" type="image/webp">
+          <img src="/images/services/shuttles/shuttles_one.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Private shuttle services in Costa Rica" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+    
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-24 md:px-16 lg:px-20 xl:px-32 order-1 lg:order-2 bg-zinc-50 dark:bg-dark-luxury">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+    
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
+              Transportation — Private
+            </span>
+    
+            <h2 id="shuttle-title"
+              class="font-nav text-[9vw] md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.95] tracking-tighter mb-4 break-words hyphens-none">
+              Enjoy Stress-Free Travel<br>
+              <span class="text-slate-400 dark:text-zinc-600">with Our Shuttle <span class="md:whitespace-nowrap">Private
+                  Services</span></span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury mt-6" aria-hidden="true"></div>
+          </header>
+    
+          <div class="space-y-6">
+            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+              If you're looking to explore without the hassle of driving, our shuttle service is the perfect solution.
+              Unlike renting a car, where you’re responsible for navigating unfamiliar roads or dangerous highways, our
+              shuttle service lets you sit back and relax. No need to worry about the stress of driving in a foreign
+              country, especially after a long day of sightseeing or activities.
+            </p>
+            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+              Our professional drivers take care of all the details, allowing you to maximize your enjoyment. You can focus
+              on the journey, chat with friends, or simply enjoy the scenery without worrying about the road. Plus, our
+              local drivers know the best routes, saving you time and ensuring you reach your destination quickly and
+              safely—even at night.
+            </p>
+            <p
+              class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic">
+              Along the way, they can offer valuable advice, suggesting the best spots for a meal, the perfect place to stop
+              for a break, or even where to find the nearest bathroom. Think of them not just as drivers, but as local
+              guides who can make your adventure even more memorable. Whether you're tired, looking to avoid driving on
+              unfamiliar roads, or simply want to make the most of your time exploring, our shuttle service offers the
+              freedom to enjoy every moment of your trip.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+    </section>-->
 
-    <section
+    <section id="service-shuttle-intro"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="shuttle-title">
+    
+      <div
+        class="w-full lg:w-1/2 h-auto min-h-[60vh] lg:h-screen lg:sticky lg:top-0 relative overflow-hidden !bg-zinc-50 dark:!bg-dark-luxury order-2 lg:order-1 flex items-center justify-center">
+        <picture class="w-full h-full">
+          <source srcset="/images/services/shuttles/shuttles_one.webp" type="image/webp">
+          <img src="/images/services/shuttles/shuttles_one.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Private shuttle services in Costa Rica" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+    
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-24 md:px-16 lg:px-20 xl:px-32 order-1 lg:order-2 bg-zinc-50 dark:bg-dark-luxury">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+    
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
+              Transportation — Private
+            </span>
+    
+            <h2 id="shuttle-title"
+              class="font-nav text-[9vw] md:text-5xl lg:text-6xl xl:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.95] tracking-tighter mb-4 break-words hyphens-none max-w-full">
+              Enjoy Stress-Free Travel<br>
+              <span class="text-slate-400 dark:text-zinc-600">with Our Shuttle Private Services</span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury mt-6" aria-hidden="true"></div>
+          </header>
+    
+          <div class="space-y-6">
+            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+              If you're looking to explore without the hassle of driving, our shuttle service is the perfect solution.
+              Unlike renting a car, where you’re responsible for navigating unfamiliar roads or dangerous highways, our
+              shuttle service lets you sit back and relax. No need to worry about the stress of driving in a foreign
+              country, especially after a long day of sightseeing or activities.
+            </p>
+            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+              Our professional drivers take care of all the details, allowing you to maximize your enjoyment. You can focus
+              on the journey, chat with friends, or simply enjoy the scenery without worrying about the road. Plus, our
+              local drivers know the best routes, saving you time and ensuring you reach your destination quickly and
+              safely—even at night.
+            </p>
+            <p
+              class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic">
+              Along the way, they can offer valuable advice, suggesting the best spots for a meal, the perfect place to stop
+              for a break, or even where to find the nearest bathroom. Think of them not just as drivers, but as local
+              guides who can make your adventure even more memorable. Whether you're tired, looking to avoid driving on
+              unfamiliar roads, or simply want to make the most of your time exploring, our shuttle service offers the
+              freedom to enjoy every moment of your trip.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+    </section>
+
+    <!--<section
       class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row-reverse items-center bg-white dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
     
       <div
@@ -302,9 +467,110 @@
           </div>
         </div>
       </div>
+    </section>-->
+
+    <!--<section id="service-rental-cars"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="rental-title">
+    
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-24 md:px-16 lg:px-20 xl:px-32 order-1 bg-white dark:bg-dark-luxury">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+    
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
+              Transportation — Rental
+            </span>
+    
+            <h2 id="rental-title"
+              class="font-nav text-[9vw] md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4 break-words hyphens-none">
+              Explore the Beauty of the Land<br>
+              <span class="text-slate-400 dark:text-zinc-600">with Our <span class="md:whitespace-nowrap">Rental
+                  Cars</span></span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury mt-6" aria-hidden="true"></div>
+          </header>
+    
+          <div class="space-y-6">
+            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+              Imagine cruising through breathtaking landscapes, with the wind in your hair and the freedom to explore at
+              your own pace. Renting a car with us gives you the perfect opportunity to discover hidden gems and majestic
+              views, like this stunning volcano in the distance.
+            </p>
+            <p
+              class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic">
+              Whether you’re planning a scenic road trip, a relaxing getaway, or just want to take in the beauty of nature
+              from the comfort of your car, we offer reliable vehicles that make every journey unforgettable. Let the open
+              road lead you to new adventures, with your perfect ride as your companion. Don’t just visit – immerse yourself
+              in the experience and make every moment count.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+      <div
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen lg:sticky lg:top-0 relative overflow-hidden !bg-white dark:!bg-dark-luxury order-2 flex items-center justify-center">
+        <picture class="w-full h-full">
+          <source srcset="/images/services/shuttles/shuttles_two.webp" type="image/webp">
+          <img src="/images/services/shuttles/shuttles_two.jpg"
+            class="w-full h-full object-cover object-top grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Car rental for volcanic sightseeing in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    
+    </section>-->
+
+    <section id="service-rental-cars"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="rental-title">
+    
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-24 md:px-16 lg:px-20 xl:px-32 order-1 bg-white dark:bg-dark-luxury">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+    
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
+              Transportation — Rental
+            </span>
+    
+            <h2 id="rental-title"
+              class="font-nav text-[9vw] md:text-5xl lg:text-6xl xl:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.95] tracking-tighter mb-4 break-words hyphens-none max-w-full">
+              Explore the Beauty of the Land<br>
+              <span class="text-slate-400 dark:text-zinc-600">with Our Rental Cars</span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury mt-6" aria-hidden="true"></div>
+          </header>
+    
+          <div class="space-y-6">
+            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+              Imagine cruising through breathtaking landscapes, with the wind in your hair and the freedom to explore at
+              your own pace. Renting a car with us gives you the perfect opportunity to discover hidden gems and majestic
+              views, like this stunning volcano in the distance.
+            </p>
+            <p
+              class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic">
+              Whether you’re planning a scenic road trip, a relaxing getaway, or just want to take in the beauty of nature
+              from the comfort of your car, we offer reliable vehicles that make every journey unforgettable. Let the open
+              road lead you to new adventures, with your perfect ride as your companion. Don’t just visit – immerse yourself
+              in the experience and make every moment count.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+      <div
+        class="w-full lg:w-1/2 h-auto min-h-[60vh] lg:h-screen lg:sticky lg:top-0 relative overflow-hidden !bg-white dark:!bg-dark-luxury order-2 flex items-center justify-center">
+        <picture class="w-full h-full">
+          <source srcset="/images/services/shuttles/shuttles_two.webp" type="image/webp">
+          <img src="/images/services/shuttles/shuttles_two.jpg"
+            class="w-full h-full object-cover object-top grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Car rental for volcanic sightseeing in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    
     </section>
 
-    <section
+    <!--<section
       class="relative w-full min-h-[60vh] lg:min-h-screen flex flex-col lg:flex-row items-center bg-zinc-50 dark:bg-dark-luxury overflow-hidden border-b border-zinc-100 dark:border-white/5">
     
       <div
@@ -346,6 +612,140 @@
               that makes you feel like royalty.
             </p>
           </div>
+        </div>
+      </div>
+    </section>-->
+
+    <!--<section id="service-luxury-limo"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="limo-title">
+    
+      <div
+        class="w-full lg:w-1/2 h-[50vh] lg:h-screen lg:sticky lg:top-0 relative overflow-hidden !bg-zinc-50 dark:!bg-dark-luxury order-2 lg:order-1 flex items-center justify-center">
+        <picture class="w-full h-full">
+          <source srcset="/images/services/shuttles/shuttles_three.webp" type="image/webp">
+          <img src="/images/services/shuttles/shuttles_three.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Luxury limousine service in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-24 md:px-16 lg:px-20 xl:px-32 order-1 lg:order-2 bg-zinc-50 dark:bg-dark-luxury">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+    
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
+              Transportation — Luxury
+            </span>
+    
+            <h2 id="limo-title"
+              class="font-nav text-[9vw] md:text-5xl lg:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.95] tracking-tighter mb-4 break-words hyphens-none">
+              Experience Luxury and Elegance<br>
+              <span class="text-slate-400 dark:text-zinc-600">with Our <span class="md:whitespace-nowrap">Limousine
+                  Service</span></span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury mt-6" aria-hidden="true"></div>
+          </header>
+    
+          <div class="space-y-6">
+            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+              For those who seek the ultimate in comfort and style, our limousine service is the epitome of luxury travel.
+              Whether you're attending a high-profile event, celebrating a milestone, or simply want to add a touch of
+              glamour to your journey, our professionally chauffeured limousines offer an unmatched experience.
+            </p>
+            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+              From the moment you step inside, you'll be surrounded by the finest amenities, ensuring a smooth, relaxing,
+              and VIP-level experience. Enjoy privacy, elegance, and top-tier service as you’re driven to your destination
+              in complete comfort. Our chauffeurs are discreet, highly trained, and dedicated to providing a seamless
+              experience, allowing you to focus on what matters most—whether it’s preparing for a big event or simply
+              enjoying the ride.
+            </p>
+            <p
+              class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic">
+              With our limousine service, you're not just getting from point A to point B; you're indulging in an experience
+              that makes you feel like royalty.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+    </section>-->
+
+    <section id="service-luxury-limo"
+      class="relative w-full min-h-screen flex flex-col lg:flex-row bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
+      aria-labelledby="limo-title">
+    
+      <div
+        class="w-full lg:w-1/2 h-auto min-h-[60vh] lg:h-screen lg:sticky lg:top-0 relative overflow-hidden !bg-zinc-50 dark:!bg-dark-luxury order-2 lg:order-1 flex items-center justify-center">
+        <picture class="w-full h-full">
+          <source srcset="/images/services/shuttles/shuttles_three.webp" type="image/webp">
+          <img src="/images/services/shuttles/shuttles_three.jpg"
+            class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[3000ms] ease-out hover:scale-105"
+            alt="Luxury limousine service in Costa Rica" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    
+      <div
+        class="w-full lg:w-1/2 flex items-center justify-center px-6 py-24 md:px-16 lg:px-20 xl:px-32 order-1 lg:order-2 bg-zinc-50 dark:bg-dark-luxury">
+        <div class="w-full max-w-xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+    
+          <header class="mb-8 md:mb-10">
+            <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
+              Transportation — Luxury
+            </span>
+    
+            <h2 id="limo-title"
+              class="font-nav text-[9vw] md:text-5xl lg:text-6xl xl:text-7xl text-slate-900 dark:text-white font-black uppercase leading-[0.95] tracking-tighter mb-4 break-words hyphens-none max-w-full">
+              Experience Luxury and Elegance<br>
+              <span class="text-slate-400 dark:text-zinc-600">with Our Limousine Service</span>
+            </h2>
+            <div class="h-1 w-20 bg-gold-luxury mt-6" aria-hidden="true"></div>
+          </header>
+    
+          <div class="space-y-6">
+            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+              For those who seek the ultimate in comfort and style, our limousine service is the epitome of luxury travel.
+              Whether you're attending a high-profile event, celebrating a milestone, or simply want to add a touch of
+              glamour to your journey, our professionally chauffeured limousines offer an unmatched experience.
+            </p>
+            <p class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed">
+              From the moment you step inside, you'll be surrounded by the finest amenities, ensuring a smooth, relaxing,
+              and VIP-level experience. Enjoy privacy, elegance, and top-tier service as you’re driven to your destination
+              in complete comfort. Our chauffeurs are discreet, highly trained, and dedicated to providing a seamless
+              experience, allowing you to focus on what matters most—whether it’s preparing for a big event or simply
+              enjoying the ride.
+            </p>
+            <p
+              class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic">
+              With our limousine service, you're not just getting from point A to point B; you're indulging in an experience
+              that makes you feel like royalty.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+    </section>
+
+    <section class="relative w-full py-32 bg-white dark:bg-dark-luxury transition-colors duration-500 overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.05]">
+        <div class="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-gold-luxury/20 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-[250px] h-[250px] bg-gold-luxury/10 rounded-full blur-[100px]"></div>
+      </div>
+    
+      <div class="max-w-xs mx-auto relative flex flex-col items-center justify-center gap-8">
+        <svg viewBox="0 0 100 100" class="w-24 h-24 text-gold-luxury/80" fill="none" stroke="currentColor"
+          stroke-width="1.5">
+          <path d="M40 35 C 30 20, 70 20, 60 35 C 55 45, 45 45, 40 35 Z" />
+          <path d="M25 75 Q 25 50, 50 50 Q 75 50, 75 75 Z" />
+          <line x1="20" y1="75" x2="80" y2="75" />
+          <line x1="30" y1="82" x2="70" y2="82" />
+        </svg>
+    
+        <div class="flex items-center gap-4">
+          <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-luxury/40"></div>
+          <div class="w-1.5 h-1.5 border border-gold-luxury rotate-45"></div>
+          <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold-luxury/40"></div>
         </div>
       </div>
     </section>
