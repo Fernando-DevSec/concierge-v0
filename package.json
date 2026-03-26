@@ -8,7 +8,7 @@
     "tailwind": "npx tailwindcss -i ./src/css/input.css -o ./src/css/styles.css --watch",
     "server": "live-server src",
     "dev": "concurrently \"npm run tailwind\" \"npm run server\"",
-    "build": "rm -rf public && mkdir -p public/css/vendors public/js/vendors && tailwindcss -i ./src/css/input.css -o ./public/css/styles.css --minify && cp src/index.html public/ && cp -r src/pages src/images src/js public/ && cp src/css/vendors/* public/css/vendors/"
+    "build": "rm -rf public && mkdir -p public/css/vendors public/js/vendors && npx tailwindcss -i ./src/css/input.css -o ./public/css/styles.css --minify && cp src/index.html public/ && cp -r src/en src/es src/fr src/images src/js public/ && cp -r src/css/vendors/* public/css/vendors/"
   },
   "repository": {
     "type": "git",
