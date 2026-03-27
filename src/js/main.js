@@ -3,13 +3,14 @@
  * @description Core interactions for Concierge VIP Costa Rica.
  * Includes: Custom Ping-Pong Slider (10s), Stable Parallax (v1.9.0 logic), 
  * Mobile Nav with Dropdowns, and Reveal Animations.
- * @version 3.7.0
+ * @version 3.8.0
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     initPreloader();
     initDarkMode();
     initMobileNavigation(); 
+    initLanguageSelector(); // <-- Nueva funcionalidad añadida
     initBackToTop();
     initCustomHeroSlider(); 
     initParallaxEffects();
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // -------------------------------------------------------------------------
-// 1. NAVIGATION
+// 1. NAVIGATION & LANGUAGES
 // -------------------------------------------------------------------------
 const initMobileNavigation = () => {
     const btn = document.getElementById('mobile-menu-button');
@@ -49,6 +50,32 @@ const initMobileNavigation = () => {
             if (link !== srvBtn) {
                 menu.classList.add('hidden');
                 btn.classList.remove('rotate-90');
+            }
+        });
+    });
+};
+
+// Nueva función para manejar el cambio de idioma dinámico
+const initLanguageSelector = () => {
+    const langLinks = document.querySelectorAll('.language-link');
+    
+    langLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetLang = link.getAttribute('data-lang');
+            const currentPath = window.location.pathname;
+
+            // Limpiamos la ruta y la dividimos en segmentos
+            // Ejemplo: "/en/about/" -> ["en", "about"]
+            const pathSegments = currentPath.split('/').filter(segment => segment.length > 0);
+
+            if (pathSegments.length > 0) {
+                // Reemplazamos el primer segmento (el idioma) por el seleccionado
+                pathSegments[0] = targetLang;
+                window.location.href = '/' + pathSegments.join('/') + '/';
+            } else {
+                // Si por alguna razón estamos en el root absoluto "/"
+                window.location.href = '/' + targetLang + '/';
             }
         });
     });
@@ -138,7 +165,6 @@ const initPreloader = async () => {
     const bar = document.getElementById('preloader-bar');
     if (!p) return;
 
-    // Sincronizar fuentes antes de ocultar
     try {
         await document.fonts.ready;
         document.documentElement.classList.add('fonts-loaded');
