@@ -2529,6 +2529,10 @@ video {
     max-height: 80vh;
   }
 
+  .xl\:max-h-\[85vh\] {
+    max-height: 85vh;
+  }
+
   .xl\:min-h-screen {
     min-height: 100vh;
   }
@@ -2555,6 +2559,10 @@ video {
 
   .xl\:flex-row {
     flex-direction: row;
+  }
+
+  .xl\:p-12 {
+    padding: 3rem;
   }
 
   .xl\:px-20 {
@@ -2588,6 +2596,14 @@ video {
 
   .xl\:text-\[clamp\(3\.5rem\2c 5vw\2c 5rem\)\] {
     font-size: clamp(3.5rem, 5vw, 5rem);
+  }
+
+  .xl\:text-\[clamp\(3\.5rem\2c 4\.5vw\2c 4\.8rem\)\] {
+    font-size: clamp(3.5rem, 4.5vw, 4.8rem);
+  }
+
+  .xl\:text-\[clamp\(3\.5rem\2c 4\.2vw\2c 4\.5rem\)\] {
+    font-size: clamp(3.5rem, 4.2vw, 4.5rem);
   }
 }
 
