@@ -2574,6 +2574,11 @@ video {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -2750,6 +2755,11 @@ video {
   .xl\:text-\[2rem\] {
     font-size: 2rem;
   }
+
+  .xl\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -2781,6 +2791,11 @@ video {
 
   .\32xl\:text-5xl {
     font-size: 3rem;
+    line-height: 1;
+  }
+
+  .\32xl\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1;
   }
 }
