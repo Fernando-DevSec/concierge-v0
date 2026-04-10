@@ -1635,6 +1635,10 @@ video {
   font-size: 9vw;
 }
 
+.text-\[clamp\(1\.8rem\2c 7vw\2c 3rem\)\] {
+  font-size: clamp(1.8rem, 7vw, 3rem);
+}
+
 .text-\[clamp\(2\.2rem\2c 7vw\2c 3\.5rem\)\] {
   font-size: clamp(2.2rem, 7vw, 3.5rem);
 }
@@ -1673,30 +1677,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[clamp\(2\.2rem\2c 8vw\2c 3\.8rem\)\] {
-  font-size: clamp(2.2rem, 8vw, 3.8rem);
-}
-
-.text-\[clamp\(1\.8rem\2c 7vw\2c 3\.2rem\)\] {
-  font-size: clamp(1.8rem, 7vw, 3.2rem);
-}
-
-.text-\[clamp\(1\.6rem\2c 6vw\2c 2\.8rem\)\] {
-  font-size: clamp(1.6rem, 6vw, 2.8rem);
-}
-
-.text-\[clamp\(1\.8rem\2c 8vw\2c 3\.5rem\)\] {
-  font-size: clamp(1.8rem, 8vw, 3.5rem);
-}
-
-.text-\[clamp\(1\.8rem\2c 7vw\2c 3rem\)\] {
-  font-size: clamp(1.8rem, 7vw, 3rem);
-}
-
-.text-\[clamp\(1\.6rem\2c 6vw\2c 2\.5rem\)\] {
-  font-size: clamp(1.6rem, 6vw, 2.5rem);
 }
 
 .font-black {
@@ -1751,14 +1731,6 @@ video {
   line-height: 1.25;
 }
 
-.leading-\[1\.1\] {
-  line-height: 1.1;
-}
-
-.leading-\[1\.2\] {
-  line-height: 1.2;
-}
-
 .tracking-\[0\.25em\] {
   letter-spacing: 0.25em;
 }
@@ -1781,14 +1753,6 @@ video {
 
 .tracking-tighter {
   letter-spacing: -0.05em;
-}
-
-.tracking-normal {
-  letter-spacing: 0em;
-}
-
-.tracking-\[-0\.06em\] {
-  letter-spacing: -0.06em;
 }
 
 .text-gold-luxury {
@@ -2385,6 +2349,10 @@ video {
     padding: 4rem;
   }
 
+  .md\:p-8 {
+    padding: 2rem;
+  }
+
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -2423,6 +2391,11 @@ video {
     padding-left: 2rem;
   }
 
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -2446,11 +2419,6 @@ video {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .md\:tracking-\[0\.5em\] {
@@ -2560,6 +2528,11 @@ video {
     padding-right: 2rem;
   }
 
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .lg\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
@@ -2578,11 +2551,6 @@ video {
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .lg\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
   }
 }
 
@@ -2688,6 +2656,16 @@ video {
     padding-right: 8rem;
   }
 
+  .xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .xl\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
@@ -2702,8 +2680,8 @@ video {
     font-size: clamp(3.5rem, 4.2vw, 4.5rem);
   }
 
-  .xl\:text-\[clamp\(3\.5rem\2c 5vw\2c 5rem\)\] {
-    font-size: clamp(3.5rem, 5vw, 5rem);
+  .xl\:text-\[clamp\(3\.5rem\2c 5vw\2c 4rem\)\] {
+    font-size: clamp(3.5rem, 5vw, 4rem);
   }
 
   .xl\:text-\[clamp\(3rem\2c 3\.5vw\2c 4\.2rem\)\] {
@@ -2714,60 +2692,9 @@ video {
     font-size: clamp(3rem, 4vw, 4.2rem);
   }
 
-  .xl\:text-\[clamp\(2\.8rem\2c 3\.2vw\2c 3\.8rem\)\] {
-    font-size: clamp(2.8rem, 3.2vw, 3.8rem);
-  }
-
-  .xl\:text-\[clamp\(2\.5rem\2c 3vw\2c 3\.8rem\)\] {
-    font-size: clamp(2.5rem, 3vw, 3.8rem);
-  }
-
-  .xl\:text-\[clamp\(2\.2rem\2c 2\.5vw\2c 3\.5rem\)\] {
-    font-size: clamp(2.2rem, 2.5vw, 3.5rem);
-  }
-
-  .xl\:text-\[clamp\(2\.2rem\2c 2\.2vw\2c 3\.2rem\)\] {
-    font-size: clamp(2.2rem, 2.2vw, 3.2rem);
-  }
-
-  .xl\:text-\[clamp\(2rem\2c 2vw\2c 2\.8rem\)\] {
-    font-size: clamp(2rem, 2vw, 2.8rem);
-  }
-
-  .xl\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  .xl\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .xl\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  .xl\:text-\[2\.2rem\] {
-    font-size: 2.2rem;
-  }
-
-  .xl\:text-\[2\.6rem\] {
-    font-size: 2.6rem;
-  }
-
-  .xl\:text-\[2rem\] {
-    font-size: 2rem;
-  }
-
   .xl\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
-  }
-
-  .xl\:text-\[clamp\(3\.5rem\2c 5vw\2c 4rem\)\] {
-    font-size: clamp(3.5rem, 5vw, 4rem);
   }
 }
 
@@ -2781,23 +2708,6 @@ video {
     padding-right: 8rem;
   }
 
-  .\32xl\:text-7xl {
-    font-size: 4.5rem;
-    line-height: 1;
-  }
-
-  .\32xl\:text-\[clamp\(4rem\2c 4\.5vw\2c 5rem\)\] {
-    font-size: clamp(4rem, 4.5vw, 5rem);
-  }
-
-  .\32xl\:text-\[clamp\(3rem\2c 3\.5vw\2c 4\.5rem\)\] {
-    font-size: clamp(3rem, 3.5vw, 4.5rem);
-  }
-
-  .\32xl\:text-\[clamp\(2\.8rem\2c 3\.2vw\2c 4rem\)\] {
-    font-size: clamp(2.8rem, 3.2vw, 4rem);
-  }
-
   .\32xl\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -2805,6 +2715,11 @@ video {
 
   .\32xl\:text-6xl {
     font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .\32xl\:text-7xl {
+    font-size: 4.5rem;
     line-height: 1;
   }
 }
