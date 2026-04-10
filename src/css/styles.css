@@ -2661,18 +2661,13 @@ video {
     line-height: 2.25rem;
   }
 
-  .xl\:text-5xl {
-    font-size: 3rem;
+  .xl\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1;
   }
 
   .xl\:text-7xl {
     font-size: 4.5rem;
-    line-height: 1;
-  }
-
-  .xl\:text-8xl {
-    font-size: 6rem;
     line-height: 1;
   }
 
@@ -2690,11 +2685,6 @@ video {
 
   .xl\:text-\[clamp\(3rem\2c 4vw\2c 4\.2rem\)\] {
     font-size: clamp(3rem, 4vw, 4.2rem);
-  }
-
-  .xl\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
   }
 }
 
