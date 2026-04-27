@@ -106,6 +106,62 @@
     }
   </style>
 
+  <!-- Slider Styles -->
+  <style>
+    /* Dynamic Viewport Correction */
+    #luxury-slider {
+      height: 100vh;
+      /* Fallback for older browsers */
+      height: 100dvh;
+    }
+  
+    .slider-item.active {
+      opacity: 1 !important;
+      z-index: 20 !important;
+    }
+  
+    /* Animation Keyframes */
+    @keyframes titleIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+  
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    /* Trigger animations only when slide is active */
+    .slider-item.active .animate-title-in {
+      animation: titleIn 0.8s ease-out forwards;
+    }
+  
+    .slider-item.active .animate-text-in {
+      animation: titleIn 0.8s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+  
+    /* Interactive thumbnail effects */
+    .thumb-item:hover {
+      transform: translateY(-10px);
+      border-color: #D4AF37;
+    }
+  
+    /* Responsive adjustments for small screens with low height */
+    @media (max-height: 720px) {
+      .slider-content {
+        padding-top: 4rem;
+      }
+  
+      #thumbnail-container {
+        bottom: 4rem;
+        transform: scale(0.85);
+        transform-origin: bottom right;
+      }
+    }
+  </style>
 
 
 </head>
@@ -378,7 +434,7 @@
       </div> 
     </section>-->
 
-    <section id="luxury-slider" class="relative w-full h-screen bg-black overflow-hidden group">
+    <!--<section id="luxury-slider" class="relative w-full h-screen bg-black overflow-hidden group">
     
       <div id="slider-container" class="relative w-full h-full">
     
@@ -536,9 +592,111 @@
           if (items.length > 0) items[0].classList.add('active');
         });
       </script>
+    </section>-->
+
+
+    <!-- SLIDER -->
+
+    <section id="luxury-slider" class="relative w-full h-dvh bg-black overflow-hidden group">
+    
+      <div id="slider-container" class="relative w-full h-full">
+    
+        <div class="slider-item absolute inset-0 opacity-0 transition-all duration-[1200ms] ease-in-out active">
+          <picture>
+            <source srcset="/images/slider/slider_one.webp" type="image/webp">
+            <img src="/images/slider/slider_one.jpg" class="w-full h-full object-cover opacity-60 brightness-[0.85]"
+              alt="Luxury Yacht Experience in Costa Rica - Unforgettable Moments" width="1920" height="1080"
+              fetchpriority="high" loading="eager">
+          </picture>
+          <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent z-10"></div>
+    
+          <div
+            class="slider-content absolute top-1/2 left-6 md:left-20 -translate-y-1/2 w-full max-w-[90%] md:max-w-2xl text-white z-20 pr-6 pt-20">
+            <h2
+              class="font-nav text-[clamp(1.75rem,7vw,5rem)] leading-[1.1] md:leading-none font-black uppercase tracking-tighter mb-6 animate-title-in drop-shadow-[0_5px_15px_rgba(0,0,0,0.6)]">
+              Wishing an<br><span class="text-gold-luxury">unforgettable moment?</span>
+            </h2>
+            <p class="font-nav text-xs md:text-base font-light tracking-wide max-w-md animate-text-in drop-shadow-md">
+              We provide unique experiences
+            </p>
+          </div>
+        </div>
+    
+        <div class="slider-item absolute inset-0 opacity-0 transition-all duration-[1200ms] ease-in-out">
+          <picture>
+            <source srcset="/images/slider/slider_two.webp" type="image/webp">
+            <img src="/images/slider/slider_two.jpg" class="w-full h-full object-cover opacity-60 brightness-[0.85]"
+              alt="Natural jewels and exotic landscapes of Costa Rica" width="1920" height="1080" loading="lazy">
+          </picture>
+          <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent z-10"></div>
+          <div
+            class="slider-content absolute top-1/2 left-6 md:left-20 -translate-y-1/2 w-full max-w-[90%] md:max-w-2xl text-white z-20 pr-6 pt-20">
+            <h2
+              class="font-nav text-[clamp(1.75rem,7vw,5rem)] leading-[1.1] md:leading-none font-black uppercase tracking-tighter mb-6 animate-title-in drop-shadow-[0_5px_15px_rgba(0,0,0,0.6)]">
+              Visit natural<br><span class="text-gold-luxury">jewels of Costa Rica</span>
+            </h2>
+            <p class="font-nav text-xs md:text-base font-light tracking-wide max-w-md animate-text-in drop-shadow-md">
+              Expert guidance to the unseen
+            </p>
+          </div>
+        </div>
+    
+        <div class="slider-item absolute inset-0 opacity-0 transition-all duration-[1200ms] ease-in-out">
+          <picture>
+            <source srcset="/images/slider/slider_three.webp" type="image/webp">
+            <img src="/images/slider/slider_three.jpg" class="w-full h-full object-cover opacity-60 brightness-[0.85]"
+              alt="High-level luxury accommodation and real estate in Costa Rica" width="1920" height="1080" loading="lazy">
+          </picture>
+          <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent z-10"></div>
+          <div
+            class="slider-content absolute top-1/2 left-6 md:left-20 -translate-y-1/2 w-full max-w-[90%] md:max-w-2xl text-white z-20 pr-6 pt-20">
+            <h2
+              class="font-nav text-[clamp(1.75rem,7vw,5rem)] leading-[1.1] md:leading-none font-black uppercase tracking-tighter mb-6 animate-title-in drop-shadow-[0_5px_15px_rgba(0,0,0,0.6)]">
+              High level<br><span class="text-gold-luxury">accommodation</span>
+            </h2>
+            <p class="font-nav text-xs md:text-base font-light tracking-wide max-w-md animate-text-in drop-shadow-md">
+              Vacations & Real Estate
+            </p>
+          </div>
+        </div>
+      </div>
+    
+      <div id="thumbnail-container" class="hidden md:flex absolute bottom-12 right-20 gap-4 z-40 overflow-visible">
+        <div
+          class="thumb-item w-32 h-44 rounded-lg overflow-hidden border border-white/20 shadow-2xl transition-all duration-500 cursor-pointer">
+          <picture>
+            <source srcset="/images/slider/slider_two.webp" type="image/webp">
+            <img src="/images/slider/slider_two.jpg" class="w-full h-full object-cover" alt="Preview natural jewels slide"
+              loading="lazy">
+          </picture>
+        </div>
+        <div
+          class="thumb-item w-32 h-44 rounded-lg overflow-hidden border border-white/20 shadow-2xl transition-all duration-500 cursor-pointer">
+          <picture>
+            <source srcset="/images/slider/slider_three.webp" type="image/webp">
+            <img src="/images/slider/slider_three.jpg" class="w-full h-full object-cover"
+              alt="Preview luxury accommodation slide" loading="lazy">
+          </picture>
+        </div>
+        <div
+          class="thumb-item w-32 h-44 rounded-lg overflow-hidden border border-white/20 shadow-2xl transition-all duration-500 cursor-pointer">
+          <picture>
+            <source srcset="/images/slider/slider_one.webp" type="image/webp">
+            <img src="/images/slider/slider_one.jpg" class="w-full h-full object-cover" alt="Preview yacht experience slide"
+              loading="lazy">
+          </picture>
+        </div>
+      </div>
+    
+      <div class="absolute bottom-10 left-6 md:left-20 flex gap-4 z-50">
+        <button id="prevBtn" aria-label="Show previous luxury slide"
+          class="w-12 h-12 border border-white/30 flex items-center justify-center text-white hover:bg-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 backdrop-blur-md bg-white/5">←</button>
+        <button id="nextBtn" aria-label="Show next luxury slide"
+          class="w-12 h-12 border border-white/30 flex items-center justify-center text-white hover:bg-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 backdrop-blur-md bg-white/5">→</button>
+      </div>
     </section>
 
-
+    <!-- SLIDER -->
 
 
     <section id="concierge-definition"

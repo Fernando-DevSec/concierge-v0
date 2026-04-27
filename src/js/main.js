@@ -1,8 +1,9 @@
 /**
  * @file main.js
- * @description Core interactions for Concierge VIP Costa Rica.
- * Includes: Custom Ping-Pong Slider (10s), Stable Parallax (v1.9.0 logic), 
- * Mobile Nav with Dropdowns, and Reveal Animations.
+ * @description Core interactions and UI logic for Concierge VIP Costa Rica.
+ * Handles the high-end hero slider, responsive navigation, parallax effects, 
+ * language switching, and scroll-triggered animations.
+ * @author Fernando (DevSec)
  * @version 3.8.0
  */
 
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPreloader();
     initDarkMode();
     initMobileNavigation(); 
-    initLanguageSelector(); // <-- Nueva funcionalidad añadida
+    initLanguageSelector(); 
     initBackToTop();
     initCustomHeroSlider(); 
     initParallaxEffects();
@@ -18,8 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // -------------------------------------------------------------------------
-// 1. NAVIGATION & LANGUAGES
+// 1. NAVIGATION & LANGUAGE LOCALIZATION
 // -------------------------------------------------------------------------
+
+/**
+ * Manages mobile menu visibility, dropdown behaviors, and icon rotations.
+ * Ensures the menu closes upon link selection (excluding dropdown triggers).
+ */
 const initMobileNavigation = () => {
     const btn = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
@@ -55,7 +61,11 @@ const initMobileNavigation = () => {
     });
 };
 
-// Nueva función para manejar el cambio de idioma dinámico
+/**
+ * Handles dynamic language switching based on URL path segments.
+ * Expected URL pattern: domain.com/{lang}/path/
+ * @requires data-lang attribute on .language-link elements
+ */
 const initLanguageSelector = () => {
     const langLinks = document.querySelectorAll('.language-link');
     
@@ -64,17 +74,12 @@ const initLanguageSelector = () => {
             e.preventDefault();
             const targetLang = link.getAttribute('data-lang');
             const currentPath = window.location.pathname;
-
-            // Limpiamos la ruta y la dividimos en segmentos
-            // Ejemplo: "/en/about/" -> ["en", "about"]
             const pathSegments = currentPath.split('/').filter(segment => segment.length > 0);
 
             if (pathSegments.length > 0) {
-                // Reemplazamos el primer segmento (el idioma) por el seleccionado
                 pathSegments[0] = targetLang;
                 window.location.href = '/' + pathSegments.join('/') + '/';
             } else {
-                // Si por alguna razón estamos en el root absoluto "/"
                 window.location.href = '/' + targetLang + '/';
             }
         });
@@ -82,31 +87,46 @@ const initLanguageSelector = () => {
 };
 
 // -------------------------------------------------------------------------
-// 2. CUSTOM HERO SLIDER
+// 2. HERO SLIDER ENGINE
 // -------------------------------------------------------------------------
+
+/**
+ * Orchestrates the luxury fade-in slider.
+ * Manages active states, thumbnail rotation (desktop), and DOM reflow 
+ * triggers to restart CSS animations on slide change.
+ * @param {number} index - Target slide index
+ * @param {string} direction - Movement direction ('next'|'prev') for thumbnail shifting
+ */
 const initCustomHeroSlider = () => {
-    const track = document.getElementById('slider-track');
-    if (!track) return;
+    const items = document.querySelectorAll('.slider-item');
+    const thumbContainer = document.getElementById('thumbnail-container');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    
+    if (items.length === 0 || !nextBtn || !prevBtn) return;
 
-    const slides = track.children;
-    const totalSlides = slides.length;
     let currentIndex = 0;
-    let movingForward = true;
 
-    const updateSlider = () => {
-        if (movingForward) {
-            if (currentIndex < totalSlides - 1) currentIndex++;
-            else { movingForward = false; currentIndex--; }
-        } else {
-            if (currentIndex > 0) currentIndex--;
-            else { movingForward = true; currentIndex++; }
+    const updateSlider = (index, direction = 'next') => {
+        // Toggle active classes for CSS visibility transitions
+        items.forEach((item, i) => {
+            item.classList.remove('active');
+            if (i === index) item.classList.add('active');
+        });
+
+        // Handle thumbnail reordering for infinite-loop visual effect
+        const thumbs = document.querySelectorAll('.thumb-item');
+        if (thumbs.length > 0 && thumbContainer && window.getComputedStyle(thumbContainer).display !== 'none') {
+            if (direction === 'next') {
+                thumbContainer.appendChild(thumbs[0]);
+            } else {
+                thumbContainer.prepend(thumbs[thumbs.length - 1]);
+            }
         }
 
-        track.style.transform = `translateX(${currentIndex * -100}%)`;
-
-        const activeSlide = slides[currentIndex];
-        const elementsToReset = activeSlide.querySelectorAll('.reveal-content, img, .animate-grow-line');
-
+        // Force DOM reflow to restart CSS keyframe animations
+        const activeSlide = items[index];
+        const elementsToReset = activeSlide.querySelectorAll('.animate-title-in, .animate-text-in, img');
         elementsToReset.forEach(el => {
             el.style.animation = 'none';
             el.offsetHeight; 
@@ -114,19 +134,47 @@ const initCustomHeroSlider = () => {
         });
     };
 
-    let sliderInterval = setInterval(updateSlider, 10000);
+    // Manual navigation event listeners
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateSlider(currentIndex, 'next');
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateSlider(currentIndex, 'prev');
+    });
+
+    // Automatic transition interval (10000ms)
+    let sliderInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateSlider(currentIndex, 'next');
+    }, 10000);
+
+    // Performance optimization: Pause execution when tab is inactive
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) clearInterval(sliderInterval);
-        else sliderInterval = setInterval(updateSlider, 10000);
+        else sliderInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateSlider(currentIndex, 'next');
+        }, 10000);
     });
+
+    // Set initial state
+    items[0].classList.add('active');
 };
 
 // -------------------------------------------------------------------------
-// 3. STABLE PARALLAX SYSTEM
+// 3. MOTION & PARALLAX SYSTEMS
 // -------------------------------------------------------------------------
+
+/**
+ * High-performance parallax system using requestAnimationFrame.
+ * Targets specific IDs and effector classes to create depth during scroll.
+ * Optimized with 'passive: true' for scrolling performance.
+ */
 const initParallaxEffects = () => {
     const parallaxTargets = document.querySelectorAll('#parallax-home, #parallax-nature, #parallax-wedding, #parallax-car, .parallax-effector');
-    
     if (parallaxTargets.length === 0) return;
 
     let ticking = false;
@@ -137,7 +185,6 @@ const initParallaxEffects = () => {
         parallaxTargets.forEach(target => {
             const parent = target.parentElement;
             if (!parent) return;
-            
             const rect = parent.getBoundingClientRect();
 
             if (rect.top < windowHeight && rect.bottom > 0) {
@@ -158,8 +205,13 @@ const initParallaxEffects = () => {
 };
 
 // -------------------------------------------------------------------------
-// 4. DARK MODE, PRELOADER (Optimized) & REVEAL
+// 4. UI UTILITIES (Preloader, Dark Mode, Reveal)
 // -------------------------------------------------------------------------
+
+/**
+ * Handles site entry animation. Waits for font readiness and window load.
+ * Includes a safety timeout to prevent infinite loading screens.
+ */
 const initPreloader = async () => {
     const p = document.getElementById('preloader');
     const bar = document.getElementById('preloader-bar');
@@ -169,7 +221,7 @@ const initPreloader = async () => {
         await document.fonts.ready;
         document.documentElement.classList.add('fonts-loaded');
     } catch (err) {
-        console.warn("Error cargando fuentes:", err);
+        console.warn("Font loading notification failed:", err);
     }
 
     if (bar) bar.style.width = '80%';
@@ -191,6 +243,9 @@ const initPreloader = async () => {
     });
 };
 
+/**
+ * Toggles dark mode state and persists preference in localStorage.
+ */
 const initDarkMode = () => {
     const btns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
     btns.forEach(b => b?.addEventListener('click', () => {
@@ -200,6 +255,9 @@ const initDarkMode = () => {
     }));
 };
 
+/**
+ * Controls visibility and behavior of the 'Back to Top' button.
+ */
 const initBackToTop = () => {
     const btn = document.getElementById('back-to-top');
     if (!btn) return;
@@ -213,6 +271,10 @@ const initBackToTop = () => {
     btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 };
 
+/**
+ * Uses IntersectionObserver API to trigger entrance animations 
+ * for elements with the .reveal-on-scroll class.
+ */
 const initScrollAnimations = () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
