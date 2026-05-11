@@ -1,0 +1,52 @@
+#luxury-slider {
+    height: 100vh;
+    /* Fallback for older browsers */
+    height: 100dvh;
+}
+
+.slider-item.active {
+    opacity: 1 !important;
+    z-index: 20 !important;
+}
+
+/* Animation Keyframes */
+@keyframes titleIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Trigger animations only when slide is active */
+.slider-item.active .animate-title-in {
+    animation: titleIn 0.8s ease-out forwards;
+}
+
+.slider-item.active .animate-text-in {
+    animation: titleIn 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+/* Interactive thumbnail effects */
+.thumb-item:hover {
+    transform: translateY(-10px);
+    border-color: #D4AF37;
+}
+
+/* Responsive adjustments for small screens with low height */
+@media (max-height: 720px) {
+    .slider-content {
+        padding-top: 4rem;
+    }
+
+    #thumbnail-container {
+        bottom: 4rem;
+        transform: scale(0.85);
+        transform-origin: bottom right;
+    }
+}

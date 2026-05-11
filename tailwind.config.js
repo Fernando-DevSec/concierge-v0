@@ -9,6 +9,10 @@ module.exports = {
         'gold-luxury': '#C5A059',
         'gold-light': '#D4AF37',
       },
+      fontFamily: {
+        'nav': ['Montserrat', 'sans-serif'],
+        'display': ['Pinyon Script', 'cursive'],
+      },
     },
   },
   plugins: [],

@@ -2,20 +2,20 @@
   "name": "concierge-v0",
   "version": "1.0.0",
   "description": "An Costa Rica concierge website.",
-  "main": "index.js",
+  "main": "src/js/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tailwind": "npx tailwindcss -i ./src/css/input.css -o ./src/css/styles.css --watch",
     "server": "live-server src",
     "dev": "concurrently \"npm run tailwind\" \"npm run server\"",
-    "build": "rm -rf public && mkdir -p public/css/vendors public/js/vendors && npx tailwindcss -i ./src/css/input.css -o ./public/css/styles.css --minify && cp src/index.html public/ && cp -r src/en src/es src/fr src/images src/js public/ && cp -r src/css/vendors/* public/css/vendors/"
+    "build": "rm -rf public && mkdir -p public/css/vendors public/js/vendors && npx tailwindcss -i ./src/css/input.css -o ./public/css/styles.css --minify && cp src/*.html public/ && cp -r src/en src/es src/fr src/images src/assets src/js public/ && cp -r src/css/vendors/* public/css/vendors/ 2>/dev/null || true"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Fernando-DevSec/concierge-v0.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fernando (DevSec)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Fernando-DevSec/concierge-v0/issues"
@@ -25,8 +25,5 @@
     "concurrently": "^9.2.1",
     "live-server": "^1.2.2",
     "tailwindcss": "^3.4.19"
-  },
-  "dependencies": {
-    "@glidejs/glide": "^3.7.1"
   }
 }
