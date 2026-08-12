@@ -260,19 +260,19 @@
     class="fixed w-full z-50 transition-colors duration-300 bg-white/80 dark:bg-dark-luxury/90 backdrop-blur-md border-b border-zinc-200 dark:border-white/10">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
       <div class="flex justify-between items-center h-20">
-  
+
         <div class="flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
           <a href="/es" class="pinyon-script-regular text-4xl tracking-tight text-slate-900 dark:text-white italic">
             Concierge <span class="text-gold-luxury">CR</span>
           </a>
         </div>
-  
+
         <div class="hidden md:flex items-center space-x-8">
           <a href="/es/contact"
             class="font-nav text-sm font-medium text-slate-600 hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
             Contacto
           </a>
-  
+
           <div class="relative group">
             <button aria-expanded="false" aria-haspopup="true"
               class="font-nav flex items-center text-sm font-medium text-slate-600 group-hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
@@ -282,7 +282,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
-  
+
             <div
               class="absolute left-0 mt-2 w-64 rounded-md shadow-2xl py-2 bg-white dark:bg-dark-luxury ring-1 ring-black ring-opacity-5 dark:ring-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left scale-95 group-hover:scale-100">
               <a href="/es/services/concierge/"
@@ -303,12 +303,12 @@
               </a>
             </div>
           </div>
-  
+
           <a href="/es/about/"
             class="font-nav text-sm font-medium text-slate-600 hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5">
             Nosotros
           </a>
-  
+
           <div class="relative group">
             <button
               class="font-nav flex items-center text-sm font-medium text-slate-600 group-hover:text-gold-luxury dark:text-zinc-300 dark:hover:text-gold-luxury transition-all duration-300 hover:-translate-y-0.5 uppercase">
@@ -334,7 +334,7 @@
               </a>
             </div>
           </div>
-  
+
           <button id="theme-toggle" aria-label="Toggle dark mode"
             class="p-2 rounded-lg bg-white/80 dark:bg-white/5 text-slate-900 dark:text-gold-luxury hover:ring-2 hover:ring-gold-luxury transition-all duration-300 active:scale-90 hover:rotate-12">
             <svg id="sun-icon" class="hidden dark:block w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -346,9 +346,9 @@
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
           </button>
-  
+
         </div>
-  
+
         <div class="md:hidden flex items-center space-x-3">
           <div class="relative group z-50">
             <button
@@ -371,7 +371,7 @@
               </a>
             </div>
           </div>
-  
+
           <button id="mobile-menu-button" aria-label="Open menu"
             class="p-2 text-slate-600 dark:text-zinc-300 active:scale-90 transition-transform duration-300">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -381,15 +381,15 @@
         </div>
       </div>
     </nav>
-  
+
     <div id="mobile-menu"
       class="hidden md:hidden bg-white/95 dark:bg-dark-luxury backdrop-blur-md border-b border-zinc-200 dark:border-white/10">
       <div class="px-4 pt-2 pb-6 space-y-2">
-        <a href="/es"
+        <a href="/es/contact"
           class="font-nav block px-3 py-4 text-base font-medium text-slate-700 dark:text-zinc-200 rounded-lg transition-all duration-300 hover:text-gold-luxury dark:hover:text-gold-luxury hover:bg-zinc-100 dark:hover:bg-white/5 active:pl-6">
-          Inicio
+          Contacto
         </a>
-  
+
         <div>
           <button id="mobile-services-button"
             class="font-nav flex items-center justify-between w-full px-3 py-4 text-base font-medium text-slate-700 dark:text-zinc-200 rounded-lg transition-all duration-300 hover:text-gold-luxury dark:hover:text-gold-luxury hover:bg-zinc-100 dark:hover:bg-white/5">
@@ -399,7 +399,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-  
+
           <div id="mobile-services-menu"
             class="hidden mt-1 ml-3 pl-4 space-y-1 border-l border-zinc-200 dark:border-gold-luxury/30">
             <a href="/es/services/concierge/"
@@ -420,12 +420,12 @@
             </a>
           </div>
         </div>
-  
+
         <a href="/es/about/"
           class="font-nav block px-3 py-4 text-base font-medium text-slate-700 dark:text-zinc-200 rounded-lg transition-all duration-300 hover:text-gold-luxury dark:hover:text-gold-luxury hover:bg-zinc-100 dark:hover:bg-white/5 active:pl-6">
           Nosotros
         </a>
-  
+
         <div class="pt-6 border-t border-zinc-100 dark:border-white/10 flex justify-center">
           <button id="theme-toggle-mobile" aria-label="Toggle dark mode"
             class="p-4 rounded-full bg-zinc-100 dark:bg-white/5 text-slate-500 dark:text-gold-luxury active:scale-90 transition-all">
@@ -448,44 +448,51 @@
     <section id="service-reservations"
       class="relative w-full min-h-fit xl:min-h-screen flex flex-col xl:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="res-title">
-    
+
       <div
         class="w-full xl:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 xl:px-20 2xl:px-32 order-1 bg-white dark:bg-dark-luxury">
         <div
           class="w-full max-w-xl 2xl:max-w-2xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-8 md:mb-10">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               01 — Servicios de Concierge
             </span>
-    
+            <!--
             <h2 id="res-title"
               class="font-nav text-[clamp(2.5rem,8vw,4rem)] md:text-5xl xl:text-[clamp(3.5rem,4.2vw,4.5rem)] 2xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
               Reservas<br>
               <span class="text-slate-400 dark:text-zinc-600">sin Complicaciones</span>
+            </h2>-->
+
+            <h2 id="res-title"
+              class="font-nav text-[clamp(2rem,7vw,4rem)] md:text-5xl xl:text-[clamp(3.5rem,4.2vw,4.5rem)] 2xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
+              Reservas<br>
+              <span class="text-slate-400 dark:text-zinc-600">sin Complicaciones</span>
             </h2>
-    
+
             <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10">
               Ahorro de Tiempo y Sin Estrés
             </h3>
             <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
           </header>
-    
+
           <div class="space-y-6">
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed text-pretty">
-              Simplificamos el proceso de reservas de hoteles y restaurantes, adaptándonos a tus preferencias específicas. 
+              Simplificamos el proceso de reservas de hoteles y restaurantes, adaptándonos a tus preferencias
+              específicas.
               Nuestra selección cuidadosamente curada garantiza el máximo confort.
             </p>
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic text-slate-700 dark:text-zinc-300">
-              Evita la molestia de búsquedas en línea que pueden generar resultados poco satisfactorios, especialmente 
+              Evita la molestia de búsquedas en línea que pueden generar resultados poco satisfactorios, especialmente
               cuando no estás familiarizado con los alojamientos en Costa Rica.
             </p>
           </div>
         </div>
       </div>
-    
+
       <div
         class="w-full xl:w-1/2 h-auto xl:h-screen relative overflow-hidden !bg-white dark:!bg-dark-luxury order-2 flex items-center justify-center p-4 xl:p-12">
         <picture class="w-full h-full flex items-center justify-center">
@@ -497,50 +504,50 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
-    
+
     </section>
 
     <section id="service-logistics"
       class="relative w-full min-h-screen flex flex-col items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="logistics-title">
-    
+
       <div
         class="w-full flex flex-col items-center justify-center px-6 py-20 md:px-16 lg:px-24 xl:px-32 bg-zinc-50 dark:bg-dark-luxury">
         <div class="w-full max-w-5xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-12 text-center flex flex-col items-center">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               02 — Logística
             </span>
-    
+
             <h2 id="logistics-title"
               class="font-nav text-[clamp(2.2rem,7vw,3.5rem)] md:text-5xl lg:text-5xl xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.85] tracking-tighter mb-6">
               Servicios de<br>
               <span class="text-slate-400 dark:text-zinc-600">Transporte</span>
             </h2>
-    
+
             <div class="h-1 w-24 bg-gold-luxury mt-4" aria-hidden="true"></div>
-    
+
             <h3 class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mt-8">
               Hacia los Mejores Destinos
             </h3>
           </header>
-    
+
           <div class="space-y-8 max-w-3xl mx-auto">
             <p
               class="font-nav text-base md:text-lg text-slate-700 dark:text-zinc-400 font-light leading-relaxed text-center text-pretty">
-              Organizamos servicios de transporte adaptados a tus necesidades, incluyendo traslados 
+              Organizamos servicios de transporte adaptados a tus necesidades, incluyendo traslados
               desde el aeropuerto al hotel y del hotel al aeropuerto.
             </p>
             <p
               class="font-nav text-base md:text-lg text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l-0 md:border-l-2 border-gold-luxury/30 md:pl-8 italic text-slate-700 dark:text-zinc-300 text-center">
-              Ofrecemos transporte privado y compartido hacia los mejores destinos turísticos, 
+              Ofrecemos transporte privado y compartido hacia los mejores destinos turísticos,
               así como servicio de limusina para clientes VIP, como ejecutivos de alto nivel y celebridades.
             </p>
           </div>
         </div>
       </div>
-    
+
       <div
         class="w-full relative overflow-hidden flex items-center justify-center p-6 lg:p-12 bg-zinc-50 dark:bg-dark-luxury">
         <picture class="w-full max-w-7xl aspect-[4/3]">
@@ -553,13 +560,13 @@
           class="absolute inset-0 bg-gradient-to-b from-zinc-50/10 via-transparent to-transparent pointer-events-none dark:from-dark-luxury/10">
         </div>
       </div>
-    
+
     </section>
 
     <section id="service-culture"
       class="relative w-full min-h-fit xl:min-h-screen flex flex-col xl:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="culture-title">
-    
+
       <div
         class="w-full xl:w-1/2 h-auto xl:h-screen relative overflow-hidden !bg-white dark:!bg-dark-luxury order-2 xl:order-1 flex items-center justify-center p-4 xl:p-12">
         <picture class="w-full h-full flex items-center justify-center">
@@ -571,80 +578,82 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
-    
+
       <div
         class="w-full xl:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 xl:px-12 2xl:px-32 order-1 xl:order-2 bg-white dark:bg-dark-luxury">
         <div
           class="w-full max-w-xl 2xl:max-w-2xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-8 md:mb-10">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               03 — Cultura
             </span>
-    
+
             <h2 id="culture-title"
               class="font-nav text-[clamp(2.5rem,8vw,4rem)] md:text-5xl xl:text-[clamp(3rem,3.5vw,4.2rem)] 2xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
               Explora<br>
               <span class="text-slate-400 dark:text-zinc-600">La ciudad de San José</span>
             </h2>
-    
+
             <h3
               class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10 text-pretty">
               Historia, Cultura y mucho más
             </h3>
             <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
           </header>
-    
+
           <div class="space-y-6">
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed text-pretty">
-              San José es la capital de Costa Rica. Para aprovechar al máximo tu estadía, disfruta de City Tours (varias rutas dentro de San José), 
-              recorridos por museos, tours gastronómicos, tours nocturnos y de entretenimiento, parques urbanos, barrios tradicionales, 
+              San José es la capital de Costa Rica. Para aprovechar al máximo tu estadía, disfruta de City Tours (varias
+              rutas dentro de San José),
+              recorridos por museos, tours gastronómicos, tours nocturnos y de entretenimiento, parques urbanos, barrios
+              tradicionales,
               monumentos, mercados, tiendas de souvenirs y mucho más.
             </p>
           </div>
         </div>
       </div>
-    
+
     </section>
 
     <section id="service-adventure"
       class="relative w-full min-h-fit xl:min-h-screen flex flex-col xl:flex-row items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="adventure-title">
-    
+
       <div
         class="w-full xl:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 xl:px-20 2xl:px-32 order-1 bg-zinc-50 dark:bg-dark-luxury">
         <div
           class="w-full max-w-xl 2xl:max-w-2xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-8 md:mb-10">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               04 — Adrenalina
             </span>
-    
+
             <h2 id="adventure-title"
               class="font-nav text-[clamp(2.5rem,8vw,4rem)] md:text-5xl xl:text-[clamp(3rem,3.5vw,4.2rem)] 2xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
               Un paraíso<br>
               <span class="text-slate-400 dark:text-zinc-600">de Aventura</span>
             </h2>
-    
+
             <h3
               class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10 text-pretty">
               Siente la Adrenalina
             </h3>
             <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
           </header>
-    
+
           <div class="space-y-6">
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed text-pretty">
-              Libera tu adrenalina disfrutando de actividades de aventura como parapente, 
+              Libera tu adrenalina disfrutando de actividades de aventura como parapente,
               canopy (tirolesa), rafting, kayak, surf, windsurf, entre muchas otras.
             </p>
           </div>
         </div>
       </div>
-    
+
       <div
         class="w-full xl:w-1/2 h-auto xl:h-screen relative overflow-hidden !bg-zinc-50 dark:!bg-dark-luxury order-2 flex items-center justify-center p-4 xl:p-12">
         <picture class="w-full h-full flex items-center justify-center">
@@ -656,13 +665,13 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
-    
+
     </section>
 
     <section id="service-biodiversity"
       class="relative w-full min-h-fit xl:min-h-screen flex flex-col xl:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="biodiversity-title">
-    
+
       <div
         class="w-full xl:w-1/2 h-auto xl:h-screen relative overflow-hidden !bg-white dark:!bg-dark-luxury order-2 xl:order-1 flex items-center justify-center p-4 xl:p-12">
         <picture class="w-full h-full flex items-center justify-center">
@@ -674,35 +683,37 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
-    
+
       <div
         class="w-full xl:w-1/2 flex items-center justify-center px-6 py-16 md:px-16 xl:px-12 2xl:px-32 order-1 xl:order-2 bg-white dark:bg-dark-luxury">
         <div
           class="w-full max-w-xl 2xl:max-w-2xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-8 md:mb-10">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               05 — Biodiversidad
             </span>
-    
+
             <h2 id="biodiversity-title"
               class="font-nav text-[clamp(2.5rem,8vw,4rem)] md:text-5xl xl:text-[clamp(3rem,3.5vw,4.2rem)] 2xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
               Observación de<br>
               <span class="text-slate-400 dark:text-zinc-600">aves en Costa Rica</span>
             </h2>
-    
+
             <h3
               class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10 text-pretty">
               El Encanto de la Naturaleza
             </h3>
             <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
           </header>
-    
+
           <div class="space-y-6">
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed text-pretty">
-              Las aves son consideradas unos de los animales más fascinantes y encantadores del planeta, por lo que miles de 
-              personas visitan los bosques y selvas de Costa Rica para apreciar la extraordinaria biodiversidad de sus aves.
+              Las aves son consideradas unos de los animales más fascinantes y encantadores del planeta, por lo que
+              miles de
+              personas visitan los bosques y selvas de Costa Rica para apreciar la extraordinaria biodiversidad de sus
+              aves.
             </p>
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic text-slate-700 dark:text-zinc-300">
@@ -711,50 +722,50 @@
           </div>
         </div>
       </div>
-    
+
     </section>
 
     <section id="service-nature-wildlife"
       class="relative w-full min-h-fit xl:min-h-screen flex flex-col xl:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="nature-wildlife-title">
-    
+
       <div
         class="w-full xl:w-[60%] flex items-center justify-center px-6 py-16 md:px-16 xl:px-20 2xl:px-32 order-1 bg-white dark:bg-dark-luxury">
         <div class="w-full max-w-2xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-8 md:mb-10">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               06 — Naturaleza
             </span>
-    
+
             <h2 id="nature-wildlife-title"
               class="font-nav text-[clamp(2.5rem,8vw,4rem)] md:text-5xl xl:text-[clamp(3rem,3.5vw,4.2rem)] 2xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
               Naturaleza<br>
               <span class="text-slate-400 dark:text-zinc-600">y vida silvestre</span>
             </h2>
-    
+
             <h3
               class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10 text-pretty">
               La Riqueza de Costa Rica
             </h3>
             <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
           </header>
-    
+
           <div class="space-y-6">
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed text-pretty">
-              Costa Rica es uno de los países con mayor biodiversidad en el mundo, ya que alberga aproximadamente 
+              Costa Rica es uno de los países con mayor biodiversidad en el mundo, ya que alberga aproximadamente
               el 5% de las especies del planeta en un territorio relativamente pequeño.
             </p>
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic text-slate-700 dark:text-zinc-300">
-              Realiza un tour con nosotros para observar el desove de tortugas, coloridas ranas, perezosos, cocodrilos, 
+              Realiza un tour con nosotros para observar el desove de tortugas, coloridas ranas, perezosos, cocodrilos,
               ballenas, delfines, monos y muchos otros animales.
             </p>
           </div>
         </div>
       </div>
-    
+
       <div
         class="w-full xl:w-[40%] h-auto xl:h-screen relative overflow-hidden !bg-white dark:!bg-dark-luxury order-2 flex items-center justify-center p-4 xl:p-12">
         <picture class="w-full h-full flex items-center justify-center">
@@ -766,13 +777,13 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
-    
+
     </section>
-  
+
     <section id="service-yacht"
       class="relative w-full min-h-fit xl:min-h-screen flex flex-col xl:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="yacht-title">
-    
+
       <div
         class="w-full xl:w-[40%] h-auto xl:h-screen relative overflow-hidden !bg-white dark:!bg-dark-luxury order-2 xl:order-1 flex items-center justify-center p-4 xl:p-12">
         <picture class="w-full h-full flex items-center justify-center">
@@ -784,91 +795,95 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
-    
+
       <div
         class="w-full xl:w-[60%] flex items-center justify-center px-6 py-16 md:px-16 xl:px-20 2xl:px-32 order-1 xl:order-2 bg-white dark:bg-dark-luxury">
         <div class="w-full max-w-2xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-8 md:mb-10">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               07 — Lujo
             </span>
-    
+
             <h2 id="yacht-title"
               class="font-nav text-[clamp(2.5rem,8vw,4rem)] md:text-5xl xl:text-[clamp(3rem,3.5vw,4.2rem)] 2xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
               Servicios<br>
               <span class="text-slate-400 dark:text-zinc-600">en Yate</span>
             </h2>
-    
+
             <h3
               class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10 text-pretty">
               Servicios en yate, actividades de navegación y pesca deportiva
             </h3>
             <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
           </header>
-    
+
           <div class="space-y-6">
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed text-pretty">
-              ¡Ah, los yates! Esas embarcaciones soñadas para el descanso y el disfrute. Vive una combinación de lujo y 
-              aventura mientras creas recuerdos inolvidables explorando rincones escondidos en las bahías y playas 
+              ¡Ah, los yates! Esas embarcaciones soñadas para el descanso y el disfrute. Vive una combinación de lujo y
+              aventura mientras creas recuerdos inolvidables explorando rincones escondidos en las bahías y playas
               más hermosas de Costa Rica.
             </p>
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l border-gold-luxury/30 pl-6 italic text-slate-700 dark:text-zinc-300">
-              Un yate ofrece escenarios naturales incomparables para tomar fotografías. Imagina una recepción romántica de boda, 
-              organizar una fiesta o simplemente disfrutar de una cena y entretenimiento en vivo. Además, no podemos dejar de 
-              incluir la organización de actividades de navegación y pesca deportiva dentro de nuestro portafolio de servicios.
+              Un yate ofrece escenarios naturales incomparables para tomar fotografías. Imagina una recepción romántica
+              de boda,
+              organizar una fiesta o simplemente disfrutar de una cena y entretenimiento en vivo. Además, no podemos
+              dejar de
+              incluir la organización de actividades de navegación y pesca deportiva dentro de nuestro portafolio de
+              servicios.
             </p>
           </div>
         </div>
       </div>
-    
+
     </section>
 
     <section id="service-hiking"
       class="relative w-full min-h-fit xl:min-h-screen flex flex-col items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="hiking-title">
-    
+
       <div
         class="w-full flex flex-col items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 bg-zinc-50 dark:bg-dark-luxury">
         <div class="w-full max-w-5xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-10 text-center flex flex-col items-center">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               08 — Aventura
             </span>
-    
+
             <h2 id="hiking-title"
               class="font-nav text-[clamp(2.2rem,7vw,3.5rem)] md:text-5xl lg:text-5xl xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.85] tracking-tighter mb-6">
               Explora<br>
               <span class="text-slate-400 dark:text-zinc-600">Costa Rica</span>
             </h2>
-    
+
             <div class="h-1 w-20 bg-gold-luxury mt-2" aria-hidden="true"></div>
-    
+
             <h3
               class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mt-8 text-pretty">
               Con tours guiados de senderismo
             </h3>
           </header>
-    
+
           <div class="space-y-8 max-w-3xl mx-auto">
             <p
               class="font-nav text-base md:text-lg text-slate-700 dark:text-zinc-400 font-light leading-relaxed text-center text-pretty">
-              El senderismo ofrece una oportunidad incomparable para conectar con la naturaleza. 
-              Esta experiencia se vuelve aún más enriquecedora cuando se realiza en un lugar nuevo con 
+              El senderismo ofrece una oportunidad incomparable para conectar con la naturaleza.
+              Esta experiencia se vuelve aún más enriquecedora cuando se realiza en un lugar nuevo con
               un guía que lidera el camino.
             </p>
             <p
               class="font-nav text-base md:text-lg text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l-0 md:border-l-2 border-gold-luxury/30 md:pl-8 italic text-slate-700 dark:text-zinc-300 text-center">
-              El papel principal de un guía es eliminar los obstáculos que impiden a las personas disfrutar plenamente 
-              del entorno natural. Disfruta de los mejores senderos en Costa Rica de manera segura y con mayor comodidad.
+              El papel principal de un guía es eliminar los obstáculos que impiden a las personas disfrutar plenamente
+              del entorno natural. Disfruta de los mejores senderos en Costa Rica de manera segura y con mayor
+              comodidad.
             </p>
           </div>
         </div>
       </div>
-    
+
       <div
         class="w-full h-auto max-w-7xl mx-auto pb-20 px-6 lg:px-12 relative overflow-hidden flex items-center justify-center">
         <picture class="w-full h-full">
@@ -880,35 +895,35 @@
           class="absolute inset-0 bg-gradient-to-b from-zinc-50/5 via-transparent to-transparent pointer-events-none dark:from-dark-luxury/5">
         </div>
       </div>
-    
+
     </section>
 
     <section id="service-inspiration"
       class="relative w-full min-h-fit xl:min-h-screen flex flex-col xl:flex-row items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="inspiration-title">
-    
+
       <div
         class="w-full xl:w-[60%] flex items-center justify-center px-6 py-16 md:px-16 xl:px-20 2xl:px-32 order-1 bg-white dark:bg-dark-luxury">
         <div class="w-full max-w-2xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-8 md:mb-10">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               09 — Inspiración
             </span>
-    
+
             <h2 id="inspiration-title"
               class="font-nav text-[clamp(2.5rem,8vw,4rem)] md:text-5xl xl:text-[clamp(3rem,3.5vw,4.2rem)] 2xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.9] tracking-tighter mb-4">
               <span class="inline-block xl:whitespace-nowrap">Lugares impresionantes,</span><br>
               <span class="text-slate-400 dark:text-zinc-600">e incomparables</span>
             </h2>
-    
+
             <h3
               class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mb-10 text-pretty">
               Renueva tu Cuerpo y tu Espíritu
             </h3>
             <div class="h-1 w-20 bg-gold-luxury" aria-hidden="true"></div>
           </header>
-    
+
           <div class="space-y-6">
             <p
               class="font-nav text-sm md:text-base text-slate-700 dark:text-zinc-400 font-light leading-relaxed text-pretty">
@@ -921,7 +936,7 @@
           </div>
         </div>
       </div>
-    
+
       <div
         class="w-full xl:w-[40%] h-auto xl:h-screen relative overflow-hidden !bg-white dark:!bg-dark-luxury order-2 flex items-center justify-center p-4 xl:p-12">
         <picture class="w-full h-full flex items-center justify-center">
@@ -933,50 +948,52 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none">
         </div>
       </div>
-    
+
     </section>
 
     <section id="service-privacy"
       class="relative w-full min-h-fit xl:min-h-screen flex flex-col items-center bg-zinc-50 dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="privacy-title">
-    
+
       <div
         class="w-full flex flex-col items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 bg-zinc-50 dark:bg-dark-luxury">
         <div class="w-full max-w-5xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-10 text-center flex flex-col items-center">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               10 — Privacidad
             </span>
-    
+
             <h2 id="privacy-title"
               class="font-nav text-[clamp(2.2rem,7vw,3.5rem)] md:text-5xl lg:text-5xl xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.85] tracking-tighter mb-6">
               Exclusividad<br>
               <span class="text-slate-400 dark:text-zinc-600">y Privacidad</span>
             </h2>
-    
+
             <div class="h-1 w-20 bg-gold-luxury mt-2" aria-hidden="true"></div>
-    
+
             <h3
               class="font-nav text-sm md:text-base text-gold-luxury font-bold uppercase tracking-[0.3em] mt-8 text-pretty">
               En su Máxima Expresión
             </h3>
           </header>
-    
+
           <div class="space-y-8 max-w-3xl mx-auto">
             <p
               class="font-nav text-base md:text-lg text-slate-700 dark:text-zinc-400 font-light leading-relaxed text-center text-pretty">
-              La privacidad permite que los huéspedes se sientan más cómodos y relajados, sin el estrés de las multitudes 
+              La privacidad permite que los huéspedes se sientan más cómodos y relajados, sin el estrés de las
+              multitudes
               o de compartir espacios con desconocidos.
             </p>
             <p
               class="font-nav text-base md:text-lg text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l-0 md:border-l-2 border-gold-luxury/30 md:pl-8 italic text-slate-700 dark:text-zinc-300 text-center">
-              Esto crea un ambiente sereno, especialmente atractivo para quienes desean descansar y escapar del ritmo acelerado de la vida diaria.
+              Esto crea un ambiente sereno, especialmente atractivo para quienes desean descansar y escapar del ritmo
+              acelerado de la vida diaria.
             </p>
           </div>
         </div>
       </div>
-    
+
       <div
         class="w-full h-auto max-w-7xl mx-auto pb-20 px-6 lg:px-12 relative overflow-hidden flex items-center justify-center">
         <picture class="w-full h-full">
@@ -989,42 +1006,42 @@
           class="absolute inset-0 bg-gradient-to-b from-zinc-50/5 via-transparent to-transparent pointer-events-none dark:from-dark-luxury/5">
         </div>
       </div>
-    
+
     </section>
 
     <section id="service-wellness"
       class="relative w-full min-h-fit xl:min-h-screen flex flex-col items-center bg-white dark:bg-dark-luxury transition-colors duration-300 overflow-hidden border-b border-zinc-100 dark:border-white/5"
       aria-labelledby="wellness-title">
-    
+
       <div
         class="w-full flex flex-col items-center justify-center px-6 py-16 md:px-16 lg:px-24 xl:px-32 bg-white dark:bg-dark-luxury">
         <div class="w-full max-w-5xl reveal-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-    
+
           <header class="mb-10 text-center flex flex-col items-center">
             <span class="text-gold-luxury font-nav text-xs tracking-[0.5em] mb-6 block font-bold uppercase">
               11 — Bienestar
             </span>
-    
+
             <h2 id="wellness-title"
               class="font-nav text-[clamp(2.2rem,7vw,3.5rem)] md:text-5xl lg:text-6xl xl:text-6xl text-slate-900 dark:text-white font-black uppercase leading-[0.85] tracking-tighter mb-6">
               Una variedad de<br>
               <span class="text-slate-400 dark:text-zinc-600">servicios de bienestar</span>
             </h2>
-    
+
             <div class="h-1 w-20 bg-gold-luxury mt-2" aria-hidden="true"></div>
           </header>
-    
+
           <div class="space-y-8 max-w-3xl mx-auto mt-10">
             <p
               class="font-nav text-base md:text-lg text-slate-700 dark:text-zinc-400 font-light leading-relaxed border-l-0 md:border-l-2 border-gold-luxury/30 md:pl-8 italic text-slate-700 dark:text-zinc-300 text-center text-pretty">
-              Disfruta de los beneficios de terapias de masaje, tratamientos faciales, cuidado de la piel, 
-              saunas y baños de vapor, con diversas técnicas que elevarán tu experiencia de viaje al nivel 
+              Disfruta de los beneficios de terapias de masaje, tratamientos faciales, cuidado de la piel,
+              saunas y baños de vapor, con diversas técnicas que elevarán tu experiencia de viaje al nivel
               máximo de relajación que hayas experimentado.
             </p>
           </div>
         </div>
       </div>
-    
+
       <div
         class="w-full h-auto max-w-7xl mx-auto pb-20 px-6 lg:px-12 relative overflow-hidden flex items-center justify-center">
         <picture class="w-full h-full">
@@ -1037,7 +1054,7 @@
           class="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent pointer-events-none dark:from-dark-luxury/5">
         </div>
       </div>
-    
+
     </section>
 
     <section class="relative w-full py-32 bg-white dark:bg-dark-luxury transition-colors duration-500 overflow-hidden">
@@ -1045,7 +1062,7 @@
         <div class="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-gold-luxury/20 rounded-full blur-[100px]"></div>
         <div class="absolute bottom-1/4 left-1/4 w-[250px] h-[250px] bg-gold-luxury/10 rounded-full blur-[100px]"></div>
       </div>
-    
+
       <div class="max-w-xs mx-auto relative flex flex-col items-center justify-center gap-8">
         <svg viewBox="0 0 100 100" class="w-24 h-24 text-gold-luxury/80" fill="none" stroke="currentColor"
           stroke-width="1.5">
@@ -1054,7 +1071,7 @@
           <line x1="20" y1="75" x2="80" y2="75" />
           <line x1="30" y1="82" x2="70" y2="82" />
         </svg>
-    
+
         <div class="flex items-center gap-4">
           <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold-luxury/40"></div>
           <div class="w-1.5 h-1.5 border border-gold-luxury rotate-45"></div>
