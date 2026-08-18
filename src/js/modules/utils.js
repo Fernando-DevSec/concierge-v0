@@ -21,8 +21,8 @@ export const initPreloader = async () => {
         if (bar) bar.style.width = '100%';
         setTimeout(() => {
             p.classList.add('opacity-0', 'pointer-events-none');
-            setTimeout(() => p.remove(), 700);
-        }, 500);
+            setTimeout(() => p.remove(), 300);
+        }, 200); 
     };
 
     const safetyTimeout = setTimeout(hidePreloader, 5000);
